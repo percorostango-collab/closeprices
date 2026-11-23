@@ -1,0 +1,101 @@
+{
+ "nota": "generato automaticamente",
+ "prodotti": [
+  {
+   "gtin": "3274080005003",
+   "brand": "Cristaline",
+   "name": "Cristaline",
+   "quantity": "1500 ml",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "3046920029759",
+   "brand": "Lindt",
+   "name": "Fondente Prodigioso 90% Cacao",
+   "quantity": "100g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "5449000054227",
+   "brand": "Coca-Cola",
+   "name": "Coca-Cola Original Taste",
+   "quantity": "1 L",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "3168930010265",
+   "brand": "Quaker",
+   "name": "cruesly mélange de noix",
+   "quantity": "450 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "3046920022651",
+   "brand": "Lindt",
+   "name": "Noir Intense",
+   "quantity": "100 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "3017620425035",
+   "brand": "Nutella",
+   "name": "Nutella",
+   "quantity": "1 kg",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "42104964",
+   "brand": "Ciel",
+   "name": "Ciel",
+   "quantity": "33cl",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "7300400481595",
+   "brand": "wasa",
+   "name": "AUTHENTIQUE",
+   "quantity": "275 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "7300400481588",
+   "brand": "wasa",
+   "name": "Fibres",
+   "quantity": "230 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "5449000214799",
+   "brand": "Coca-Cola",
+   "name": "Coca-Cola Zero",
+   "quantity": "330 mL",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "8076809523547",
+   "brand": "Barilla",
+   "name": "Pesto Rosso",
+   "quantity": "200 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  },
+  {
+   "gtin": "3229820129488",
+   "brand": "Bjorg",
+   "name": "muesli raisin,datte,figue",
+   "quantity": "375 g",
+   "probe": true,
+   "origine": "Open Food Facts, piu' scansionati in Italia, 2026-11-23"
+  }
+ ]
+}

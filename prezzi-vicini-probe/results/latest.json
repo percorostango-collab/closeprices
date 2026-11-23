@@ -1,0 +1,1914 @@
+{
+ "generato": "2026-11-23 13:30 UTC",
+ "prodotti_provati": [
+  "3274080005003",
+  "3046920029759",
+  "5449000054227",
+  "3168930010265",
+  "3046920022651",
+  "3017620425035"
+ ],
+ "off": [
+  {
+   "gtin": "3274080005003",
+   "status": 200,
+   "trovato": true,
+   "nome": "Cristaline",
+   "marche": "Cristaline",
+   "quantita": "1500 ml",
+   "negozi": "Intermarché, auchan, carrefour, e-leclerc, leclerc, lidl, super-u",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "3046920029759",
+   "status": 200,
+   "trovato": true,
+   "nome": "Fondente Prodigioso 90% Cacao",
+   "marche": "Lindt",
+   "quantita": "100g",
+   "negozi": "Ah",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "5449000054227",
+   "status": 200,
+   "trovato": true,
+   "nome": "Coca-Cola Original Taste",
+   "marche": "Coca-Cola",
+   "quantita": "1 L",
+   "negozi": "spar",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "3168930010265",
+   "status": 200,
+   "trovato": true,
+   "nome": "cruesly mélange de noix",
+   "marche": "Quaker, Cruesli",
+   "quantita": "450 g",
+   "negozi": "Intermarché, Magasins U",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "3046920022651",
+   "status": 200,
+   "trovato": true,
+   "nome": "Noir Intense",
+   "marche": "Lindt",
+   "quantita": "100 g",
+   "negozi": "Carrefour, Carrefour City, Carrefour Market, E.leclerc, Intermarché, Magasins U, carrefour.fr",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "3017620425035",
+   "status": 200,
+   "trovato": true,
+   "nome": "Nutella",
+   "marche": "Nutella, FERRERO FRANCE COMMERCIALE",
+   "quantita": "1 kg",
+   "negozi": "Auchan, Carrefour, E. Leclerc",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "42104964",
+   "status": 200,
+   "trovato": true,
+   "nome": "Ciel",
+   "marche": "Ciel",
+   "quantita": "33cl",
+   "negozi": "",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "7300400481595",
+   "status": 200,
+   "trovato": true,
+   "nome": "AUTHENTIQUE",
+   "marche": "wasa, Barilla Sverige AB",
+   "quantita": "275 g",
+   "negozi": "Intermarché, Leclerc, Magasins U, carrefour.fr",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "7300400481588",
+   "status": 200,
+   "trovato": true,
+   "nome": "Fibres",
+   "marche": "wasa, Barilla Sverige AB",
+   "quantita": "230 g",
+   "negozi": "Auchan, Carrefour Market, Centre Commercial E.Leclerc, Dia, Magasins U, Marché U, Super U, carrefour.fr, monoprix",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "5449000214799",
+   "status": 200,
+   "trovato": true,
+   "nome": "Coca-Cola Zero",
+   "marche": "Coca-Cola",
+   "quantita": "330 mL",
+   "negozi": "Coles, Magasins U, Woolworths",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "8076809523547",
+   "status": 200,
+   "trovato": true,
+   "nome": "Pesto Rosso",
+   "marche": "Barilla",
+   "quantita": "200 g",
+   "negozi": "Jumbo",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  },
+  {
+   "gtin": "3229820129488",
+   "status": 200,
+   "trovato": true,
+   "nome": "muesli raisin,datte,figue",
+   "marche": "Bjorg",
+   "quantita": "375 g",
+   "negozi": "Auchan, Carrefour, Franprix, Géant Casino, Magasins U, carrefour.fr",
+   "marca_coincide": true,
+   "open_prices_totale": null
+  }
+ ],
+ "osm": {
+  "Milano": {
+   "errore": "HTTP 502"
+  },
+  "Roma": {
+   "errore": "HTTP 502"
+  },
+  "Napoli": {
+   "errore": "HTTP 502"
+  }
+ },
+ "siti": [
+  {
+   "nome": "Conad",
+   "base": "https://www.conad.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.conad.it/sitemap.xml",
+    "voci": 3490,
+    "prodotti_nel_nome": 49
+   },
+   "ricerca": {
+    "url": "https://www.conad.it/",
+    "parametro": "q"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 2,
+      "scheda_url": "https://www.conad.it/carte-e-premi/collezioni-e-concorsi",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Collezioni e Concorsi Conad per sorprenderti | Conad",
+      "identita_titolo_ok": false,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Esselunga",
+   "base": "https://www.esselunga.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.esselunga.it/it-it/sitemap.xml",
+    "voci": 2765,
+    "prodotti_nel_nome": 156
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Carrefour",
+   "base": "https://www.carrefour.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.carrefour.it/sitemap_index.xml",
+    "voci": 6,
+    "prodotti_nel_nome": 6
+   },
+   "ricerca": {
+    "url": "https://www.carrefour.it/search",
+    "parametro": "q"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "outcome": "robots_vieta_ricerca"
+     }
+    }
+   ],
+   "esito": "robots_vieta_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "EasyCoop",
+   "base": "https://www.easycoop.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 403,
+   "esito": "bloccato",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "CoopShop",
+   "base": "https://www.coopshop.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "esito": "js_senza_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Coop.fi — Unicoop Firenze",
+   "base": "https://www.coopfirenze.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.coopfirenze.it/sitemap.xml",
+    "voci": 970,
+    "prodotti_nel_nome": 42
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Coop a casa — Unicoop Etruria",
+   "base": "https://www.coop.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Bennet",
+   "base": "https://www.bennet.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Tigros",
+   "base": "https://www.tigros.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "esito": "bloccato",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Iper Tosano — La Tua Spesa",
+   "base": "https://www.latuaspesa.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "esito": "bloccato",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Pam — Pam a Casa",
+   "base": "https://www.pampanorama.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Eurospin Online",
+   "base": "https://www.eurospin.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.eurospin.com/sitemap-index.xml",
+    "voci": 8,
+    "prodotti_nel_nome": 8
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Iperal",
+   "base": "https://www.iperalspesaonline.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "esito": "bloccato",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Iper — IperDrive",
+   "base": "https://www.iper.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "CRAI — CraiGO",
+   "base": "https://www.craigo.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Sigma Online",
+   "base": "https://www.sigmaonline.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Unes / U2 / il Viaggiator Goloso",
+   "base": "https://www.unes.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.unes.it/sitemap.xml",
+    "voci": 532,
+    "prodotti_nel_nome": 8
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Decò a Casa — Multicedi",
+   "base": "https://www.multicedi.it/",
+   "in_registro": true,
+   "robots": {
+    "status": null,
+    "nota": "non leggibile (SSLError: HTTPSConnectionPool(host='www.multicedi.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VER): per prudenza vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Dodecà",
+   "base": "https://www.dodeca.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Todis a Casa",
+   "base": "https://www.todisacasa.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "ricerca": {
+    "url": "https://todisacasa.it/ricerca",
+    "parametro": "search"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 1,
+      "scheda_url": "https://todisacasa.it/ricerca?search=Cristaline+Cristaline",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Cristaline Cristaline",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 1,
+      "scheda_url": "https://todisacasa.it/ricerca?search=Lindt+Fondente+Prodigioso+90%25+Cacao",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Lindt Fondente Prodigioso 90% Cacao",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 2,
+      "scheda_url": "https://todisacasa.it/cioccolato-e-spalmabili_186",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Cioccolato e spalmabili | Todis a Casa | Consegna a casa",
+      "identita_titolo_ok": false,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 1,
+      "scheda_url": "https://todisacasa.it/ricerca?search=Quaker+cruesly+mélange+de+noix",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Quaker cruesly mélange de noix",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 1,
+      "scheda_url": "https://todisacasa.it/ricerca?search=Lindt+Noir+Intense",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Lindt Noir Intense",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 2,
+      "scheda_url": "https://todisacasa.it/prodotto/nutella-nutella-plant-based-1918046",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Nutella plant-based",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Despar a Casa",
+   "base": "https://www.despar.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Nonna Isa Shop",
+   "base": "https://www.nonnaisa.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.nonnaisa.com/sitemap_index.xml",
+    "voci": 7,
+    "prodotti_nel_nome": 7
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Migross — eMigross",
+   "base": "https://www.emigross.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 202,
+    "nota": "non leggibile (202): per prudenza vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Prezzemolo & Vitale",
+   "base": "https://www.prezzemoloevitale.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 3
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.prezzemoloevitale.it/media/sitemap/stemap_www_it_category.xml",
+    "voci": 438,
+    "prodotti_nel_nome": 434
+   },
+   "ricerca": {
+    "url": "https://www.prezzemoloevitale.it/it/catalogsearch/result/",
+    "parametro": "q"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 403,
+      "outcome": "bloccato",
+      "error": null
+     }
+    }
+   ],
+   "esito": "bloccato",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "CTS",
+   "base": "https://www.ctsspesaonline.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "esito": "js_senza_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "PIM",
+   "base": "https://www.pimspesaonline.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "esito": "js_senza_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Pewex",
+   "base": "https://www.prontospesapewex.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Ipertriscount",
+   "base": "https://www.ipertriscountspesaonline.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "esito": "js_senza_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Basko",
+   "base": "https://www.basko.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "esito": "js_senza_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Oasi / Tigre",
+   "base": "https://www.oasitigre.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 404,
+    "nota": "HTTP 404: nessun robots.txt",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "ricerca": {
+    "url": "https://www.oasitigre.it/",
+    "parametro": "address"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 2,
+      "scheda_url": "https://www.oasitigre.it/prodotti/dolcicolazioneemerenda/frollinisemplici/consiliafrollinialluovo700g-733730.html",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Consilia Frollini All'Uovo 700 g",
+      "identita_titolo_ok": false,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Alì / Alìper — Alìperme",
+   "base": "https://www.alisupermercati.it/",
+   "in_registro": true,
+   "robots": {
+    "status": null,
+    "nota": "non leggibile (ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))): per prudenza vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Dem",
+   "base": "https://www.supermercatidem.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.supermercatidem.com/sitemap_index.xml",
+    "voci": 5,
+    "prodotti_nel_nome": 5
+   },
+   "ricerca": {
+    "url": "https://www.supermercatidem.com/",
+    "parametro": "s"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_embedded_json",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 1,
+      "scheda_url": "https://www.supermercatidem.com/nutella-peanut/",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Nutella Peanut: la novità introvabile in Italia è da Dem Supermercati - Supermercati DEM",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Sacoph",
+   "base": "https://www.supermercatisacoph.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Sì con Te",
+   "base": "https://www.siconte.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 202,
+    "nota": "non leggibile (202): per prudenza vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "accesso"
+  },
+  {
+   "nome": "DOK",
+   "base": "https://www.supermercatidok.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.supermercatidok.it/sitemap_index.xml",
+    "voci": 1,
+    "prodotti_nel_nome": 1
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Despar Centro Sud",
+   "base": "https://www.mydespar.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 0
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "esito": "nessun_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Coop Sardegna",
+   "base": "https://www.coopsardegna.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.coopsardegna.it/wp-sitemap.xml",
+    "voci": 7,
+    "prodotti_nel_nome": 7
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "Famila Sicilia / Ciaospesa",
+   "base": "https://www.famila.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.famila.it/sitemap.xml",
+    "voci": 7,
+    "prodotti_nel_nome": 7
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "accesso"
+  },
+  {
+   "nome": "D’Ambros",
+   "base": "https://www.dambros.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://dambros.it/sitemap_index.xml",
+    "voci": 1,
+    "prodotti_nel_nome": 1
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "ecommerce"
+  },
+  {
+   "nome": "Mercatò",
+   "base": "https://www.cosicomodo.it/mercato",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.cosicomodo.it/sitemap.xml",
+    "voci": 16,
+    "prodotti_nel_nome": 16
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Il Gigante",
+   "base": "https://www.cosicomodo.it/ilgigante",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.cosicomodo.it/sitemap.xml",
+    "voci": 16,
+    "prodotti_nel_nome": 16
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Emisfero",
+   "base": "https://www.cosicomodo.it/emisfero",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.cosicomodo.it/sitemap.xml",
+    "voci": 16,
+    "prodotti_nel_nome": 16
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Galassia",
+   "base": "https://www.cosicomodo.it/galassia",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.cosicomodo.it/sitemap.xml",
+    "voci": 16,
+    "prodotti_nel_nome": 16
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Italmark",
+   "base": "https://www.italmark.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "http://www.italmark.it/sitemap_index.xml",
+    "voci": 17,
+    "prodotti_nel_nome": 17
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Pan",
+   "base": "https://www.supermercatipan.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.supermercatipan.it/sitemap.xml",
+    "voci": 1637,
+    "prodotti_nel_nome": 42
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "Sole365",
+   "base": "https://www.cosicomodo.it/sole365",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.cosicomodo.it/sitemap.xml",
+    "voci": 16,
+    "prodotti_nel_nome": 16
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "cosicomodo"
+  },
+  {
+   "nome": "MD",
+   "base": "https://it.everli.com/it/spesa/md/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Elite / Super Elite",
+   "base": "https://it.everli.com/it/spesa/elite/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Sapore di Mare",
+   "base": "https://it.everli.com/it/spesa/sapore-di-mare/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Despar",
+   "base": "https://it.everli.com/it/spesa/despar/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Gelmarket",
+   "base": "https://it.everli.com/it/spesa/gelmarket/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Pewex",
+   "base": "https://it.everli.com/it/spesa/pewex/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "Oasi",
+   "base": "https://it.everli.com/it/spesa/oasi/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "voci": 4,
+    "prodotti_nel_nome": 4
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "everli"
+  },
+  {
+   "nome": "NaturaSì",
+   "base": "https://www.naturasi.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 11
+   },
+   "home_status": 200,
+   "js_shell": true,
+   "sitemap": {
+    "url": "https://www.naturasi.it/category.xml",
+    "voci": 484,
+    "prodotti_nel_nome": 28
+   },
+   "esito": "js_senza_form_ricerca",
+   "kind": "specialista"
+  },
+  {
+   "nome": "Eataly Italia",
+   "base": "https://www.eataly.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.eataly.it/sitemap_index.xml",
+    "voci": 6,
+    "prodotti_nel_nome": 6
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "specialista"
+  },
+  {
+   "nome": "ALDI",
+   "base": "https://www.aldi.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 4
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.aldi.it/sitemap.xml",
+    "voci": 490,
+    "prodotti_nel_nome": 7
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "informativo"
+  },
+  {
+   "nome": "Lidl",
+   "base": "https://www.lidl.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.lidl.it/static/sitemap.xml",
+    "voci": 3,
+    "prodotti_nel_nome": 2
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "informativo"
+  },
+  {
+   "nome": "DPiù",
+   "base": "https://www.d-piu.com/",
+   "in_registro": true,
+   "robots": {
+    "status": 202,
+    "nota": "non leggibile (202): per prudenza vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "informativo"
+  },
+  {
+   "nome": "MD — sito diretto",
+   "base": "https://www.mdspa.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.mdspa.it/sitemap_index.xml",
+    "voci": 3,
+    "prodotti_nel_nome": 3
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "informativo"
+  },
+  {
+   "nome": "Rossetto",
+   "base": "https://www.rossettogroup.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://rossettogroup.it/sitemap.xml",
+    "voci": 756,
+    "prodotti_nel_nome": 0
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "informativo"
+  },
+  {
+   "nome": "Despar Aspiag — offerte",
+   "base": "https://www.despar.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 2
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.despar.it/sitemap.xml",
+    "voci": 2338,
+    "prodotti_nel_nome": 37
+   },
+   "ricerca": {
+    "url": "https://www.despar.it/it/punti-vendita/",
+    "parametro": "searchTerm"
+   },
+   "prodotti": [
+    {
+     "gtin": "3274080005003",
+     "brand": "Cristaline",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920029759",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "5449000054227",
+     "brand": "Coca-Cola",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 1,
+      "scheda_url": "https://www.despar.it/it/despar/",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Despar: il supermercato più vicino a te!",
+      "identita_titolo_ok": false,
+      "outcome": "scheda_senza_codice"
+     }
+    },
+    {
+     "gtin": "3168930010265",
+     "brand": "Quaker",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3046920022651",
+     "brand": "Lindt",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "3017620425035",
+     "brand": "Nutella",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
+   "kind": "informativo"
+  },
+  {
+   "nome": "Gelmarket — catalogo",
+   "base": "https://www.gelmarket.it/",
+   "in_registro": true,
+   "robots": {
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
+   },
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap": {
+    "url": "https://www.gelmarket.it/sitemap_index.xml",
+    "voci": 2,
+    "prodotti_nel_nome": 2
+   },
+   "esito": "nessun_form_ricerca",
+   "kind": "informativo"
+  },
+  {
+   "nome": "Despar Sicilia (shop regionale)",
+   "base": "https://shop.desparsicilia.it/",
+   "in_registro": false,
+   "robots": {
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
+   },
+   "esito": "robots_vieta_tutto",
+   "kind": "ecommerce"
+  }
+ ],
+ "richieste": 239
+}
