@@ -1,0 +1,103 @@
+name: Sonda cataloghi
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/probe.yml"]
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sonda
+  cancel-in-progress: false
+defaults:
+  run:
+    working-directory: prezzi-vicini-probe
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      - name: Test
+        continue-on-error: true
+        run: |
+          mkdir -p results
+          python -m pytest -q 2>&1 | tee results/tests.txt
+
+      - name: Campione di prodotti da Open Food Facts
+        continue-on-error: true
+        run: |
+          python - <<'PY' 2>&1 | tee results/campione.log
+          import json, os, sys, urllib.parse, urllib.request
+          from datetime import date
+          sys.path.insert(0, ".")
+          from pvcore.gtin import normalize_gtin
+          from pvcore.identity import sizes
+          BASE = os.environ.get("OFF_BASE", "https://world.openfoodfacts.org")
+          UA = "PrezziViciniProbe/0.1 (+https://github.com/" + os.environ.get("GITHUB_REPOSITORY", "locale") + ")"
+          FIELDS = "code,product_name,product_name_it,brands,quantity,unique_scans_n"
+          URLS = [
+              BASE + "/api/v2/search?" + urllib.parse.urlencode({"countries_tags_en": "italy", "sort_by": "unique_scans_n", "page_size": 200, "fields": FIELDS}),
+              BASE + "/cgi/search.pl?" + urllib.parse.urlencode({"action": "process", "json": 1, "tagtype_0": "countries", "tag_contains_0": "contains", "tag_0": "italy", "sort_by": "unique_scans_n", "page_size": 200, "fields": FIELDS}),
+          ]
+          products = None
+          for u in URLS:
+              try:
+                  req = urllib.request.Request(u, headers={"User-Agent": UA})
+                  with urllib.request.urlopen(req, timeout=60) as r:
+                      products = json.load(r).get("products") or None
+                  if products:
+                      print("campione da", u.split("?")[0], "->", len(products), "prodotti")
+                      break
+              except Exception as e:
+                  print("fallito", u.split("?")[0], type(e).__name__, str(e)[:120])
+          if not products:
+              print("Open Food Facts non raggiungibile: resta il set di riserva (data/golden.json)")
+              sys.exit(0)
+          chosen, per_brand = [], {}
+          for p in products:
+              code = normalize_gtin(str(p.get("code", "")))
+              brand = (p.get("brands") or "").split(",")[0].strip()
+              name = (p.get("product_name_it") or p.get("product_name") or "").strip()
+              qty = (p.get("quantity") or "").strip()
+              if not (code and len(code) in (8, 13) and brand and name and qty and sizes(qty)):
+                  continue
+              if per_brand.get(brand.lower(), 0) >= 2:
+                  continue
+              per_brand[brand.lower()] = per_brand.get(brand.lower(), 0) + 1
+              chosen.append({"gtin": code, "brand": brand, "name": name, "quantity": qty, "probe": True,
+                             "origine": "Open Food Facts, piu' scansionati in Italia, " + date.today().isoformat()})
+              if len(chosen) >= 12:
+                  break
+          if len(chosen) < 3:
+              print("campione troppo piccolo:", len(chosen), "-> resta il set di riserva")
+              sys.exit(0)
+          doc = {"nota": "generato automaticamente", "prodotti": chosen}
+          json.dump(doc, open("data/golden.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          json.dump(doc, open("results/campione.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          for c in chosen:
+              print(c["gtin"], "|", c["brand"], "|", c["name"], "|", c["quantity"])
+          PY
+
+      - name: Sonda
+        continue-on-error: true
+        run: python -m probe.run_probe --products 6 2>&1 | tee results/run.log
+
+      - name: Salva gli esiti nel repository
+        if: always()
+        run: |
+          git config user.name "probe-bot"
+          git config user.email "probe-bot@users.noreply.github.com"
+          mkdir -p results/storico
+          if [ -f results/summary.md ]; then cp results/summary.md "results/storico/$(date -u +%F).md"; fi
+          git add results
+          git diff --cached --quiet || git commit -m "Esiti sonda $(date -u +%F)"
+          git pull --rebase || true
+          git push
