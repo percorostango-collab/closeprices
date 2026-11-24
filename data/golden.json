@@ -1,0 +1,23 @@
+{
+  "nota": "Set di prodotti con verità nota. 'origine' dice quanto è affidabile ogni riga. Aggiungere qui i casi reali che danno problemi (es. De Cecco: serve un codice verificato).",
+  "prodotti": [
+    {"gtin": "8008490000021", "brand": "Uliveto", "name": "Acqua Minerale Naturale Uliveto", "quantity": "1500ml", "probe": true,
+     "origine": "Open Food Facts + tabella ISTAT scanner data, visti il 23/11/2026"},
+    {"gtin": "8020141800002", "brand": "Sant'Anna", "name": "Acqua minerale naturale", "quantity": "1,5 l", "probe": true,
+     "origine": "Open Food Facts, visto il 23/11/2026"},
+    {"gtin": "8001620014172", "brand": "San Benedetto", "name": "Acqua Minerale Naturale", "quantity": "1,5 L", "probe": false,
+     "origine": "Open Food Facts, visto il 23/11/2026"},
+    {"gtin": "80134091", "brand": "Ferrarelle", "name": "Acqua Minerale", "quantity": "1,5 l", "probe": false,
+     "origine": "Open Food Facts (EAN-8), visto il 23/11/2026"},
+    {"gtin": "80412021", "brand": "Lete", "name": "Acqua minerale naturale frizzante", "quantity": "1,5 l", "probe": false,
+     "origine": "Open Food Facts (EAN-8), visto il 23/11/2026"},
+    {"gtin": "80331926", "brand": "Santagata", "name": "Acqua Minerale Effervescence Naturale", "quantity": "1,5 l", "probe": false,
+     "origine": "Open Food Facts (EAN-8), visto il 23/11/2026"},
+    {"gtin": "8017596003126", "brand": "Dolciando", "name": "", "quantity": null, "probe": false, "gs1_chain": "Eurospin",
+     "origine": "commento in lib/chains.dart (Open Food Facts, negozio Eurospin)"},
+    {"gtin": "3017620422003", "brand": "Nutella", "name": "Nutella", "quantity": "750 g", "probe": true,
+     "origine": "memoria: codice molto noto, DA VALIDARE (la sonda lo confronta con Open Food Facts)"},
+    {"gtin": "5449000000996", "brand": "Coca-Cola", "name": "Coca-Cola", "quantity": "330 ml", "probe": false,
+     "origine": "memoria: codice molto noto, DA VALIDARE (la sonda lo confronta con Open Food Facts)"}
+  ]
+}

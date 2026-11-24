@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: prezzi-vicini-api
+    env: python
+    buildCommand: "pip install -r requirements-server.txt"
+    startCommand: "uvicorn server.app:create_app --factory --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PV_CONTACT
+        sync: false
+      - key: PV_TURSO_URL
+        sync: false
+      - key: PV_TURSO_TOKEN
+        sync: false
+      - key: PV_INDEX_BUDGET_S
+        value: "8.0"
+      - key: PV_CATALOG_TTL_DAYS
+        value: "30"
+      - key: PV_PRODUCT_TTL_DAYS
+        value: "30"
+      - key: PV_NOTFOUND_TTL_DAYS
+        value: "7"
+      - key: PV_REQUEST_INTERVAL_S
+        value: "1.5"

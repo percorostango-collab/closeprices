@@ -1,0 +1,632 @@
+[
+ {
+  "name": "Conad",
+  "canonical": "Conad",
+  "domain": "conad.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Esselunga",
+  "canonical": "Esselunga",
+  "domain": "esselunga.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Carrefour",
+  "canonical": "Carrefour",
+  "domain": "carrefour.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "EasyCoop",
+  "canonical": "Coop",
+  "domain": "easycoop.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "CoopShop",
+  "canonical": "Coop",
+  "domain": "coopshop.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Coop.fi — Unicoop Firenze",
+  "canonical": "Coop",
+  "domain": "coopfirenze.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Coop a casa — Unicoop Etruria",
+  "canonical": "Coop",
+  "domain": "coop.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Bennet",
+  "canonical": "Bennet",
+  "domain": "bennet.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Tigros",
+  "canonical": "Tigros",
+  "domain": "tigros.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Iper Tosano — La Tua Spesa",
+  "canonical": "Tosano",
+  "domain": "latuaspesa.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Pam — Pam a Casa",
+  "canonical": "Pam",
+  "domain": "pampanorama.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Eurospin Online",
+  "canonical": "Eurospin",
+  "domain": "eurospin.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Iperal",
+  "canonical": "Iperal",
+  "domain": "iperalspesaonline.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Iper — IperDrive",
+  "canonical": "Iper",
+  "domain": "iper.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "CRAI — CraiGO",
+  "canonical": "Crai",
+  "domain": "craigo.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Sigma Online",
+  "canonical": "Sigma",
+  "domain": "sigmaonline.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Unes / U2 / il Viaggiator Goloso",
+  "canonical": "U2 Supermercato",
+  "domain": "unes.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Decò a Casa — Multicedi",
+  "canonical": "Decò",
+  "domain": "multicedi.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Dodecà",
+  "canonical": "Dodecà",
+  "domain": "dodeca.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Todis a Casa",
+  "canonical": "Todis",
+  "domain": "todisacasa.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Despar a Casa",
+  "canonical": "Despar",
+  "domain": "despar.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Nonna Isa Shop",
+  "canonical": "Nonna Isa",
+  "domain": "nonnaisa.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Migross — eMigross",
+  "canonical": "Migross",
+  "domain": "emigross.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Prezzemolo & Vitale",
+  "canonical": "Prezzemolo & Vitale",
+  "domain": "prezzemoloevitale.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "CTS",
+  "canonical": "CTS",
+  "domain": "ctsspesaonline.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "PIM",
+  "canonical": "PIM",
+  "domain": "pimspesaonline.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Pewex",
+  "canonical": "Pewex",
+  "domain": "prontospesapewex.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Ipertriscount",
+  "canonical": "Ipertriscount",
+  "domain": "ipertriscountspesaonline.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Basko",
+  "canonical": "Basko",
+  "domain": "basko.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Oasi / Tigre",
+  "canonical": "Oasi",
+  "domain": "oasitigre.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Alì / Alìper — Alìperme",
+  "canonical": "Alì",
+  "domain": "alisupermercati.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Dem",
+  "canonical": "Dem",
+  "domain": "supermercatidem.com",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Sacoph",
+  "canonical": "Sacoph",
+  "domain": "supermercatisacoph.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Sì con Te",
+  "canonical": "Sì con Te",
+  "domain": "siconte.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "DOK",
+  "canonical": "DOK",
+  "domain": "supermercatidok.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Despar Centro Sud",
+  "canonical": "Despar",
+  "domain": "mydespar.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Coop Sardegna",
+  "canonical": "Coop",
+  "domain": "coopsardegna.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "Famila Sicilia / Ciaospesa",
+  "canonical": "Famila",
+  "domain": "famila.it",
+  "platform": null,
+  "slug": null,
+  "kind": "accesso",
+  "physical": true
+ },
+ {
+  "name": "D’Ambros",
+  "canonical": "D'Ambros",
+  "domain": "dambros.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true
+ },
+ {
+  "name": "Famila",
+  "canonical": "Famila",
+  "domain": "famila.it",
+  "platform": null,
+  "slug": null,
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Mercatò",
+  "canonical": "Mercatò",
+  "domain": null,
+  "platform": "cosicomodo",
+  "slug": "mercato",
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Il Gigante",
+  "canonical": "Il Gigante",
+  "domain": null,
+  "platform": "cosicomodo",
+  "slug": "ilgigante",
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Emisfero",
+  "canonical": "Emisfero",
+  "domain": null,
+  "platform": "cosicomodo",
+  "slug": "emisfero",
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Galassia",
+  "canonical": "Galassia",
+  "domain": null,
+  "platform": "cosicomodo",
+  "slug": "galassia",
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Italmark",
+  "canonical": "Italmark",
+  "domain": "italmark.it",
+  "platform": null,
+  "slug": null,
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Pan",
+  "canonical": "Pan",
+  "domain": "supermercatipan.it",
+  "platform": null,
+  "slug": null,
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "Sole365",
+  "canonical": "Sole365",
+  "domain": null,
+  "platform": "cosicomodo",
+  "slug": "sole365",
+  "kind": "cosicomodo",
+  "physical": true
+ },
+ {
+  "name": "MD",
+  "canonical": "MD",
+  "domain": null,
+  "platform": "everli",
+  "slug": "md",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Elite / Super Elite",
+  "canonical": "Elite",
+  "domain": null,
+  "platform": "everli",
+  "slug": "elite",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Sapore di Mare",
+  "canonical": "Sapore di Mare",
+  "domain": null,
+  "platform": "everli",
+  "slug": "sapore-di-mare",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Despar",
+  "canonical": "Despar",
+  "domain": null,
+  "platform": "everli",
+  "slug": "despar",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Gelmarket",
+  "canonical": "Gelmarket",
+  "domain": null,
+  "platform": "everli",
+  "slug": "gelmarket",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Pewex",
+  "canonical": "Pewex",
+  "domain": null,
+  "platform": "everli",
+  "slug": "pewex",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Oasi",
+  "canonical": "Oasi",
+  "domain": null,
+  "platform": "everli",
+  "slug": "oasi",
+  "kind": "everli",
+  "physical": true
+ },
+ {
+  "name": "Cicalia",
+  "canonical": "Cicalia",
+  "domain": "cicalia.com",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": false
+ },
+ {
+  "name": "Cortilia",
+  "canonical": "Cortilia",
+  "domain": "cortilia.it",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": false
+ },
+ {
+  "name": "NaturaSì",
+  "canonical": "NaturaSì",
+  "domain": "naturasi.it",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": true
+ },
+ {
+  "name": "Eataly Italia",
+  "canonical": "Eataly",
+  "domain": "eataly.it",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": true
+ },
+ {
+  "name": "Bofrost",
+  "canonical": "Bofrost",
+  "domain": "bofrost.it",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": false
+ },
+ {
+  "name": "Eismann",
+  "canonical": "Eismann",
+  "domain": "eismann.it",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": false
+ },
+ {
+  "name": "Biobottega",
+  "canonical": "Biobottega",
+  "domain": "biobottega.com",
+  "platform": null,
+  "slug": null,
+  "kind": "specialista",
+  "physical": false
+ },
+ {
+  "name": "Coop — prodotti a marchio",
+  "canonical": "Coop",
+  "domain": "coop.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "Selex — prodotti a marchio",
+  "canonical": "Selex",
+  "domain": "prodottiselex.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": false
+ },
+ {
+  "name": "ALDI",
+  "canonical": "Aldi",
+  "domain": "aldi.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "Lidl",
+  "canonical": "Lidl",
+  "domain": "lidl.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "DPiù",
+  "canonical": "DPiù",
+  "domain": "d-piu.com",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "MD — sito diretto",
+  "canonical": "MD",
+  "domain": "mdspa.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "Rossetto",
+  "canonical": "Rossetto",
+  "domain": "rossettogroup.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "Despar Aspiag — offerte",
+  "canonical": "Despar",
+  "domain": "despar.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ },
+ {
+  "name": "Gelmarket — catalogo",
+  "canonical": "Gelmarket",
+  "domain": "gelmarket.it",
+  "platform": null,
+  "slug": null,
+  "kind": "informativo",
+  "physical": true
+ }
+]

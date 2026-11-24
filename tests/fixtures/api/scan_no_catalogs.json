@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "gtin": "8008490000021",
+ "radius_km": 10.0,
+ "position_used": true,
+ "product": {
+  "state": "riconosciuto",
+  "name": "Acqua Minerale Naturale",
+  "brand": "Uliveto",
+  "quantity": "1,5 L",
+  "image_url": "http://img.example/uliveto.jpg",
+  "source": "Open Food Facts",
+  "own_brand_chain": null,
+  "corrected_fields": []
+ },
+ "catalogs": [],
+ "stores_with_product_in_catalog": [],
+ "stores_without_information": [
+  {
+   "chain": null,
+   "name": "Da Mario",
+   "distance_m": 200,
+   "address": "Via Prova 6",
+   "lat": 41.9046,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Conad",
+   "name": "Conad City",
+   "distance_m": 300,
+   "address": "Via Prova 1",
+   "lat": 41.905499999999996,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Lidl",
+   "name": "Lidl",
+   "distance_m": 497,
+   "address": "Via Prova 4",
+   "lat": 41.9028,
+   "lon": 12.5024
+  },
+  {
+   "chain": "Eurospin",
+   "name": "Eurospin",
+   "distance_m": 1001,
+   "address": "Via Prova 5",
+   "lat": 41.8938,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Esselunga",
+   "name": "Esselunga",
+   "distance_m": 2002,
+   "address": "Via Prova 7",
+   "lat": 41.8848,
+   "lon": 12.4964
+  }
+ ],
+ "indexing": {
+  "state": "non_disponibile",
+  "chains_consultable": 0,
+  "chains_tried": 0,
+  "chains_confirmed": 0
+ },
+ "limits": [
+  {
+   "code": "NO_CATALOG_CONFIRMATION",
+   "severity": "warning",
+   "text": "Nessun catalogo online ha confermato questo prodotto con il codice a barre. Non significa che non sia in vendita: significa che non abbiamo una prova."
+  },
+  {
+   "code": "NO_CATALOGS_QUERYABLE",
+   "severity": "warning",
+   "text": "Al momento nessun catalogo è consultabile in automatico da questo servizio."
+  },
+  {
+   "code": "STORE_AVAILABILITY",
+   "severity": "info",
+   "text": "Un catalogo che contiene il prodotto non garantisce che il negozio vicino lo abbia in magazzino: gli assortimenti cambiano da negozio a negozio."
+  },
+  {
+   "code": "PRICE_STORE",
+   "severity": "info",
+   "text": "Il prezzo sullo scaffale dei singoli negozi non è un dato pubblico: non lo mostriamo e non lo stimiamo. Il prezzo di un catalogo è quello del sito online e può essere diverso nel negozio fisico."
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+services:
+  prezzivicini:
+    build: .
+    restart: unless-stopped
+    ports: ["8000:8000"]
+    environment:
+      PV_CONTACT: ${PV_CONTACT:?scrivi la tua email nel file .env}
+    volumes:
+      - ./var:/var/pv

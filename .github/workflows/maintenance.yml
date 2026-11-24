@@ -1,0 +1,54 @@
+name: Manutenzione Prezzi Vicini
+
+on:
+  schedule:
+    # Index della coda prodotti: ogni ora (cron minimo su GitHub Actions Free è 5 min, usiamo ogni ora)
+    - cron: "0 * * * *"
+    # Riscoperta cataloghi: ogni giorno alle 3:00 UTC
+    - cron: "0 3 * * *"
+    # Caricamento negozi da OpenStreetMap: primo giorno del mese alle 4:00 UTC
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dipendenze
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-server.txt
+
+      - name: Index prodotti in coda
+        if: github.event.schedule == '0 * * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          PV_TURSO_URL: ${{ secrets.PV_TURSO_URL }}
+          PV_TURSO_TOKEN: ${{ secrets.PV_TURSO_TOKEN }}
+          PV_CONTACT: ${{ secrets.PV_CONTACT }}
+          PV_INDEX_BUDGET_S: "60"
+        run: python -m server.cli index --limit 20
+
+      - name: Riscoperta cataloghi
+        if: github.event.schedule == '0 3 * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          PV_TURSO_URL: ${{ secrets.PV_TURSO_URL }}
+          PV_TURSO_TOKEN: ${{ secrets.PV_TURSO_TOKEN }}
+          PV_CONTACT: ${{ secrets.PV_CONTACT }}
+        run: python -m server.cli discover-sites
+
+      - name: Caricamento negozi da OpenStreetMap
+        if: github.event.schedule == '0 4 1 * *' || github.event_name == 'workflow_dispatch'
+        env:
+          PV_TURSO_URL: ${{ secrets.PV_TURSO_URL }}
+          PV_TURSO_TOKEN: ${{ secrets.PV_TURSO_TOKEN }}
+          PV_CONTACT: ${{ secrets.PV_CONTACT }}
+        run: python -m server.cli load-stores
