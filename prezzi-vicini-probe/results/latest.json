@@ -1,124 +1,30 @@
 {
- "generato": "2026-11-23 13:30 UTC",
+ "generato": "2026-11-24 05:49 UTC",
  "prodotti_provati": [
-  "3274080005003",
-  "3046920029759",
-  "5449000054227",
-  "3168930010265",
-  "3046920022651",
-  "3017620425035"
+  "8076809523547",
+  "8000500426494",
+  "8000500310427",
+  "8002270014901",
+  "8000500179864",
+  "8076809513722"
+ ],
+ "campione_log": [
+  "pagina 1: HTTP 200, 100 prodotti, scelti 10 (totale 10)",
+  "pagina 2: HTTP 200, 100 prodotti, scelti 2 (totale 12)",
+  "8076809523547 | Barilla | Pesto Rosso | 200 g",
+  "8000500426494 | Ferrero | Nutella senza lattosio e senza glutine | 350 g",
+  "8000500310427 | Ferrero Technical Services Srl | Nutella B-ready | 304 g",
+  "8002270014901 | San Pellegrino | Acqua San Pellegrino | 1 L",
+  "8000500179864 | Ferrero | Nutella | 600g",
+  "8076809513722 | Barilla | Basilico | 400 g",
+  "8000500435731 | Eat Natural | Barretta Protein arachidi, mandorle e caramello salato | 3 x 40 g",
+  "8000500435670 | Eat Natural | Protein arachidi e cioccolato fondente extra | 3 x 40 g",
+  "8076809517706 | Mulino Bianco | BAIOCCHI NOCCIOLA &CACAO SNACK 336g | 336 g",
+  "8005510001525 | Monini | Gran fruttato 100% italienne | 75 cl",
+  "8000500269169 | Kinder | Kinder Cards Confezione da 5 | 128 g",
+  "8000500037560 | Kinder | bueno | 43g"
  ],
  "off": [
-  {
-   "gtin": "3274080005003",
-   "status": 200,
-   "trovato": true,
-   "nome": "Cristaline",
-   "marche": "Cristaline",
-   "quantita": "1500 ml",
-   "negozi": "Intermarché, auchan, carrefour, e-leclerc, leclerc, lidl, super-u",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "3046920029759",
-   "status": 200,
-   "trovato": true,
-   "nome": "Fondente Prodigioso 90% Cacao",
-   "marche": "Lindt",
-   "quantita": "100g",
-   "negozi": "Ah",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "5449000054227",
-   "status": 200,
-   "trovato": true,
-   "nome": "Coca-Cola Original Taste",
-   "marche": "Coca-Cola",
-   "quantita": "1 L",
-   "negozi": "spar",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "3168930010265",
-   "status": 200,
-   "trovato": true,
-   "nome": "cruesly mélange de noix",
-   "marche": "Quaker, Cruesli",
-   "quantita": "450 g",
-   "negozi": "Intermarché, Magasins U",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "3046920022651",
-   "status": 200,
-   "trovato": true,
-   "nome": "Noir Intense",
-   "marche": "Lindt",
-   "quantita": "100 g",
-   "negozi": "Carrefour, Carrefour City, Carrefour Market, E.leclerc, Intermarché, Magasins U, carrefour.fr",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "3017620425035",
-   "status": 200,
-   "trovato": true,
-   "nome": "Nutella",
-   "marche": "Nutella, FERRERO FRANCE COMMERCIALE",
-   "quantita": "1 kg",
-   "negozi": "Auchan, Carrefour, E. Leclerc",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "42104964",
-   "status": 200,
-   "trovato": true,
-   "nome": "Ciel",
-   "marche": "Ciel",
-   "quantita": "33cl",
-   "negozi": "",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "7300400481595",
-   "status": 200,
-   "trovato": true,
-   "nome": "AUTHENTIQUE",
-   "marche": "wasa, Barilla Sverige AB",
-   "quantita": "275 g",
-   "negozi": "Intermarché, Leclerc, Magasins U, carrefour.fr",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "7300400481588",
-   "status": 200,
-   "trovato": true,
-   "nome": "Fibres",
-   "marche": "wasa, Barilla Sverige AB",
-   "quantita": "230 g",
-   "negozi": "Auchan, Carrefour Market, Centre Commercial E.Leclerc, Dia, Magasins U, Marché U, Super U, carrefour.fr, monoprix",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
-  {
-   "gtin": "5449000214799",
-   "status": 200,
-   "trovato": true,
-   "nome": "Coca-Cola Zero",
-   "marche": "Coca-Cola",
-   "quantita": "330 mL",
-   "negozi": "Coles, Magasins U, Woolworths",
-   "marca_coincide": true,
-   "open_prices_totale": null
-  },
   {
    "gtin": "8076809523547",
    "status": 200,
@@ -128,29 +34,229 @@
    "quantita": "200 g",
    "negozi": "Jumbo",
    "marca_coincide": true,
-   "open_prices_totale": null
+   "open_prices_status": 200,
+   "open_prices_totale": 68
   },
   {
-   "gtin": "3229820129488",
+   "gtin": "8000500426494",
    "status": 200,
    "trovato": true,
-   "nome": "muesli raisin,datte,figue",
-   "marche": "Bjorg",
-   "quantita": "375 g",
-   "negozi": "Auchan, Carrefour, Franprix, Géant Casino, Magasins U, carrefour.fr",
+   "nome": "Nutella senza lattosio e senza glutine",
+   "marche": "Ferrero, Nutella",
+   "quantita": "350 g",
+   "negozi": "Aldi, Carrefour, Conad, E.Leclerc, Edeka, Kaufland, Lidl, Magasins U, Netto MD, Rewe, Tesco, rohlik.cz",
    "marca_coincide": true,
-   "open_prices_totale": null
+   "open_prices_status": 200,
+   "open_prices_totale": 101
+  },
+  {
+   "gtin": "8000500310427",
+   "status": 200,
+   "trovato": true,
+   "nome": "Nutella B-ready",
+   "marche": "Ferrero Technical Services Srl, Nutella biscuits",
+   "quantita": "304 g",
+   "negozi": "Esselunga",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 50
+  },
+  {
+   "gtin": "8002270014901",
+   "status": 200,
+   "trovato": true,
+   "nome": "Acqua San Pellegrino",
+   "marche": "San Pellegrino",
+   "quantita": "1 L",
+   "negozi": "Auchan, Carrefour, E.Leclerc, Intermarché, Système U, carrefour.fr",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 5
+  },
+  {
+   "gtin": "8000500179864",
+   "status": 200,
+   "trovato": true,
+   "nome": "Nutella",
+   "marche": "Ferrero",
+   "quantita": "600g",
+   "negozi": "Ah",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 16
+  },
+  {
+   "gtin": "8076809513722",
+   "status": 200,
+   "trovato": true,
+   "nome": "Basilico",
+   "marche": "Barilla, Barilla G. e R. Fratelli SpA",
+   "quantita": "400 g",
+   "negozi": "NETTO, aldi, auchan, carrefour, carrefour-fr, coop, cora, franprix, lidl, magasins-u",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 22
+  },
+  {
+   "gtin": "8000500435731",
+   "status": 200,
+   "trovato": true,
+   "nome": "Barretta Protein arachidi, mandorle e caramello salato",
+   "marche": "Eat Natural",
+   "quantita": "3 x 40 g",
+   "negozi": "Carrefour Market",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 11
+  },
+  {
+   "gtin": "8000500435670",
+   "status": 200,
+   "trovato": true,
+   "nome": "Protein arachidi e cioccolato fondente extra",
+   "marche": "Eat Natural",
+   "quantita": "3 x 40 g",
+   "negozi": "",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 10
+  },
+  {
+   "gtin": "8076809517706",
+   "status": 200,
+   "trovato": true,
+   "nome": "BAIOCCHI NOCCIOLA &CACAO SNACK 336g",
+   "marche": "Mulino Bianco",
+   "quantita": "336 g",
+   "negozi": "carrefour-fr, carrefour-market, conad, coop, e-leclerc, franprix, leclerc, magasins-u",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 44
+  },
+  {
+   "gtin": "8005510001525",
+   "status": 200,
+   "trovato": true,
+   "nome": "Gran fruttato 100% italienne",
+   "marche": "Monini",
+   "quantita": "75 cl",
+   "negozi": "Intermarché, Magasins U, carrefour.fr, u express",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 14
+  },
+  {
+   "gtin": "8000500269169",
+   "status": 200,
+   "trovato": true,
+   "nome": "Kinder Cards Confezione da 5",
+   "marche": "Kinder",
+   "quantita": "128 g",
+   "negozi": "Jumbo",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 45
+  },
+  {
+   "gtin": "8000500037560",
+   "status": 200,
+   "trovato": true,
+   "nome": "bueno",
+   "marche": "Kinder",
+   "quantita": "43g",
+   "negozi": "Cora",
+   "marca_coincide": true,
+   "open_prices_status": 200,
+   "open_prices_totale": 3
   }
  ],
  "osm": {
   "Milano": {
-   "errore": "HTTP 502"
+   "errore": "overpass-api.de HTTP 502; overpass.kumi.systems ReadTimeout; overpass.private.coffee ReadTimeout; overpass-api.de HTTP 502; overpass.kumi.systems ReadTimeout; overpass.private.coffee ReadTimeout"
   },
   "Roma": {
-   "errore": "HTTP 502"
+   "supermercati": 309,
+   "con_brand_wikidata": 171,
+   "con_brand": 182,
+   "solo_nome": 117,
+   "senza_nome": 11,
+   "top_wikidata": [
+    [
+     "Q3992174",
+     25
+    ],
+    [
+     "Q639075",
+     22
+    ],
+    [
+     "Q114567803",
+     18
+    ],
+    [
+     "Q105615038",
+     17
+    ],
+    [
+     "Q284688",
+     10
+    ],
+    [
+     "Q2689639",
+     8
+    ],
+    [
+     "Q57543102",
+     8
+    ],
+    [
+     "Q217599",
+     8
+    ]
+   ],
+   "server": "overpass-api.de"
   },
   "Napoli": {
-   "errore": "HTTP 502"
+   "supermercati": 99,
+   "con_brand_wikidata": 44,
+   "con_brand": 45,
+   "solo_nome": 46,
+   "senza_nome": 8,
+   "top_wikidata": [
+    [
+     "Q639075",
+     11
+    ],
+    [
+     "Q65127915",
+     10
+    ],
+    [
+     "Q3992174",
+     4
+    ],
+    [
+     "Q57543102",
+     3
+    ],
+    [
+     "Q3696429",
+     2
+    ],
+    [
+     "Q3841263",
+     2
+    ],
+    [
+     "Q3977979",
+     2
+    ],
+    [
+     "Q60840755",
+     2
+    ]
+   ],
+   "server": "overpass-api.de"
   }
  },
  "siti": [
@@ -165,10 +271,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.conad.it/sitemap.xml",
-    "voci": 3490,
-    "prodotti_nel_nome": 49
+   "sitemap_probe": {
+    "sitemap": "https://www.conad.it/sitemap.xml",
+    "url_prodotto_trovati": 27,
+    "pagine": [
+     {
+      "url": "https://www.conad.it/prodotti-e-marchi/conad",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Marchio Conad: prodotti, prezzi e produttori | Conad"
+     },
+     {
+      "url": "https://www.conad.it/prodotti-e-marchi/i-nostri-valori/artisti-della-qualita",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Artisti della Qualità: Freschezza ed Eccellenza  | Conad"
+     },
+     {
+      "url": "https://www.conad.it/prodotti-e-marchi/sapori-e-idee/insalata-da-vertical-farm",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Sapori e Idee Conad, prodotti gastronomici d'eccellenza | Conad"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "ricerca": {
     "url": "https://www.conad.it/",
@@ -176,8 +312,8 @@
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -194,8 +330,8 @@
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -212,25 +348,8 @@
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
-     "per_codice": {
-      "term": "codice",
-      "status": 200,
-      "codice_nei_risultati": "absent",
-      "candidati": 2,
-      "scheda_url": "https://www.conad.it/carte-e-premi/collezioni-e-concorsi",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Collezioni e Concorsi Conad per sorprenderti | Conad",
-      "identita_titolo_ok": false,
-      "outcome": "scheda_senza_codice"
-     }
-    },
-    {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -247,8 +366,8 @@
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -265,8 +384,26 @@
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -283,7 +420,7 @@
      }
     }
    ],
-   "esito": "scheda_senza_codice",
+   "esito": "nessun_candidato",
    "kind": "ecommerce"
   },
   {
@@ -297,10 +434,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.esselunga.it/it-it/sitemap.xml",
-    "voci": 2765,
-    "prodotti_nel_nome": 156
+   "sitemap_probe": {
+    "sitemap": "https://www.esselunga.it/it-it/sitemap.xml",
+    "url_prodotto_trovati": 115,
+    "pagine": [
+     {
+      "url": "https://www.esselunga.it/it-it/servizio-clienti/detersivi-insetticidi/esselunga/bucato/liquidi/677432-ammorbidente-concentrato-lavanda-1l.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Esselunga Ammorbidente concentrato Lavanda 1l"
+     },
+     {
+      "url": "https://www.esselunga.it/it-it/servizio-clienti/detersivi-insetticidi/esselunga/bucato/polvere/676483-esselunga-detersivo-lavatrice-polvere-marsiglia.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Esselunga detersivo lavatrice polvere marsiglia"
+     },
+     {
+      "url": "https://www.esselunga.it/it-it/servizio-clienti/detersivi-insetticidi/esselunga/casa/candeggina/682026-candeggina-2000ml.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Candeggina 2000ml"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
@@ -316,10 +483,58 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.carrefour.it/sitemap_index.xml",
-    "voci": 6,
-    "prodotti_nel_nome": 6
+   "sitemap_probe": {
+    "sitemap": "https://www.carrefour.it/sitemap_index.xml",
+    "sotto_sitemap": "https://www.carrefour.it/sitemap_0-product.xml",
+    "url_prodotto_trovati": 11497,
+    "pagine": [
+     {
+      "url": "https://www.carrefour.it/p/bonduelle-mais-3-x-150-g/3083680020763.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        3.49,
+        "EUR"
+       ]
+      ],
+      "titolo": "Bonduelle Mais 3 x 150 g"
+     },
+     {
+      "url": "https://www.carrefour.it/p/hipro-yogurt-15g-proteine0-grassi-gusto-vanigliacon-magnesiovit-b9basso-in-lattosio160g/8001630011505.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        1.45,
+        "EUR"
+       ]
+      ],
+      "titolo": "HiPRO Yogurt, 15g Proteine,0% grassi, gusto Vaniglia,con Magnesio&Vit B9,basso i"
+     },
+     {
+      "url": "https://www.carrefour.it/p/lego-technic-42213-suv-ford-bronco-macchina-giocattolo-con-porte-apribili-motore-v6-sospensioni-e-sterzo-idea-regalo-9-/5702017816364.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {
+       "5702017816364": "text"
+      },
+      "prezzi": [
+       [
+        59.9,
+        "EUR"
+       ]
+      ],
+      "titolo": "LEGO Technic 42213 SUV Ford Bronco, Macchina Giocattolo con Porte Apribili, Moto"
+     }
+    ],
+    "pagine_con_gtin": 1,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 3,
+    "pagine_con_codice_e_prezzo": 1,
+    "esito": "codice_e_prezzo"
    },
    "ricerca": {
     "url": "https://www.carrefour.it/search",
@@ -327,48 +542,48 @@
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
      }
     },
     {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "outcome": "robots_vieta_ricerca"
@@ -402,6 +617,42 @@
    },
    "home_status": 200,
    "js_shell": true,
+   "sitemap_probe": {
+    "sitemap": "https://www.coopshop.it/sitemap.xml",
+    "sotto_sitemap": "https://www.coopshop.it/sitemap/product_0.xml",
+    "url_prodotto_trovati": 1000,
+    "pagine": [
+     {
+      "url": "https://www.coopshop.it/product/16-tartelle-quadrate-200g",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "coopshop.it"
+     },
+     {
+      "url": "https://www.coopshop.it/product/2-succhietto-silicmini-dino-v",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "coopshop.it"
+     },
+     {
+      "url": "https://www.coopshop.it/product/5-buste-imbottite-cm17x27",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "coopshop.it"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "js_senza_form_ricerca",
    "kind": "ecommerce"
   },
@@ -416,10 +667,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.coopfirenze.it/sitemap.xml",
-    "voci": 970,
-    "prodotti_nel_nome": 42
+   "sitemap_probe": {
+    "sitemap": "https://www.coopfirenze.it/sitemap.xml",
+    "url_prodotto_trovati": 974,
+    "pagine": [
+     {
+      "url": "https://www.coopfirenze.it/eventi-e-progetti/eventi/-life-in-lycra---pas-de-cheval--gratuito-per-gli-under30--iscrit",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Imposta il tuo negozio preferito"
+     },
+     {
+      "url": "https://www.coopfirenze.it/negozi-e-promo/offerte-e-volantini/ricetta-os1-23_linguine-al-farro",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Imposta il tuo negozio preferito"
+     },
+     {
+      "url": "https://www.coopfirenze.it/news-e-media/comunicati-stampa/un-pranzo-solidale-al-teatro-nazionale-di-firenze",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Imposta il tuo negozio preferito"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
@@ -433,7 +714,7 @@
     "nota": "HTTP 403: tutto vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -445,7 +726,7 @@
     "nota": "HTTP 403: tutto vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -485,6 +766,41 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.pampanorama.it/sitemap.xml",
+    "url_prodotto_trovati": 6291,
+    "pagine": [
+     {
+      "url": "https://www.pampanorama.it/prodotti/composta-di-fragole-con-aceto-balsamico.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Pam Panorama"
+     },
+     {
+      "url": "https://www.pampanorama.it/prodotti/pam-nocciole-tostate-pelate-300-g.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Pam Panorama"
+     },
+     {
+      "url": "https://www.pampanorama.it/prodotti/torte-frolla-2.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Pam Panorama"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
   },
@@ -499,10 +815,25 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.eurospin.com/sitemap-index.xml",
-    "voci": 8,
-    "prodotti_nel_nome": 8
+   "sitemap_probe": {
+    "sitemap": "https://www.eurospin.com/sitemap-index.xml",
+    "sotto_sitemap": "https://www.eurospin.com/it-it/sitemap.xml",
+    "url_prodotto_trovati": 1,
+    "pagine": [
+     {
+      "url": "https://www.eurospin.com/it-it/prodotti/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Prodotti"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 1,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
@@ -531,6 +862,11 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.iper.it/sitemap.xml",
+    "esito": "sitemap_non_leggibile",
+    "status": 404
+   },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
   },
@@ -543,7 +879,7 @@
     "nota": "HTTP 403: tutto vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -555,7 +891,7 @@
     "nota": "HTTP 403: tutto vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -569,10 +905,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.unes.it/sitemap.xml",
-    "voci": 532,
-    "prodotti_nel_nome": 8
+   "sitemap_probe": {
+    "sitemap": "https://www.unes.it/sitemap.xml",
+    "url_prodotto_trovati": 8,
+    "pagine": [
+     {
+      "url": "https://www.unes.it/it/prodotti/amarsi-e-piacersi",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Amarsi è Piacersi: Prodotti per ogni Esigenza | Unes"
+     },
+     {
+      "url": "https://www.unes.it/it/prodotti/compagni-di-viaggio",
+      "status": 200,
+      "bloccata": true,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Compagni di Viaggio: Pet Food Premium per Cani e Gatti | Unes"
+     },
+     {
+      "url": "https://www.unes.it/it/prodotti/u-confronta-e-risparmia",
+      "status": 200,
+      "bloccata": true,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "U!: Prodotti di qualità a prezzi convenienti | Unes"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 1,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
@@ -586,7 +952,7 @@
     "nota": "non leggibile (SSLError: HTTPSConnectionPool(host='www.multicedi.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VER): per prudenza vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -600,6 +966,41 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.dodeca.it/sitemap.xml",
+    "url_prodotto_trovati": 3,
+    "pagine": [
+     {
+      "url": "http://www.dodeca.it",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Dodecà"
+     },
+     {
+      "url": "http://www.dodeca.it/aboutus.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": ""
+     },
+     {
+      "url": "http://www.dodeca.it/contact.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": ""
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
   },
@@ -614,14 +1015,41 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.todisacasa.it/sitemap.xml",
+    "url_prodotto_trovati": 2,
+    "pagine": [
+     {
+      "url": "https://www.todisacasa.it/prodotti-per-dentiere_158?d=1",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Todis a Casa | Todis | Consegna a domicilio"
+     },
+     {
+      "url": "https://www.todisacasa.it/prodotti-viso_75?d=1",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Todis a Casa | Todis | Consegna a domicilio"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 2,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "ricerca": {
     "url": "https://todisacasa.it/ricerca",
     "parametro": "search"
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -633,19 +1061,13 @@
       "term": "nome",
       "status": 200,
       "codice_nei_risultati": "absent",
-      "candidati": 1,
-      "scheda_url": "https://todisacasa.it/ricerca?search=Cristaline+Cristaline",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Cristaline Cristaline",
-      "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
+      "candidati": 0,
+      "outcome": "nessun_candidato"
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -657,36 +1079,30 @@
       "term": "nome",
       "status": 200,
       "codice_nei_risultati": "absent",
-      "candidati": 1,
-      "scheda_url": "https://todisacasa.it/ricerca?search=Lindt+Fondente+Prodigioso+90%25+Cacao",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Lindt Fondente Prodigioso 90% Cacao",
-      "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
+      "candidati": 0,
+      "outcome": "nessun_candidato"
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 200,
       "codice_nei_risultati": "confirmed_text",
-      "candidati": 2,
-      "scheda_url": "https://todisacasa.it/cioccolato-e-spalmabili_186",
+      "candidati": 1,
+      "scheda_url": "https://todisacasa.it/prodotto/ferrero-nutella-biscuits-1320177",
       "scheda_status": 200,
-      "scheda_esito": "absent",
+      "scheda_esito": "confirmed_text",
       "scheda_elenco": false,
-      "scheda_titolo": "Cioccolato e spalmabili | Todis a Casa | Consegna a casa",
+      "scheda_titolo": "Nutella Biscuits",
       "identita_titolo_ok": false,
-      "outcome": "scheda_senza_codice"
+      "outcome": "codice_text"
      }
     },
     {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -698,19 +1114,30 @@
       "term": "nome",
       "status": 200,
       "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
       "candidati": 1,
-      "scheda_url": "https://todisacasa.it/ricerca?search=Quaker+cruesly+mélange+de+noix",
+      "scheda_url": "https://todisacasa.it/prodotto/ferrero-nutella-1246039",
       "scheda_status": 200,
-      "scheda_esito": "absent",
+      "scheda_esito": "confirmed_text",
       "scheda_elenco": false,
-      "scheda_titolo": "Quaker cruesly mélange de noix",
+      "scheda_titolo": "Nutella",
       "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
+      "outcome": "codice_text"
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -722,42 +1149,12 @@
       "term": "nome",
       "status": 200,
       "codice_nei_risultati": "absent",
-      "candidati": 1,
-      "scheda_url": "https://todisacasa.it/ricerca?search=Lindt+Noir+Intense",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Lindt Noir Intense",
-      "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
-     }
-    },
-    {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
-     "per_codice": {
-      "term": "codice",
-      "status": 200,
-      "codice_nei_risultati": "confirmed_text",
       "candidati": 0,
       "outcome": "nessun_candidato"
-     },
-     "per_nome": {
-      "term": "nome",
-      "status": 200,
-      "codice_nei_risultati": "absent",
-      "candidati": 2,
-      "scheda_url": "https://todisacasa.it/prodotto/nutella-nutella-plant-based-1918046",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Nutella plant-based",
-      "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
      }
     }
    ],
-   "esito": "scheda_senza_codice",
+   "esito": "codice_text",
    "kind": "ecommerce"
   },
   {
@@ -771,6 +1168,41 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.despar.com/sitemap.xml",
+    "url_prodotto_trovati": 25,
+    "pagine": [
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/despar-enjoy",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     },
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/despar-x-me",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     },
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/scopri-la-nostra-cantina",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
   },
@@ -785,10 +1217,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.nonnaisa.com/sitemap_index.xml",
-    "voci": 7,
-    "prodotti_nel_nome": 7
+   "sitemap_probe": {
+    "sitemap": "https://www.nonnaisa.com/sitemap_index.xml",
+    "sotto_sitemap": "https://www.nonnaisa.com/product-sitemap.xml",
+    "url_prodotto_trovati": 73,
+    "pagine": [
+     {
+      "url": "https://www.nonnaisa.com/prodotto/padella-bbq/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "PADELLA BBQ - Nonna Isa"
+     },
+     {
+      "url": "https://www.nonnaisa.com/prodotto/sardegna-termale-ingresso-giornaliero-infrasettimanale/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "SARDEGNA TERMALE - INGRESSO GIORNALIERO INFRASETTIMANALE - Nonna Isa"
+     },
+     {
+      "url": "https://www.nonnaisa.com/prodotto/tappeto-bagno/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "TAPPETO BAGNO - Nonna Isa"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
@@ -798,11 +1261,184 @@
    "base": "https://www.emigross.it/",
    "in_registro": true,
    "robots": {
-    "status": 202,
-    "nota": "non leggibile (202): per prudenza vietato",
-    "sitemap_dichiarate": 0
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
    },
-   "esito": "robots_vieta_tutto",
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://emigross.it/sitemap_index.xml",
+    "sotto_sitemap": "https://emigross.it/product-sitemap.xml",
+    "url_prodotto_trovati": 1000,
+    "pagine": [
+     {
+      "url": "https://emigross.it/prodotto/domopak-pellicola-ultraderente-300-metri/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        10.59,
+        "EUR"
+       ]
+      ],
+      "titolo": "Domopak Pellicola ultraderente 300 metri - Emigross"
+     },
+     {
+      "url": "https://emigross.it/prodotto/mariarosa-pasta-di-zucchero-modellabile-150-g/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        3.99,
+        "EUR"
+       ]
+      ],
+      "titolo": "Mariarosa Pasta di Zucchero Modellabile 150 g - Emigross"
+     },
+     {
+      "url": "https://emigross.it/prodotto/tovaglioli-24x24-100pz-2-veli-marrone/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        1.35,
+        "EUR"
+       ]
+      ],
+      "titolo": "Tovaglioli 24X24 100pz 2 veli Marrone - Emigross"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 3,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "solo_prezzo"
+   },
+   "ricerca": {
+    "url": "https://emigross.it/",
+    "parametro": "s"
+   },
+   "prodotti": [
+    {
+     "gtin": "8076809523547",
+     "brand": "Barilla",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8076809513722",
+     "brand": "Barilla",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 2,
+      "scheda_url": "https://emigross.it/prodotto/barilla-sugo-basilico-100-pomodoro-e-basilico-italiani-condimento-per-pasta-400g/",
+      "scheda_status": 200,
+      "scheda_esito": "absent",
+      "scheda_elenco": false,
+      "scheda_titolo": "Barilla Sugo Basilico 100% Pomodoro e Basilico Italiani 400 g - Emigross",
+      "identita_titolo_ok": true,
+      "outcome": "scheda_senza_codice"
+     }
+    }
+   ],
+   "esito": "scheda_senza_codice",
    "kind": "ecommerce"
   },
   {
@@ -816,10 +1452,217 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.prezzemoloevitale.it/media/sitemap/stemap_www_it_category.xml",
-    "voci": 438,
-    "prodotti_nel_nome": 434
+   "sitemap_probe": {
+    "sitemap": "https://www.prezzemoloevitale.it/media/sitemap/stemap_www_it_category.xml",
+    "url_prodotto_trovati": 430,
+    "pagine": [
+     {
+      "url": "https://www.prezzemoloevitale.it/it/prodotti/casa-persona-animali/igiene-cura-persona/cura-dei-capelli/shampoo.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {
+       "8015700162752": "structured",
+       "8015700162851": "structured",
+       "8720181781094": "structured",
+       "8720181781100": "structured",
+       "8720181781063": "structured",
+       "3600524195250": "structured",
+       "8700216528962": "structured",
+       "8700216528795": "structured",
+       "8700216307307": "structured",
+       "8700216307444": "structured",
+       "8700216307321": "structured",
+       "8700216305952": "structured",
+       "8700216307390": "structured",
+       "3600542159623": "structured",
+       "8700216307765": "structured",
+       "3600542543415": "structured",
+       "3600524194512": "structured",
+       "8720182541338": "structured",
+       "8720182541352": "structured",
+       "8720182541345": "structured",
+       "3600524194437": "structured",
+       "8009740905806": "structured",
+       "8700216421102": "structured",
+       "8700216528771": "structured",
+       "8700216504218": "structured",
+       "8700216502870": "structured",
+       "8700216530286": "structured",
+       "8700216504225": "structured",
+       "8700216528870": "structured",
+       "8700216528931": "structured"
+      },
+      "prezzi": [
+       [
+        2.69,
+        "EUR"
+       ],
+       [
+        3.29,
+        "EUR"
+       ],
+       [
+        4.49,
+        "EUR"
+       ],
+       [
+        3.99,
+        "EUR"
+       ],
+       [
+        2.99,
+        "EUR"
+       ],
+       [
+        2.49,
+        "EUR"
+       ]
+      ],
+      "titolo": "Shampoo - Cura dei capelli - Igiene e persona - Casa, persona e animali - Prodot"
+     },
+     {
+      "url": "https://www.prezzemoloevitale.it/it/prodotti/ispirami/vegan/dispensa/pane-sostituti-e-barrette.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {
+       "8012678030267": "structured",
+       "8012678030250": "structured",
+       "8003712011304": "structured",
+       "8003712011298": "structured",
+       "8003712011274": "structured",
+       "8003712008656": "structured",
+       "8016323222434": "structured",
+       "8016323222175": "structured",
+       "8003712010758": "structured",
+       "8003712008663": "structured",
+       "8003712007635": "structured",
+       "8003712005891": "structured",
+       "8003712009516": "structured",
+       "8003712008694": "structured",
+       "8003712007284": "structured",
+       "8003712007260": "structured",
+       "8003712010079": "structured",
+       "8008698011683": "structured",
+       "8002859150228": "structured",
+       "8003712010741": "structured",
+       "4000446001025": "structured",
+       "8002590042752": "structured",
+       "4000358092487": "structured",
+       "8001860258633": "structured",
+       "8001860259869": "structured",
+       "8001860355028": "structured"
+      },
+      "prezzi": [
+       [
+        2.79,
+        "EUR"
+       ],
+       [
+        2.29,
+        "EUR"
+       ],
+       [
+        3.49,
+        "EUR"
+       ],
+       [
+        3.99,
+        "EUR"
+       ],
+       [
+        4.99,
+        "EUR"
+       ],
+       [
+        4.19,
+        "EUR"
+       ],
+       [
+        1.49,
+        "EUR"
+       ],
+       [
+        1.99,
+        "EUR"
+       ],
+       [
+        1.89,
+        "EUR"
+       ],
+       [
+        2.39,
+        "EUR"
+       ],
+       [
+        2.49,
+        "EUR"
+       ],
+       [
+        2.99,
+        "EUR"
+       ],
+       [
+        4.69,
+        "EUR"
+       ],
+       [
+        1.79,
+        "EUR"
+       ],
+       [
+        1.59,
+        "EUR"
+       ]
+      ],
+      "titolo": "Pane, sostituti e barrette - Dispensa - Vegan - Ispirami - Prodotti Spesa online"
+     },
+     {
+      "url": "https://www.prezzemoloevitale.it/it/prodotti/salumi-latticini/latte-burro-yogurt/latte-e-bevande-vegetali/latte-fresco.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {
+       "8001790444120": "structured",
+       "8001790444137": "structured",
+       "8000130531025": "structured",
+       "8000130531018": "structured",
+       "8002580323854": "structured",
+       "8002580323601": "structured",
+       "8002670165388": "structured",
+       "8002670165395": "structured",
+       "8002670163179": "structured",
+       "8024927000280": "structured",
+       "8024927000297": "structured"
+      },
+      "prezzi": [
+       [
+        2.59,
+        "EUR"
+       ],
+       [
+        2.15,
+        "EUR"
+       ],
+       [
+        2.09,
+        "EUR"
+       ],
+       [
+        1.99,
+        "EUR"
+       ],
+       [
+        2.19,
+        "EUR"
+       ]
+      ],
+      "titolo": "Latte fresco - Latte e bevande vegetali - Latte, burro e yogurt - Salumi e latti"
+     }
+    ],
+    "pagine_con_gtin": 3,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 3,
+    "pagine_con_codice_e_prezzo": 3,
+    "esito": "codice_e_prezzo"
    },
    "ricerca": {
     "url": "https://www.prezzemoloevitale.it/it/catalogsearch/result/",
@@ -827,8 +1670,8 @@
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -837,8 +1680,8 @@
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -847,8 +1690,8 @@
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -857,8 +1700,8 @@
      }
     },
     {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -867,8 +1710,8 @@
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -877,8 +1720,8 @@
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 403,
@@ -901,6 +1744,42 @@
    },
    "home_status": 200,
    "js_shell": true,
+   "sitemap_probe": {
+    "sitemap": "https://www.ctsspesaonline.it/sitemap.xml",
+    "sotto_sitemap": "https://www.ctsspesaonline.it/product1.xml",
+    "url_prodotto_trovati": 1500,
+    "pagine": [
+     {
+      "url": "https://www.ctsspesaonline.it/product/gentilini-biscotti-novellini-g-250",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "cts"
+     },
+     {
+      "url": "https://www.ctsspesaonline.it/product/santanna-acqua-naturale-6x50-cl",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "cts"
+     },
+     {
+      "url": "https://www.ctsspesaonline.it/product/zonin-prosecco-doc-spumante-cl-75",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "cts"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "js_senza_form_ricerca",
    "kind": "ecommerce"
   },
@@ -915,6 +1794,42 @@
    },
    "home_status": 200,
    "js_shell": true,
+   "sitemap_probe": {
+    "sitemap": "https://www.pimspesaonline.it/sitemap.xml",
+    "sotto_sitemap": "https://www.pimspesaonline.it/product1.xml",
+    "url_prodotto_trovati": 1500,
+    "pagine": [
+     {
+      "url": "https://www.pimspesaonline.it/product/gentilini-biscotti-novellini-g-250",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "pim"
+     },
+     {
+      "url": "https://www.pimspesaonline.it/product/santanna-acqua-naturale-6x50-cl",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "pim"
+     },
+     {
+      "url": "https://www.pimspesaonline.it/product/zonin-prosecco-doc-spumante-cl-75",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "pim"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "js_senza_form_ricerca",
    "kind": "ecommerce"
   },
@@ -929,6 +1844,11 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.prontospesapewex.it/sitemap.xml",
+    "esito": "sitemap_non_leggibile",
+    "status": 404
+   },
    "esito": "nessun_form_ricerca",
    "kind": "ecommerce"
   },
@@ -943,6 +1863,42 @@
    },
    "home_status": 200,
    "js_shell": true,
+   "sitemap_probe": {
+    "sitemap": "https://www.ipertriscountspesaonline.it/sitemap.xml",
+    "sotto_sitemap": "https://www.ipertriscountspesaonline.it/product1.xml",
+    "url_prodotto_trovati": 1500,
+    "pagine": [
+     {
+      "url": "https://www.ipertriscountspesaonline.it/product/gentilini-biscotti-novellini-g-250",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "ipertriscount"
+     },
+     {
+      "url": "https://www.ipertriscountspesaonline.it/product/santanna-acqua-naturale-6x50-cl",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "ipertriscount"
+     },
+     {
+      "url": "https://www.ipertriscountspesaonline.it/product/zonin-prosecco-doc-spumante-cl-75",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "ipertriscount"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "js_senza_form_ricerca",
    "kind": "ecommerce"
   },
@@ -957,6 +1913,42 @@
    },
    "home_status": 200,
    "js_shell": true,
+   "sitemap_probe": {
+    "sitemap": "https://www.basko.it/sitemap.xml",
+    "sotto_sitemap": "https://www.basko.it/product1.xml",
+    "url_prodotto_trovati": 1500,
+    "pagine": [
+     {
+      "url": "https://www.basko.it/product/forneria-artigianale-dolcetti-al-cocco-220-gr",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "basko-spesa-online"
+     },
+     {
+      "url": "https://www.basko.it/product/friskies-nutrisoft-con-manzo-15-kg-100-complete",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "basko-spesa-online"
+     },
+     {
+      "url": "https://www.basko.it/product/tratto-video-evidenziatore-verde-1-pezzo",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "basko-spesa-online"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "js_senza_form_ricerca",
    "kind": "accesso"
   },
@@ -971,14 +1963,19 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.oasitigre.it/sitemap.xml",
+    "esito": "sitemap_non_leggibile",
+    "status": 404
+   },
    "ricerca": {
     "url": "https://www.oasitigre.it/",
     "parametro": "address"
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -995,8 +1992,8 @@
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1013,25 +2010,8 @@
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
-     "per_codice": {
-      "term": "codice",
-      "status": 200,
-      "codice_nei_risultati": "absent",
-      "candidati": 2,
-      "scheda_url": "https://www.oasitigre.it/prodotti/dolcicolazioneemerenda/frollinisemplici/consiliafrollinialluovo700g-733730.html",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Consilia Frollini All'Uovo 700 g",
-      "identita_titolo_ok": false,
-      "outcome": "scheda_senza_codice"
-     }
-    },
-    {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1048,8 +2028,8 @@
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1066,8 +2046,26 @@
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1084,7 +2082,7 @@
      }
     }
    ],
-   "esito": "scheda_senza_codice",
+   "esito": "nessun_candidato",
    "kind": "accesso"
   },
   {
@@ -1096,7 +2094,7 @@
     "nota": "non leggibile (ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))): per prudenza vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "accesso"
   },
   {
@@ -1110,10 +2108,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.supermercatidem.com/sitemap_index.xml",
-    "voci": 5,
-    "prodotti_nel_nome": 5
+   "sitemap_probe": {
+    "sitemap": "https://www.supermercatidem.com/sitemap_index.xml",
+    "sotto_sitemap": "https://www.supermercatidem.com/post-sitemap.xml",
+    "url_prodotto_trovati": 106,
+    "pagine": [
+     {
+      "url": "https://www.supermercatidem.com/catalogo-premi-viaggio-perfetto/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Catalogo Premi, parti per il viaggio perfetto con Dem Supermercati - Supermercat"
+     },
+     {
+      "url": "https://www.supermercatidem.com/crostini-di-polenta-con-gorgonzola-e-pere/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Crostini di polenta con gorgonzola e pere - Supermercati DEM"
+     },
+     {
+      "url": "https://www.supermercatidem.com/insieme-per-peter-pan-unisciti-a-noi/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Insieme per Peter Pan! Unisciti a noi! - Supermercati DEM"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "ricerca": {
     "url": "https://www.supermercatidem.com/",
@@ -1121,8 +2150,8 @@
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1139,8 +2168,8 @@
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1157,8 +2186,8 @@
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1175,8 +2204,8 @@
      }
     },
     {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1193,8 +2222,8 @@
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1211,8 +2240,8 @@
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1224,18 +2253,12 @@
       "term": "nome",
       "status": 200,
       "codice_nei_risultati": "absent",
-      "candidati": 1,
-      "scheda_url": "https://www.supermercatidem.com/nutella-peanut/",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Nutella Peanut: la novità introvabile in Italia è da Dem Supermercati - Supermercati DEM",
-      "identita_titolo_ok": true,
-      "outcome": "scheda_senza_codice"
+      "candidati": 0,
+      "outcome": "nessun_candidato"
      }
     }
    ],
-   "esito": "scheda_senza_codice",
+   "esito": "nessun_candidato",
    "kind": "accesso"
   },
   {
@@ -1249,6 +2272,11 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.supermercatisacoph.it/sitemap.xml",
+    "esito": "sitemap_non_leggibile",
+    "status": 200
+   },
    "esito": "nessun_form_ricerca",
    "kind": "accesso"
   },
@@ -1257,11 +2285,163 @@
    "base": "https://www.siconte.it/",
    "in_registro": true,
    "robots": {
-    "status": 202,
-    "nota": "non leggibile (202): per prudenza vietato",
-    "sitemap_dichiarate": 0
+    "status": 200,
+    "nota": "ok",
+    "sitemap_dichiarate": 1
    },
-   "esito": "robots_vieta_tutto",
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.siconte.it/sitemap_index.xml",
+    "sotto_sitemap": "https://www.siconte.it/curiosity-sitemap.xml",
+    "url_prodotto_trovati": 106,
+    "pagine": [
+     {
+      "url": "https://www.siconte.it/curiosity/cubetti-latte-congelato-antispreco/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Cubetti di latte congelato: l’idea antispreco perfetta"
+     },
+     {
+      "url": "https://www.siconte.it/curiosity/questioni-di-un-certo-peso/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Questioni di un certo peso - Si con te"
+     },
+     {
+      "url": "https://www.siconte.it/curiosity/viaggio-in-cucina-pinxtos-con-tortilla-di-patate-pesto-alla-genovese-e-pachino/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Viaggio in Cucina: Pinxtos con tortilla di patate, pesto alla genovese e Pachino"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
+   "ricerca": {
+    "url": "https://www.siconte.it/",
+    "parametro": "s"
+   },
+   "prodotti": [
+    {
+     "gtin": "8076809523547",
+     "brand": "Barilla",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8076809513722",
+     "brand": "Barilla",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    }
+   ],
+   "esito": "nessun_candidato",
    "kind": "accesso"
   },
   {
@@ -1275,10 +2455,10 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.supermercatidok.it/sitemap_index.xml",
-    "voci": 1,
-    "prodotti_nel_nome": 1
+   "sitemap_probe": {
+    "sitemap": "https://www.supermercatidok.it/sitemap_index.xml",
+    "esito": "sitemap_non_leggibile",
+    "status": 503
    },
    "esito": "nessun_form_ricerca",
    "kind": "accesso"
@@ -1294,6 +2474,41 @@
    },
    "home_status": 200,
    "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.mydespar.it/sitemap.xml",
+    "url_prodotto_trovati": 25,
+    "pagine": [
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/despar-enjoy",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     },
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/despar-x-me",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     },
+     {
+      "url": "https://despar.com/prodotti-a-marchio-despar/scopri-la-nostra-cantina",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "DESPAR EUROSPAR INTERSPAR Centro Sud"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
    "esito": "nessun_form_ricerca",
    "kind": "accesso"
   },
@@ -1308,10 +2523,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.coopsardegna.it/wp-sitemap.xml",
-    "voci": 7,
-    "prodotti_nel_nome": 7
+   "sitemap_probe": {
+    "sitemap": "https://www.coopsardegna.it/wp-sitemap.xml",
+    "sotto_sitemap": "https://www.coopsardegna.it/wp-sitemap-taxonomies-portfolio-types-1.xml",
+    "url_prodotto_trovati": 3,
+    "pagine": [
+     {
+      "url": "https://www.coopsardegna.it/portfolio-types/applications/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Portfolio categories  Applications"
+     },
+     {
+      "url": "https://www.coopsardegna.it/portfolio-types/e-commerce-systems/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Portfolio categories  E-commerce systems"
+     },
+     {
+      "url": "https://www.coopsardegna.it/portfolio-types/wordpress-themes/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Portfolio categories  WordPress Themes"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "accesso"
@@ -1327,10 +2573,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.famila.it/sitemap.xml",
-    "voci": 7,
-    "prodotti_nel_nome": 7
+   "sitemap_probe": {
+    "sitemap": "https://www.famila.it/sitemap.xml",
+    "sotto_sitemap": "https://www.famila.it/famila/sitemap.xml",
+    "url_prodotto_trovati": 1338,
+    "pagine": [
+     {
+      "url": "https://www.famila.it/spesa-e-famiglia/dettaglio-articolo/ricette/altre-ricette/arrivano_le_arance_succose_delizie_per_i_primi_freddi",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Arrivano le arance, succose delizie per i primi freddi"
+     },
+     {
+      "url": "https://www.famila.it/spesa-e-famiglia/dettaglio-articolo/trucchetti-e-ispirazioni/vivere-con-la-famiglia/oltrepo-sulle-note-del-gusto",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Oltrepò sulle note del gusto"
+     },
+     {
+      "url": "https://www.famila.it/spesa-e-famiglia/dettaglio-ricetta/idee-dal-magazine/video-tutorial/idea-sfiziosa",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Un' idea sfiziosa"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "accesso"
@@ -1340,18 +2617,11 @@
    "base": "https://www.dambros.it/",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": 403,
+    "nota": "HTTP 403: tutto vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://dambros.it/sitemap_index.xml",
-    "voci": 1,
-    "prodotti_nel_nome": 1
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   },
   {
@@ -1359,18 +2629,11 @@
    "base": "https://www.cosicomodo.it/mercato",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectionError: HTTPSConnectionPool(host='www.cosicomodo.it', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host='www.co): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://www.cosicomodo.it/sitemap.xml",
-    "voci": 16,
-    "prodotti_nel_nome": 16
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1378,18 +2641,11 @@
    "base": "https://www.cosicomodo.it/ilgigante",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectionError: HTTPSConnectionPool(host='www.cosicomodo.it', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host='www.co): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://www.cosicomodo.it/sitemap.xml",
-    "voci": 16,
-    "prodotti_nel_nome": 16
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1397,18 +2653,11 @@
    "base": "https://www.cosicomodo.it/emisfero",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectionError: HTTPSConnectionPool(host='www.cosicomodo.it', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host='www.co): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://www.cosicomodo.it/sitemap.xml",
-    "voci": 16,
-    "prodotti_nel_nome": 16
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1416,18 +2665,11 @@
    "base": "https://www.cosicomodo.it/galassia",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectionError: HTTPSConnectionPool(host='www.cosicomodo.it', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host='www.co): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://www.cosicomodo.it/sitemap.xml",
-    "voci": 16,
-    "prodotti_nel_nome": 16
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1435,18 +2677,11 @@
    "base": "https://www.italmark.it/",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectTimeout: HTTPSConnectionPool(host='www.italmark.it', port=443): Max retries exceeded with url: /robots.txt (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.ital): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "http://www.italmark.it/sitemap_index.xml",
-    "voci": 17,
-    "prodotti_nel_nome": 17
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1460,10 +2695,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.supermercatipan.it/sitemap.xml",
-    "voci": 1637,
-    "prodotti_nel_nome": 42
+   "sitemap_probe": {
+    "sitemap": "https://www.supermercatipan.it/sitemap.xml",
+    "url_prodotto_trovati": 1280,
+    "pagine": [
+     {
+      "url": "https://www.supermercatipan.it/spesa-e-famiglia/dettaglio-articolo/animali-di-famiglia/animali-di-famiglia/cane-e-gatto-prove-di-convivenza",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Cane e gatto, prove di convivenza"
+     },
+     {
+      "url": "https://www.supermercatipan.it/spesa-e-famiglia/dettaglio-articolo/ricette/i-vini/whisky-sceglierlo-e-gustarlo",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Whisky: sceglierlo e gustarlo"
+     },
+     {
+      "url": "https://www.supermercatipan.it/spesa-e-famiglia/dettaglio-ricetta/ricette/primi-piatti/strangolapreti",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Strangolapreti"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "cosicomodo"
@@ -1473,18 +2738,11 @@
    "base": "https://www.cosicomodo.it/sole365",
    "in_registro": true,
    "robots": {
-    "status": 200,
-    "nota": "ok",
-    "sitemap_dichiarate": 1
+    "status": null,
+    "nota": "non leggibile (ConnectionError: HTTPSConnectionPool(host='www.cosicomodo.it', port=443): Max retries exceeded with url: /robots.txt (Caused by NameResolutionError(\"HTTPSConnection(host='www.co): per prudenza vietato",
+    "sitemap_dichiarate": 0
    },
-   "home_status": 200,
-   "js_shell": false,
-   "sitemap": {
-    "url": "https://www.cosicomodo.it/sitemap.xml",
-    "voci": 16,
-    "prodotti_nel_nome": 16
-   },
-   "esito": "nessun_form_ricerca",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "cosicomodo"
   },
   {
@@ -1498,10 +2756,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1517,10 +2776,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1536,10 +2796,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1555,10 +2816,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1574,10 +2836,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1593,10 +2856,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1612,10 +2876,11 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://it.everli.com/it_everli_com_it_sitemap.xml",
-    "voci": 4,
-    "prodotti_nel_nome": 4
+   "sitemap_probe": {
+    "sitemap": "https://it.everli.com/it_everli_com_it_sitemap.xml",
+    "sotto_sitemap": "https://it.everli.com/sitemap_it.xml",
+    "url_prodotto_trovati": 0,
+    "esito": "nessuna_scheda_in_sitemap"
    },
    "esito": "nessun_form_ricerca",
    "kind": "everli"
@@ -1631,10 +2896,40 @@
    },
    "home_status": 200,
    "js_shell": true,
-   "sitemap": {
-    "url": "https://www.naturasi.it/category.xml",
-    "voci": 484,
-    "prodotti_nel_nome": 28
+   "sitemap_probe": {
+    "sitemap": "https://www.naturasi.it/category.xml",
+    "url_prodotto_trovati": 29,
+    "pagine": [
+     {
+      "url": "https://www.naturasi.it/cura-della-casa/prodotti-per-il-bucato",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "NaturaSì"
+     },
+     {
+      "url": "https://www.naturasi.it/dettaglio-volantino-new",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "NaturaSì"
+     },
+     {
+      "url": "https://www.naturasi.it/prodotti-richiamati",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "NaturaSì"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "js_senza_form_ricerca",
    "kind": "specialista"
@@ -1650,10 +2945,56 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.eataly.it/sitemap_index.xml",
-    "voci": 6,
-    "prodotti_nel_nome": 6
+   "sitemap_probe": {
+    "sitemap": "https://www.eataly.it/sitemap_index.xml",
+    "sotto_sitemap": "https://www.eataly.it/sitemap_0-product.xml",
+    "url_prodotto_trovati": 1399,
+    "pagine": [
+     {
+      "url": "https://www.eataly.it/p/caffe-classico-EAT1_00146685.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        9.9,
+        "EUR"
+       ]
+      ],
+      "titolo": "CaffÃ¨ Classico 250 g x 2"
+     },
+     {
+      "url": "https://www.eataly.it/p/cola-zero-zucchero-in-bottiglia-di-vetro-EAT1_00675725.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        3.9,
+        "EUR"
+       ]
+      ],
+      "titolo": "Cola Zero Zucchero in Bottiglia di Vetro 330 ml"
+     },
+     {
+      "url": "https://www.eataly.it/p/labc-del-pesce%3A-tecniche-e-cotture-2004654337086.html",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        210.0,
+        "EUR"
+       ]
+      ],
+      "titolo": "L'ABC DEL PESCE: TECNICHE E COTTURE | Eataly"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 3,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "solo_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "specialista"
@@ -1669,10 +3010,40 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.aldi.it/sitemap.xml",
-    "voci": 490,
-    "prodotti_nel_nome": 7
+   "sitemap_probe": {
+    "sitemap": "https://www.aldi.it/sitemap.xml",
+    "url_prodotto_trovati": 490,
+    "pagine": [
+     {
+      "url": "https://www.aldi.it/il-mondo-aldi/rubriche/consigli-in-cucina/robot-da-cucina/Blender",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Blender"
+     },
+     {
+      "url": "https://www.aldi.it/il-mondo-aldi/rubriche/cookbook-aldi/gli-abbinamenti-di-dicembre/torta-ai-mandarini-rovesciata",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Torta ai mandarini rovesciata"
+     },
+     {
+      "url": "https://www.aldi.it/servizi-aldi/servizio-clienti",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Aiuto e Contatti"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "informativo"
@@ -1688,10 +3059,58 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.lidl.it/static/sitemap.xml",
-    "voci": 3,
-    "prodotti_nel_nome": 2
+   "sitemap_probe": {
+    "sitemap": "https://www.lidl.it/static/sitemap.xml",
+    "sotto_sitemap": "https://www.lidl.it/p/export/IT/it/product_sitemap.xml.gz",
+    "url_prodotto_trovati": 499,
+    "pagine": [
+     {
+      "url": "https://www.lidl.it/p/castagne/p11029927",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {
+       "4056489026150": "structured"
+      },
+      "prezzi": [
+       [
+        6.99,
+        "EUR"
+       ]
+      ],
+      "titolo": "Castagne - Lidl"
+     },
+     {
+      "url": "https://www.lidl.it/p/deluxe-battuto-di-olive-leccino/p11139904",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        1.79,
+        "EUR"
+       ]
+      ],
+      "titolo": "Deluxe | Battuto di olive leccino - Lidl"
+     },
+     {
+      "url": "https://www.lidl.it/p/kiwi/p11150925",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [
+       [
+        2.49,
+        "EUR"
+       ]
+      ],
+      "titolo": "Kiwi - Lidl"
+     }
+    ],
+    "pagine_con_gtin": 1,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 3,
+    "pagine_con_codice_e_prezzo": 1,
+    "esito": "codice_e_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "informativo"
@@ -1701,11 +3120,41 @@
    "base": "https://www.d-piu.com/",
    "in_registro": true,
    "robots": {
-    "status": 202,
-    "nota": "non leggibile (202): per prudenza vietato",
+    "status": 200,
+    "nota": "ok",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "home_status": 200,
+   "js_shell": false,
+   "sitemap_probe": {
+    "sitemap": "https://www.d-piu.com/sitemap.xml",
+    "sotto_sitemap": "https://www.d-piu.com/copertina-volantini-sitemap.xml",
+    "url_prodotto_trovati": 2,
+    "pagine": [
+     {
+      "url": "https://www.d-piu.com/copertina-volantini/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Archivi Copertina volantini diretti - DPiù"
+     },
+     {
+      "url": "https://www.d-piu.com/copertina-volantini/copertina-p-v-diretti-volantini/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Copertina p.v. diretti volantini"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 2,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
+   },
+   "esito": "nessun_form_ricerca",
    "kind": "informativo"
   },
   {
@@ -1719,10 +3168,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.mdspa.it/sitemap_index.xml",
-    "voci": 3,
-    "prodotti_nel_nome": 3
+   "sitemap_probe": {
+    "sitemap": "https://www.mdspa.it/sitemap_index.xml",
+    "sotto_sitemap": "https://www.mdspa.it/post-sitemap.xml",
+    "url_prodotto_trovati": 70,
+    "pagine": [
+     {
+      "url": "https://www.mdspa.it/md-dona-prodotti-ancora-buoni-ma-non-idonei-alla-vendita/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "MD dona prodotti ancora buoni ma non idonei alla vendita • MD"
+     },
+     {
+      "url": "https://www.mdspa.it/md-e-vicina-allo-sport/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "MD Title Sponsor dei Campionati Italiani di Scherma 2021 • MD"
+     },
+     {
+      "url": "https://www.mdspa.it/md-presenta-il-bilancio-di-sostenibilita-2023/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "MD presenta il secondo Bilancio di Sostenibilità 2023 • MD"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "informativo"
@@ -1738,10 +3218,24 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://rossettogroup.it/sitemap.xml",
-    "voci": 756,
-    "prodotti_nel_nome": 0
+   "sitemap_probe": {
+    "sitemap": "https://rossettogroup.it/sitemap.xml",
+    "url_prodotto_trovati": 1,
+    "pagine": [
+     {
+      "url": "https://rossettogroup.it/articoli/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Articoli"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 1,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "informativo"
@@ -1757,10 +3251,32 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.despar.it/sitemap.xml",
-    "voci": 2338,
-    "prodotti_nel_nome": 37
+   "sitemap_probe": {
+    "sitemap": "https://www.despar.it/sitemap.xml",
+    "url_prodotto_trovati": 2,
+    "pagine": [
+     {
+      "url": "https://www.despar.it/it/prodotti-a-marchio-despar/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "I prodotti a marchio Despar"
+     },
+     {
+      "url": "https://www.despar.it/it/prodotti-che-regalano-punti-cuore/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Despar: Supermercati, Promozioni e Offerte sempre Aggiornate"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 2,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "ricerca": {
     "url": "https://www.despar.it/it/punti-vendita/",
@@ -1768,8 +3284,8 @@
    },
    "prodotti": [
     {
-     "gtin": "3274080005003",
-     "brand": "Cristaline",
+     "gtin": "8076809523547",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1786,8 +3302,8 @@
      }
     },
     {
-     "gtin": "3046920029759",
-     "brand": "Lindt",
+     "gtin": "8000500426494",
+     "brand": "Ferrero",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1804,25 +3320,8 @@
      }
     },
     {
-     "gtin": "5449000054227",
-     "brand": "Coca-Cola",
-     "per_codice": {
-      "term": "codice",
-      "status": 200,
-      "codice_nei_risultati": "confirmed_text",
-      "candidati": 1,
-      "scheda_url": "https://www.despar.it/it/despar/",
-      "scheda_status": 200,
-      "scheda_esito": "absent",
-      "scheda_elenco": false,
-      "scheda_titolo": "Despar: il supermercato più vicino a te!",
-      "identita_titolo_ok": false,
-      "outcome": "scheda_senza_codice"
-     }
-    },
-    {
-     "gtin": "3168930010265",
-     "brand": "Quaker",
+     "gtin": "8000500310427",
+     "brand": "Ferrero Technical Services Srl",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1839,8 +3338,8 @@
      }
     },
     {
-     "gtin": "3046920022651",
-     "brand": "Lindt",
+     "gtin": "8002270014901",
+     "brand": "San Pellegrino",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1857,8 +3356,26 @@
      }
     },
     {
-     "gtin": "3017620425035",
-     "brand": "Nutella",
+     "gtin": "8000500179864",
+     "brand": "Ferrero",
+     "per_codice": {
+      "term": "codice",
+      "status": 200,
+      "codice_nei_risultati": "confirmed_text",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     },
+     "per_nome": {
+      "term": "nome",
+      "status": 200,
+      "codice_nei_risultati": "absent",
+      "candidati": 0,
+      "outcome": "nessun_candidato"
+     }
+    },
+    {
+     "gtin": "8076809513722",
+     "brand": "Barilla",
      "per_codice": {
       "term": "codice",
       "status": 200,
@@ -1875,7 +3392,7 @@
      }
     }
    ],
-   "esito": "scheda_senza_codice",
+   "esito": "nessun_candidato",
    "kind": "informativo"
   },
   {
@@ -1889,10 +3406,41 @@
    },
    "home_status": 200,
    "js_shell": false,
-   "sitemap": {
-    "url": "https://www.gelmarket.it/sitemap_index.xml",
-    "voci": 2,
-    "prodotti_nel_nome": 2
+   "sitemap_probe": {
+    "sitemap": "https://www.gelmarket.it/sitemap_index.xml",
+    "sotto_sitemap": "https://www.gelmarket.it/post-sitemap.xml",
+    "url_prodotto_trovati": 29,
+    "pagine": [
+     {
+      "url": "https://www.gelmarket.it/fantasia-di-mazzancolle-vongole-e-zucchine/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Fantasia di mazzancolle, vongole e zucchine | Gelmarket"
+     },
+     {
+      "url": "https://www.gelmarket.it/tartufini-di-halloween-al-cioccolato-e-nocciole/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Tartufini di Halloween al cioccolato e nocciole | Gelmarket"
+     },
+     {
+      "url": "https://www.gelmarket.it/tonno-marinato-ai-frutti-rossi/",
+      "status": 200,
+      "bloccata": false,
+      "gtin": {},
+      "prezzi": [],
+      "titolo": "Tonno marinato ai frutti rossi | Gelmarket"
+     }
+    ],
+    "pagine_con_gtin": 0,
+    "pagine_lette": 3,
+    "pagine_con_prezzo": 0,
+    "pagine_con_codice_e_prezzo": 0,
+    "esito": "ne_codice_ne_prezzo"
    },
    "esito": "nessun_form_ricerca",
    "kind": "informativo"
@@ -1906,9 +3454,9 @@
     "nota": "HTTP 403: tutto vietato",
     "sitemap_dichiarate": 0
    },
-   "esito": "robots_vieta_tutto",
+   "esito": "bloccato_waf_o_robots_illeggibile",
    "kind": "ecommerce"
   }
  ],
- "richieste": 239
+ "richieste": 387
 }
