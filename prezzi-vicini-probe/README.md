@@ -2,7 +2,7 @@
 
 Due cose in un repository:
 
-1. **Test offline** (`tests/`): la logica che decide se un prodotto è proprio quello. 61 test + 4 limiti noti.
+1. **Test offline** (`tests/`): la logica che decide se un prodotto è proprio quello, con siti finti in locale. 81 test + 4 limiti noti.
    Girano da soli su GitHub a ogni caricamento (scheda *Actions* → "Test").
 2. **Sonda sui cataloghi reali** (`probe/`): misura, senza SerpApi, quanti cataloghi del registro permettono
    di trovare la scheda di un prodotto e di **confermarne il codice a barre**. Scrive l'esito in
@@ -16,6 +16,13 @@ Due cose in un repository:
 3. Scrivi a Claude il nome del repository. Fine.
 
 Se nella scheda *Actions* non compare nulla, la cartella `.github` non è stata caricata: ricaricala.
+
+## Come leggere l'esito (`results/summary.md`)
+La sezione **"misura decisiva"** dice, catena per catena, se le schede prodotto (prese dalla sitemap, senza cercare nulla)
+espongono un **codice a barre valido** e un **prezzo**. Esiti: `codice_e_prezzo` (ottimo), `solo_codice`, `solo_prezzo`,
+`ne_codice_ne_prezzo`, `schede_bloccate`, `nessuna_scheda_in_sitemap`, `sitemap_non_leggibile`.
+`bloccato_waf_o_robots_illeggibile` = il firewall del sito respinge i server di GitHub (non è un divieto scritto).
+Il campione di prodotti è automatico: italiani (prefisso GS1 800-839) più scansionati su Open Food Facts.
 
 ## Come si comporta la sonda con i siti
 - Si identifica (User-Agent con il nome del repository) e rispetta `robots.txt`: se vieta la ricerca, non la fa.

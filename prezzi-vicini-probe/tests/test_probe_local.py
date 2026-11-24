@@ -134,8 +134,8 @@ def test_no_results_anywhere(run):
 def test_unreachable_host():
     f = Fetcher(min_interval=0, timeout=2)
     r = probe_site({"name": "morto", "base": "http://127.0.0.1:1/"}, [P], f, Robots(f))
-    # robots non leggibile = per prudenza vietato: la sonda non insiste
-    assert r["esito"] in ("robots_vieta_tutto", "non_raggiungibile")
+    # robots non leggibile: quasi sempre un firewall, non un divieto; la sonda non insiste
+    assert r["esito"] == "bloccato_waf_o_robots_illeggibile"
 
 
 def test_run_sites_never_raises_and_summary_renders():

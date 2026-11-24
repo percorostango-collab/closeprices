@@ -151,3 +151,83 @@ def check_page(html, gtin: str, status: int = 200) -> PageResult:
                           is_listing=count > 1 or distinct_valid_gtins(flat) >= LISTING_THRESHOLD,
                           detail="testo o attributo della pagina")
     return PageResult(Verdict.ABSENT, product_count=count)
+
+
+# ---- estrazione di codici "con chiave" (per misurare se le schede prodotto espongono un GTIN) -----
+_KEYED_JSON = re.compile(r'"(?:ean|ean13|ean_code|gtin\d{0,2}|barcode|upc)"\s*:\s*"?(\d{8,14})(?!\d)', re.I)
+_KEYED_TEXT = re.compile(r"(?:\bEAN\b|\bGTIN\b|codice\s+a\s+barre|\bbarcode\b)[^0-9]{0,25}(\d{8,14})(?!\d)", re.I)
+_KEYED_ATTR = re.compile(r'data-(?:ean|gtin|barcode)[\w-]*="(\d{8,14})"', re.I)
+
+
+def find_gtins(html) -> dict:
+    """Codici GTIN validi dichiarati nella pagina, con dove sono: {gtin: 'structured'|'json'|'text'}.
+    Conta solo numeri accompagnati da una chiave (gtin, ean, barcode...): un numero qualsiasi
+    che per caso passa la cifra di controllo non vale."""
+    out = {}
+    if not html:
+        return out
+    soup = BeautifulSoup(html, "html.parser")
+    for n in _jsonld_nodes(soup):
+        for k in _GTIN_KEYS:
+            v = n.get(k)
+            g = normalize_gtin(str(v)) if v is not None else None
+            if g:
+                out.setdefault(g, "structured")
+    for el in soup.find_all(attrs={"itemprop": re.compile(r"^gtin(8|12|13|14)?$", re.I)}):
+        g = normalize_gtin(el.get("content") or el.get_text(strip=True))
+        if g:
+            out.setdefault(g, "structured")
+    for m in soup.find_all("meta"):
+        key = (m.get("property") or m.get("name") or "").lower()
+        if key in ("product:ean", "product:gtin", "og:upc", "og:ean", "gtin", "gtin13", "ean"):
+            g = normalize_gtin(m.get("content") or "")
+            if g:
+                out.setdefault(g, "structured")
+    for sc in soup.find_all("script"):
+        if re.search(r"ld\+json", sc.get("type") or "", re.I):
+            continue
+        for mm in _KEYED_JSON.finditer(sc.string or sc.get_text() or ""):
+            g = normalize_gtin(mm.group(1))
+            if g:
+                out.setdefault(g, "json")
+    for mm in _KEYED_ATTR.finditer(html):
+        g = normalize_gtin(mm.group(1))
+        if g:
+            out.setdefault(g, "json")
+    for t in soup(["script", "style"]):
+        t.decompose()
+    for mm in _KEYED_TEXT.finditer(soup.get_text(" ", strip=True)):
+        g = normalize_gtin(mm.group(1))
+        if g:
+            out.setdefault(g, "text")
+    return out
+
+
+def find_prices(html) -> list:
+    """Prezzi dichiarati nei dati strutturati (JSON-LD offers, microdata, meta). Lista di (importo, valuta)."""
+    out = []
+    if not html:
+        return out
+    soup = BeautifulSoup(html, "html.parser")
+
+    def num(v):
+        try:
+            x = float(str(v).replace(",", "."))
+            return x if 0 < x < 10000 else None
+        except ValueError:
+            return None
+
+    for n in _jsonld_nodes(soup):
+        for k in ("price", "lowPrice"):
+            if k in n and num(n[k]) is not None:
+                out.append((num(n[k]), n.get("priceCurrency") or "?"))
+    for el in soup.find_all(attrs={"itemprop": "price"}):
+        v = num(el.get("content") or el.get_text(strip=True))
+        if v is not None:
+            out.append((v, "?"))
+    for m in soup.find_all("meta"):
+        if (m.get("property") or m.get("name") or "").lower() in ("product:price:amount", "og:price:amount"):
+            v = num(m.get("content"))
+            if v is not None:
+                out.append((v, "?"))
+    return list(dict.fromkeys(out))

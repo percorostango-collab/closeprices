@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from probe.sample import make_sample  # noqa: E402
 from probe.probe import (Fetcher, probe_off, probe_osm, render_summary, run_sites,  # noqa: E402
                          targets_from_registry)
 from pvcore.registry import load_registry  # noqa: E402
@@ -23,13 +24,20 @@ def main(argv=None):
     ap.add_argument("--products", type=int, default=3)
     ap.add_argument("--out", default=str(ROOT / "results"))
     ap.add_argument("--min-interval", type=float, default=1.5)
+    ap.add_argument("--sample", choices=["auto", "golden"], default="auto")
     a = ap.parse_args(argv)
     only = set(a.only.split(","))
     gold = json.loads((ROOT / "data" / "golden.json").read_text(encoding="utf-8"))["prodotti"]
-    probe_products = [p for p in gold if p.get("probe")][: a.products]
     f = Fetcher(min_interval=a.min_interval)
+    sample, slog = make_sample(Fetcher(min_interval=7.0)) if a.sample == "auto" else ([], ["campione: data/golden.json"])
+    if len(sample) >= 3:
+        gold = sample
+    else:
+        slog.append("campione automatico insufficiente: uso data/golden.json")
+    probe_products = [p for p in gold if p.get("probe")][: a.products]
     res = {"generato": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-           "prodotti_provati": [p["gtin"] for p in probe_products]}
+           "prodotti_provati": [p["gtin"] for p in probe_products],
+           "campione_log": slog + [f'{p["gtin"]} | {p["brand"]} | {p["name"]} | {p["quantity"]}' for p in gold]}
     if "off" in only:
         res["off"] = probe_off(gold, f)
     if "osm" in only:
