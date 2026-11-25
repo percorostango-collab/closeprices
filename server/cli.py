@@ -4,6 +4,7 @@
   discover-sites     capisce quali cataloghi sono consultabili (una volta, poi ogni 2 settimane)
   index              verifica in coda i prodotti scansionati
   coverage           mostra cosa copre il servizio
+  diag               stato del database e delle impostazioni, senza segreti
   serve              avvia il servizio (con manutenzione automatica in background)"""
 import argparse
 import json
@@ -36,13 +37,17 @@ def maintenance(settings, fetcher, robots, stop=None):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["init-db", "load-stores", "discover-sites", "index", "coverage", "serve"])
+    ap.add_argument("cmd", choices=["init-db", "load-stores", "discover-sites", "index", "coverage", "diag", "serve"])
     ap.add_argument("--file")
     ap.add_argument("--host", default="0.0.0.0")
     ap.add_argument("--port", type=int, default=8000)
     ap.add_argument("--limit", type=int, default=20)
     a = ap.parse_args(argv)
     s = Settings()
+    if a.cmd == "diag":
+        from .diag import diagnose
+        print(json.dumps(diagnose(s), ensure_ascii=False, indent=1))
+        return
     conn = connect(s.db_path, s)
     fetcher = products.make_fetcher(s)
     robots = Robots(fetcher)

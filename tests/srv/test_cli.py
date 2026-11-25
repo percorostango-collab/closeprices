@@ -45,3 +45,14 @@ def test_queue_is_processed_with_a_longer_budget():
         assert done == 1 and conn.execute("SELECT COUNT(*) FROM index_queue").fetchone()[0] == 0
         assert [e["chain"] for e in catalogs.fresh_evidence(conn, G, 30)] == ["Conad"]
         assert [x["chain"] for x in c.get("/v1/scan", params={"code": G}).json()["catalogs"]] == ["Conad"]
+
+
+def test_cli_diag_shows_state_without_secrets(tmp_path, monkeypatch, capsys):
+    monkeypatch.setenv("PV_DB", str(tmp_path / "d.db"))
+    cli.main(["diag"])
+    j = json.loads(capsys.readouterr().out)
+    turso = scenarios.MODE.get("turso")
+    assert j["database"] == "ok" and j["database_modo"] == ("turso" if turso else "sqlite-locale")
+    assert j["conteggi"]["stores"] == 0
+    if turso:
+        assert turso.token not in json.dumps(j)
