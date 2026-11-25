@@ -215,7 +215,19 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     Widget body;
     if (_loading) {
-      body = const Center(child: CircularProgressIndicator());
+      body = const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            CircularProgressIndicator(),
+            SizedBox(height: 16),
+            Text(
+              'Se il servizio era inattivo, il risveglio può richiedere circa un minuto. Poi le scansioni sono veloci.',
+              textAlign: TextAlign.center,
+            ),
+          ]),
+        ),
+      );
     } else if (_error != null) {
       body = Center(
         child: Padding(

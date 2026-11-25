@@ -15,14 +15,14 @@ dei negozi) e quanti cataloghi riesce davvero a consultare.
 ## Stato della verifica (onesto)
 | Parte | Come è stata verificata |
 |---|---|
-| Servizio e logica (`server/`, `pvcore/`) | 137 test automatici contro siti finti in locale; i test sanno fallire (controllati rompendo il codice di proposito) |
+| Servizio e logica (`server/`, `pvcore/`) | 171 test automatici contro siti finti in locale; gli scenari del servizio girano su SQLite e su un finto Turso con lo stesso protocollo HTTP; i test sanno fallire (controllati rompendo il codice di proposito) |
 | Formato dati servizio ↔ app | l'app (parte Dart pura) legge esempi generati dal servizio vero; il controllo fallisce se un campo cambia |
 | Modelli, client e testi dell'app | analizzati e provati con il compilatore Dart |
 | Schermate Flutter (`app/lib/screens`) | **non compilate né provate su telefono**: solo controllo di sintassi. È il primo punto da provare |
 | Servizio contro i siti reali | **non provato da qui** (rete chiusa): la copertura reale si vede con `coverage` dopo `discover-sites` |
 
 ## Avvio rapido
-1. Servizio: `docs/DEPLOY.md`.
+1. Servizio: `docs/RENDER_TURSO.md` (Render + Turso + GitHub Actions, senza computer acceso) oppure `docs/DEPLOY.md` (Docker).
 2. App: in `app/` esegui `setup.bat` (Windows) o `setup.sh`, poi configura i permessi (`app/ANDROID_IOS.md`),
    poi `flutter run`. Al primo avvio scrivi l'indirizzo del servizio nelle Impostazioni.
 

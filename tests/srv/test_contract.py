@@ -6,6 +6,8 @@ import pytest
 from helpers import G
 from scenarios import LAT, LON, env, shape
 
+pytestmark = pytest.mark.usefixtures("db_mode")
+
 FIX = Path(__file__).resolve().parent.parent / "fixtures" / "api"
 CASES = {
     "scan_full": (dict(), dict(code=G, lat=LAT, lon=LON)),

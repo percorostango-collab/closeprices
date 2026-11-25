@@ -43,7 +43,7 @@ def main(argv=None):
     ap.add_argument("--limit", type=int, default=20)
     a = ap.parse_args(argv)
     s = Settings()
-    conn = connect(s.db_path)
+    conn = connect(s.db_path, s)
     fetcher = products.make_fetcher(s)
     robots = Robots(fetcher)
     if a.cmd == "init-db":

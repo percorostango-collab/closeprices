@@ -1,11 +1,15 @@
+import pytest
 import json
 
 from helpers import G
 from probe.probe import Fetcher, Robots
+import scenarios
 from scenarios import STORES, env
 from server import catalogs, cli, products
 from server.config import Settings
 from server.db import connect
+
+pytestmark = pytest.mark.usefixtures("db_mode")
 
 
 def test_cli_init_load_coverage(tmp_path, monkeypatch, capsys):
@@ -16,6 +20,13 @@ def test_cli_init_load_coverage(tmp_path, monkeypatch, capsys):
     cli.main(["load-stores", "--file", str(f)])
     out = capsys.readouterr().out
     assert '"negozi": 7' in out
+    # I dati devono finire nel database GIUSTO: su Turso se configurato, altrimenti nel file locale.
+    turso = scenarios.MODE.get("turso")
+    if turso:
+        assert turso.db.execute("SELECT COUNT(*) FROM stores").fetchone()[0] == 7
+        assert not (tmp_path / "x.db").exists(), "i comandi hanno scritto su un file locale invece che su Turso"
+    else:
+        assert (tmp_path / "x.db").exists()
     cli.main(["coverage"])
     cov = json.loads(capsys.readouterr().out)
     assert cov["negozi"] == {"totale": 7, "con_catena_riconosciuta": 6}      # "Da Mario" non è di una catena nota
@@ -27,7 +38,7 @@ def test_queue_is_processed_with_a_longer_budget():
         r = c.get("/v1/scan", params={"code": G}).json()
         assert r["indexing"]["state"] == "parziale" and r["catalogs"] == []
         s = ctx["settings"]
-        conn = connect(s.db_path)
+        conn = connect(s.db_path, s)
         fetcher = Fetcher(min_interval=0, timeout=5, ua=s.user_agent)
         done = catalogs.process_queue(conn, s, fetcher, Robots(fetcher),
                                       lambda g: products.lookup(conn, g, s, fetcher), limit=5, budget_s=10)

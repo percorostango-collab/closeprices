@@ -13,6 +13,7 @@ from server.config import Settings
 from server.db import connect
 
 LAT, LON = 41.9028, 12.4964
+MODE = {}          # impostato dalla fixture db_mode: {} = SQLite, {'turso': FakeTurso} = Turso finto
 
 
 def el(i, name, brand=None, dlat=0.0, dlon=0.0):
@@ -37,8 +38,10 @@ def env(mode="json", delay=0.0, with_profile=True, budget=5.0, stores_on=True, o
     cat_srv, cat_base = serve2(cat_router)
     off_srv, off_base = serve2(off_r)
     s = Settings(db_path=os.path.join(tmp, "t.db"), off_base=off_base.rstrip("/"), request_interval_s=0,
-                 index_budget_s=budget, contact="test@example.org")
-    conn = connect(s.db_path)
+                 index_budget_s=budget, contact="test@example.org",
+                 turso_url=MODE["turso"].url if MODE.get("turso") else "",
+                 turso_token=MODE["turso"].token if MODE.get("turso") else "")
+    conn = connect(s.db_path, s)
     if stores_on:
         stores.upsert(conn, stores.parse_overpass({"elements": STORES}))
     f = Fetcher(min_interval=0, timeout=3, ua=s.user_agent)

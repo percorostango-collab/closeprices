@@ -29,7 +29,13 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
     if not profiles:
         state = "non_disponibile"
     elif catalogs.needs_index(conn, gtin, settings.catalog_ttl_days):
-        summary = catalogs.index_gtin(conn, gtin, product, fetcher, robots, settings.index_budget_s)
+        if settings.index_budget_s <= 0:
+            # modalità "solo coda": la scansione non interroga i cataloghi, li verifica la manutenzione
+            state, pending = "parziale", True
+            conn.execute("INSERT OR IGNORE INTO index_queue VALUES(?,?)", (gtin, now_iso()))
+            conn.commit()
+        else:
+            summary = catalogs.index_gtin(conn, gtin, product, fetcher, robots, settings.index_budget_s)
         if summary["incomplete"]:
             state, pending = "parziale", True
             conn.execute("INSERT OR IGNORE INTO index_queue VALUES(?,?)", (gtin, now_iso()))

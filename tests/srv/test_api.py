@@ -4,6 +4,8 @@ import pytest
 from helpers import G
 from scenarios import LAT, LON, env
 
+pytestmark = pytest.mark.usefixtures("db_mode")
+
 Q = dict(lat=LAT, lon=LON)
 
 
@@ -96,7 +98,7 @@ def test_slow_catalog_is_partial_and_queued():
         assert time.time() - t0 < 1.8
         assert r["indexing"]["state"] == "parziale" and "INDEX_PARTIAL" in codes(r)
         from server.db import connect
-        conn = connect(ctx["settings"].db_path)
+        conn = connect(ctx["settings"].db_path, ctx["settings"])
         assert conn.execute("SELECT gtin FROM index_queue").fetchone()[0] == G
 
 

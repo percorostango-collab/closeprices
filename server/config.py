@@ -11,6 +11,7 @@ class Settings:
     db_path: str = field(default_factory=lambda: os.environ.get("PV_DB", "var/prezzi_vicini.db"))
     turso_url: str = field(default_factory=lambda: os.environ.get("PV_TURSO_URL", ""))
     turso_token: str = field(default_factory=lambda: os.environ.get("PV_TURSO_TOKEN", ""))
+    turso_pipeline: str = field(default_factory=lambda: os.environ.get("PV_TURSO_PIPELINE", "v2"))
     contact: str = field(default_factory=lambda: os.environ.get("PV_CONTACT", "contatto-non-configurato"))
     off_base: str = field(default_factory=lambda: os.environ.get("OFF_BASE", "https://world.openfoodfacts.org"))
     index_budget_s: float = field(default_factory=lambda: _f("PV_INDEX_BUDGET_S", 8.0))

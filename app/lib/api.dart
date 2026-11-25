@@ -15,7 +15,8 @@ class ApiException implements Exception {
 class PvApi {
   final String baseUrl;
   final Duration timeout;
-  PvApi(this.baseUrl, {this.timeout = const Duration(seconds: 30)});
+  // Il servizio gratuito si addormenta dopo un po' di inattività: il risveglio può richiedere circa un minuto.
+  PvApi(this.baseUrl, {this.timeout = const Duration(seconds: 100)});
 
   Uri _uri(String path, [Map<String, String>? query]) {
     final b = Uri.parse(baseUrl.endsWith('/') ? baseUrl.substring(0, baseUrl.length - 1) : baseUrl);
