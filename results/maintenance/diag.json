@@ -1,0 +1,11 @@
+{
+ "python": "3.12.16",
+ "database_modo": "turso",
+ "turso_url_impostato": true,
+ "turso_token_impostato": true,
+ "turso_host": "close-prices-percorostango-collab.aws-eu-central-1.turso.io",
+ "contatto_impostato": true,
+ "budget_verifica_s": 8.0,
+ "database": "errore",
+ "errore": "DatabaseError: Turso ha risposto HTTP 400 su close-prices-percorostango-collab.aws-eu-central-1.turso.io: {\"error\":\"JWT error: Base64 error: Invalid input length: 41\"}"
+}
