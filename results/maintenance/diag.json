@@ -15,8 +15,36 @@
   "contiene_spazi_o_virgolette": false,
   "solo_caratteri_validi": true
  },
+ "turso_token_dopo_pulizia": {
+  "lunghezza_totale": 348,
+  "lunghezze_delle_parti": [
+   36,
+   224,
+   86
+  ],
+  "inizia_con_eyJ": true,
+  "contiene_spazi_o_virgolette": false,
+  "solo_caratteri_validi": true
+ },
+ "caratteri_tolti_dalla_pulizia": 5,
  "contatto_impostato": true,
  "budget_verifica_s": 8.0,
- "database": "errore",
- "errore": "DatabaseError: Turso ha risposto HTTP 400 su close-prices-percorostango-collab.aws-eu-central-1.turso.io: {\"error\":\"JWT error: Base64 error: Invalid input length: 41\"}"
+ "database": "ok",
+ "tabelle": [
+  "attempts",
+  "corrections",
+  "evidence",
+  "index_queue",
+  "products",
+  "site_profiles",
+  "sqlite_sequence",
+  "stores"
+ ],
+ "conteggi": {
+  "stores": 0,
+  "site_profiles": 0,
+  "products": 1,
+  "evidence": 0,
+  "index_queue": 0
+ }
 }
