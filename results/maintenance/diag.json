@@ -4,6 +4,17 @@
  "turso_url_impostato": true,
  "turso_token_impostato": true,
  "turso_host": "close-prices-percorostango-collab.aws-eu-central-1.turso.io",
+ "turso_token_forma": {
+  "lunghezza_totale": 353,
+  "lunghezze_delle_parti": [
+   41,
+   224,
+   86
+  ],
+  "inizia_con_eyJ": false,
+  "contiene_spazi_o_virgolette": false,
+  "solo_caratteri_validi": true
+ },
  "contatto_impostato": true,
  "budget_verifica_s": 8.0,
  "database": "errore",
