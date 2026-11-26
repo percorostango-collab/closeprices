@@ -146,3 +146,21 @@ def test_database_outage_is_503_with_a_reason_not_a_blind_500(ft):
     r = c.get("/v1/coverage")
     assert r.status_code == 503 and "database non risponde" in r.json()["detail"]
     assert c.get("/v1/health").json() == {"ok": True}                    # la salute NON dipende dal database
+
+
+def test_token_shape_describes_without_revealing():
+    from server.diag import token_shape
+    good = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9." + "a" * 120 + "." + "b" * 86
+    g = token_shape(good)
+    assert g["inizia_con_eyJ"] and len(g["lunghezze_delle_parti"]) == 3 and g["solo_caratteri_validi"]
+    assert not g["contiene_spazi_o_virgolette"] and g["lunghezza_totale"] == len(good)
+    bad = token_shape('"eyJabc.def\n')
+    assert bad["contiene_spazi_o_virgolette"] and not bad["inizia_con_eyJ"] and len(bad["lunghezze_delle_parti"]) == 2
+    assert token_shape("") is None and token_shape(None) is None
+    assert good not in str(g) and "aaaa" not in str(g)
+
+
+def test_diag_includes_token_shape_but_never_the_token(ft):
+    s = Settings(turso_url=ft.url, turso_token=ft.token)
+    j = make_client(s).get("/v1/diag").json()
+    assert j["turso_token_forma"]["lunghezza_totale"] == len(ft.token) and ft.token not in str(j)

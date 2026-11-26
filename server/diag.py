@@ -1,15 +1,28 @@
 """Diagnosi del servizio in chiaro, senza mai mostrare segreti. Usata da /v1/diag e da `cli diag`."""
+import re
 import sys
 from urllib.parse import urlparse
 
 from .db import connect
 
 
+def token_shape(tok: str):
+    """Com'è fatto il token, senza rivelarlo: solo lunghezze e tipi di caratteri. Un token Turso valido è un JWT:
+    tre parti separate da punti, la prima inizia con 'eyJ', lungo in tutto parecchie centinaia di caratteri."""
+    if not tok:
+        return None
+    parts = tok.split(".")
+    return {"lunghezza_totale": len(tok), "lunghezze_delle_parti": [len(p) for p in parts],
+            "inizia_con_eyJ": tok.startswith("eyJ"),
+            "contiene_spazi_o_virgolette": bool(re.search(r"[\s\"'`]", tok)),
+            "solo_caratteri_validi": all(re.fullmatch(r"[A-Za-z0-9_-]*", p) for p in parts)}
+
+
 def diagnose(settings) -> dict:
     host = urlparse(settings.turso_url.replace("libsql://", "https://")).hostname if settings.turso_url else None
     info = {"python": sys.version.split()[0], "database_modo": "turso" if settings.use_turso else "sqlite-locale",
             "turso_url_impostato": bool(settings.turso_url), "turso_token_impostato": bool(settings.turso_token),
-            "turso_host": host, "contatto_impostato": settings.contact != "contatto-non-configurato",
+            "turso_host": host, "turso_token_forma": token_shape(settings.turso_token), "contatto_impostato": settings.contact != "contatto-non-configurato",
             "budget_verifica_s": settings.index_budget_s}
     try:
         conn = connect(settings.db_path, settings)
