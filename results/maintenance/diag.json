@@ -29,6 +29,22 @@
  "caratteri_tolti_dalla_pulizia": 5,
  "contatto_impostato": true,
  "budget_verifica_s": 8.0,
- "database": "errore",
- "errore": "DatabaseError: connessione a Turso non riuscita (ConnectTimeout): controlla PV_TURSO_URL"
+ "database": "ok",
+ "tabelle": [
+  "attempts",
+  "corrections",
+  "evidence",
+  "index_queue",
+  "products",
+  "site_profiles",
+  "sqlite_sequence",
+  "stores"
+ ],
+ "conteggi": {
+  "stores": 35575,
+  "site_profiles": 62,
+  "products": 1,
+  "evidence": 0,
+  "index_queue": 0
+ }
 }
