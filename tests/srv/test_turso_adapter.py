@@ -164,3 +164,34 @@ def test_diag_includes_token_shape_but_never_the_token(ft):
     s = Settings(turso_url=ft.url, turso_token=ft.token)
     j = make_client(s).get("/v1/diag").json()
     assert j["turso_token_forma"]["lunghezza_totale"] == len(ft.token) and ft.token not in str(j)
+
+
+JWT = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9." + "P" * 224 + "." + "S" * 86
+
+
+@pytest.mark.parametrize("pasted", [
+    JWT, "token" + JWT, "Bearer " + JWT, "Bearer" + JWT, f'"{JWT}"', f"'{JWT}'", JWT + "\n", "  " + JWT[:30] + "\n" + JWT[30:] + " ",
+    "PV_TURSO_TOKEN=" + JWT, "Authorization: Bearer " + JWT])
+def test_clean_token_recovers_a_badly_pasted_jwt(pasted):
+    from server.db import clean_token
+    # "PV_TURSO_TOKEN=" non contiene eyJ prima del JWT: tutto ciò che precede l'inizio viene scartato
+    assert clean_token(pasted) == JWT
+
+
+def test_clean_token_leaves_other_values_alone():
+    from server.db import clean_token
+    assert clean_token("token-segreto-di-prova") == "token-segreto-di-prova" and clean_token("") == "" and clean_token(None) == ""
+
+
+def test_service_works_with_a_token_that_has_junk_in_front():
+    f = FakeTurso(token=JWT)
+    try:
+        c = TursoConnection(f.url, "token" + JWT)                       # il difetto trovato nel token reale
+        assert c.execute("SELECT 41 AS n").fetchone()["n"] == 41
+        s = Settings(turso_url=f.url, turso_token="token" + JWT)
+        j = make_client(s).get("/v1/diag").json()
+        assert j["database"] == "ok" and j["caratteri_tolti_dalla_pulizia"] == 5
+        assert j["turso_token_forma"]["lunghezze_delle_parti"][0] == 41 and j["turso_token_dopo_pulizia"]["lunghezze_delle_parti"][0] == 36
+        assert JWT not in str(j)
+    finally:
+        f.close()

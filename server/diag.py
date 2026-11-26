@@ -3,7 +3,7 @@ import re
 import sys
 from urllib.parse import urlparse
 
-from .db import connect
+from .db import clean_token, connect
 
 
 def token_shape(tok: str):
@@ -22,7 +22,9 @@ def diagnose(settings) -> dict:
     host = urlparse(settings.turso_url.replace("libsql://", "https://")).hostname if settings.turso_url else None
     info = {"python": sys.version.split()[0], "database_modo": "turso" if settings.use_turso else "sqlite-locale",
             "turso_url_impostato": bool(settings.turso_url), "turso_token_impostato": bool(settings.turso_token),
-            "turso_host": host, "turso_token_forma": token_shape(settings.turso_token), "contatto_impostato": settings.contact != "contatto-non-configurato",
+            "turso_host": host, "turso_token_forma": token_shape(settings.turso_token),
+            "turso_token_dopo_pulizia": token_shape(clean_token(settings.turso_token)),
+            "caratteri_tolti_dalla_pulizia": len(settings.turso_token or "") - len(clean_token(settings.turso_token)), "contatto_impostato": settings.contact != "contatto-non-configurato",
             "budget_verifica_s": settings.index_budget_s}
     try:
         conn = connect(settings.db_path, settings)

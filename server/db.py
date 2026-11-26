@@ -47,6 +47,16 @@ def older_than(iso: str, days: float) -> bool:
     return datetime.now(timezone.utc) - t > timedelta(days=days)
 
 
+def clean_token(tok) -> str:
+    """Ripulisce un token incollato male: virgolette, spazi, a capo, "Bearer " e qualsiasi cosa stia PRIMA dell'inizio
+    del JWT. Un token Turso è un JWT e comincia sempre con 'eyJ'."""
+    t = re.sub(r"\s+", "", str(tok or ""))
+    t = re.sub(r"^(?:authorization:)?bearer", "", t.strip("\"'`"), flags=re.I)
+    t = t.strip("\"'`")
+    i = t.find("eyJ")
+    return t[i:] if i > 0 else t
+
+
 class DatabaseError(Exception):
     """Il database non risponde o ha rifiutato una richiesta. Il messaggio non contiene mai il token."""
 
@@ -152,7 +162,7 @@ class TursoConnection:
         if not base.startswith("http"):
             base = "https://" + base
         self._endpoint = f"{base}/{pipeline}/pipeline"
-        self._token, self._timeout = token.strip(), timeout
+        self._token, self._timeout = clean_token(token), timeout
         self._s = session or requests.Session()
         self.row_factory = None
 
