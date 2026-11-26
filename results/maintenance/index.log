@@ -1,15 +1,1 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/closeprices/closeprices/server/cli.py", line 76, in <module>
-    main()
-  File "/home/runner/work/closeprices/closeprices/server/cli.py", line 51, in main
-    conn = connect(s.db_path, s)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/closeprices/closeprices/server/db.py", line 225, in connect
-    c.executescript(SCHEMA)
-  File "/home/runner/work/closeprices/closeprices/server/db.py", line 203, in executescript
-    self._post(stmts)
-  File "/home/runner/work/closeprices/closeprices/server/db.py", line 170, in _post
-    raise DatabaseError(f"Turso ha risposto HTTP {r.status_code} su {self._endpoint.split('/', 3)[2]}: "
-server.db.DatabaseError: Turso ha risposto HTTP 400 su close-prices-percorostango-collab.aws-eu-central-1.turso.io: {"error":"JWT error: Base64 error: Invalid input length: 41"}
+prodotti verificati: 0
