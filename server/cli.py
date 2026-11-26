@@ -42,6 +42,8 @@ def main(argv=None):
     ap.add_argument("--host", default="0.0.0.0")
     ap.add_argument("--port", type=int, default=8000)
     ap.add_argument("--limit", type=int, default=20)
+    ap.add_argument("--bbox", help='load-stores: solo queste aree, "sud,ovest,nord,est" (piu\' aree separate da ";")')
+    ap.add_argument("--step", type=float, default=2.0, help="load-stores: lato delle tessere in gradi (piu piccolo = richieste piu leggere)")
     a = ap.parse_args(argv)
     s = Settings()
     if a.cmd == "diag":
@@ -54,8 +56,18 @@ def main(argv=None):
     if a.cmd == "init-db":
         print("database pronto:", s.db_path)
     elif a.cmd == "load-stores":
-        print(json.dumps(stores.load_from_file(conn, a.file) if a.file else
-                         stores.load_from_overpass(conn, s.user_agent), ensure_ascii=False, indent=1, default=str))
+        if a.file:
+            out = stores.load_from_file(conn, a.file)
+        elif a.bbox:
+            out = {"aree": []}
+            for part in a.bbox.split(";"):
+                box = tuple(float(x) for x in part.split(","))
+                if len(box) != 4:
+                    raise SystemExit(f"--bbox non valido: {part!r} (servono 4 numeri: sud,ovest,nord,est)")
+                out["aree"].append({"bbox": box, **stores.load_from_overpass(conn, s.user_agent, bbox=box, step=a.step)})
+        else:
+            out = stores.load_from_overpass(conn, s.user_agent, step=a.step)
+        print(json.dumps(out, ensure_ascii=False, indent=1, default=str))
     elif a.cmd == "discover-sites":
         print(catalogs.discover_all(conn, fetcher, robots))
     elif a.cmd == "index":

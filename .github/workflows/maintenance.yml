@@ -9,6 +9,15 @@ on:
     # Caricamento dei negozi da OpenStreetMap: il primo giorno del mese alle 4:00 UTC
     - cron: "0 4 1 * *"
   workflow_dispatch:
+    inputs:
+      bbox:
+        description: 'Solo negozi, solo queste aree: "sud,ovest,nord,est" (piu aree separate da ;). Vuoto = tutto.'
+        required: false
+        default: ""
+      step:
+        description: "Lato delle tessere in gradi (1 = piu leggere)"
+        required: false
+        default: "1"
 
 permissions:
   contents: write
@@ -54,7 +63,7 @@ jobs:
           git push
 
       - name: Verifica dei prodotti in coda
-        if: always() && (github.event.schedule == '0 * * * *' || github.event_name == 'workflow_dispatch')
+        if: always() && github.event.inputs.bbox == '' && (github.event.schedule == '0 * * * *' || github.event_name == 'workflow_dispatch')
         env:
           PV_INDEX_BUDGET_S: "60"
         run: |
@@ -63,7 +72,7 @@ jobs:
           python -m server.cli index --limit 20 2>&1 | tee results/maintenance/index.log
 
       - name: Riscoperta dei cataloghi
-        if: always() && (github.event.schedule == '0 3 * * *' || github.event_name == 'workflow_dispatch')
+        if: always() && github.event.inputs.bbox == '' && (github.event.schedule == '0 3 * * *' || github.event_name == 'workflow_dispatch')
         run: |
           set -o pipefail
           mkdir -p results/maintenance
@@ -71,10 +80,17 @@ jobs:
 
       - name: Caricamento dei negozi da OpenStreetMap
         if: always() && (github.event.schedule == '0 4 1 * *' || github.event_name == 'workflow_dispatch')
+        env:
+          BBOX: ${{ github.event.inputs.bbox }}
+          STEP: ${{ github.event.inputs.step }}
         run: |
           set -o pipefail
           mkdir -p results/maintenance
-          python -m server.cli load-stores 2>&1 | tee results/maintenance/stores.log
+          if [ -n "$BBOX" ]; then
+            python -m server.cli load-stores --bbox "$BBOX" --step "${STEP:-1}" 2>&1 | tee results/maintenance/stores-aree.log
+          else
+            python -m server.cli load-stores 2>&1 | tee results/maintenance/stores.log
+          fi
 
       - name: Stato finale e salvataggio dei log nel repository
         if: always()
