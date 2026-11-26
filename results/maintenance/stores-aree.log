@@ -1,0 +1,78 @@
+tessera (39.4, 6.5, 40.4, 7.5): ok (totale 0)
+tessera (39.4, 7.5, 40.4, 8.5): ok (totale 17)
+tessera (39.4, 8.5, 40.4, 9.5): ok (totale 256)
+tessera (39.4, 9.5, 40.4, 10.5): ok (totale 333)
+tessera (40.4, 6.5, 41.4, 7.5): ok (totale 333)
+tessera (40.4, 7.5, 41.4, 8.5): ok (totale 383)
+tessera (40.4, 8.5, 41.4, 9.5): ok (totale 600)
+tessera (40.4, 9.5, 41.4, 10.5): ok (totale 675)
+tessera (41.4, 14.5, 42.4, 15.5): ok (totale 131)
+tessera (41.4, 15.5, 42.4, 16.5): ok (totale 236)
+tessera (42.4, 14.5, 43.4, 15.5): FALLITA (overpass.private.coffee HTTP 504)
+tessera (42.4, 15.5, 43.4, 16.5): ok (totale 267)
+tessera (45.4, 6.5, 46.4, 7.5): ok (totale 589)
+tessera (45.4, 7.5, 46.4, 8.5): ok (totale 1050)
+tessera (46.4, 6.5, 47.2, 7.5): ok (totale 2479)
+tessera (46.4, 7.5, 47.2, 8.5): ok (totale 3301)
+tessera (45.4, 10.5, 46.4, 11.5): ok (totale 1063)
+tessera (45.4, 11.5, 46.4, 12.5): ok (totale 2125)
+tessera (46.4, 10.5, 47.2, 11.5): ok (totale 2541)
+tessera (46.4, 11.5, 47.2, 12.5): ok (totale 2799)
+{
+ "aree": [
+  {
+   "bbox": [
+    39.4,
+    6.5,
+    41.4,
+    10.5
+   ],
+   "negozi": 675,
+   "tessere_fallite": [],
+   "riconosciuti_dal_wikidata": 3
+  },
+  {
+   "bbox": [
+    41.4,
+    14.5,
+    43.4,
+    16.5
+   ],
+   "negozi": 267,
+   "tessere_fallite": [
+    [
+     [
+      42.4,
+      14.5,
+      43.4,
+      15.5
+     ],
+     "overpass.private.coffee HTTP 504"
+    ]
+   ],
+   "riconosciuti_dal_wikidata": 1
+  },
+  {
+   "bbox": [
+    45.4,
+    6.5,
+    47.2,
+    8.5
+   ],
+   "negozi": 3301,
+   "tessere_fallite": [],
+   "riconosciuti_dal_wikidata": 83
+  },
+  {
+   "bbox": [
+    45.4,
+    10.5,
+    47.2,
+    12.5
+   ],
+   "negozi": 2799,
+   "tessere_fallite": [],
+   "riconosciuti_dal_wikidata": 32
+  }
+ ]
+}
