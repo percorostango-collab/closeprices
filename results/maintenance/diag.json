@@ -41,10 +41,10 @@
   "stores"
  ],
  "conteggi": {
-  "stores": 0,
-  "site_profiles": 0,
+  "stores": 35575,
+  "site_profiles": 62,
   "products": 1,
   "evidence": 0,
-  "index_queue": 0
+  "index_queue": 1
  }
 }
