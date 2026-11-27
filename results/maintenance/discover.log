@@ -36,7 +36,7 @@ DOK: senza_ricerca
 Despar Centro Sud: senza_ricerca
 Coop Sardegna: senza_ricerca
 Famila Sicilia / Ciaospesa: senza_ricerca
-D’Ambros: senza_ricerca
+D’Ambros: bloccato
 Mercatò: senza_ricerca
 Il Gigante: senza_ricerca
 Emisfero: senza_ricerca
@@ -60,4 +60,4 @@ MD — sito diretto: senza_ricerca
 Rossetto: senza_ricerca
 Despar Aspiag — offerte: usabile
 Gelmarket — catalogo: senza_ricerca
-{'usabile': 9, 'senza_ricerca': 37, 'bloccato': 10, 'js_senza_ricerca': 6}
+{'usabile': 9, 'senza_ricerca': 36, 'bloccato': 11, 'js_senza_ricerca': 6}

@@ -3,9 +3,9 @@
   "catene_con_negozi_fisici": 51,
   "catene_consultabili": 9,
   "stato_siti": {
-   "bloccato": 9,
+   "bloccato": 10,
    "js_senza_ricerca": 6,
-   "senza_ricerca": 31,
+   "senza_ricerca": 30,
    "usabile": 9
   },
   "prodotti_con_conferma": 0,
