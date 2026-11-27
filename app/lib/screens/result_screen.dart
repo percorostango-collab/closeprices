@@ -37,8 +37,9 @@ class _ResultScreenState extends State<ResultScreen> {
       _locationNote = 'Permesso di posizione negato: i negozi vicini non sono disponibili.';
       return null;
     }
+    // geolocator 12.x: la precisione si passa con desiredAccuracy (locationSettings esiste solo dalla 13)
     return Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(accuracy: LocationAccuracy.medium));
+        desiredAccuracy: LocationAccuracy.medium, timeLimit: const Duration(seconds: 15));
   }
 
   Future<void> _load() async {
