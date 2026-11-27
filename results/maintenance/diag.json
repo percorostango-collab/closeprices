@@ -48,8 +48,8 @@
  "conteggi": {
   "stores": 42616,
   "site_profiles": 62,
-  "products": 4,
+  "products": 5,
   "evidence": 0,
-  "index_queue": 0
+  "index_queue": 1
  }
 }
