@@ -1,0 +1,45 @@
+name: Diagnosi prodotto
+
+on:
+  workflow_dispatch:
+    inputs:
+      casi:
+        description: 'Casi: "CODICE|indirizzo1,indirizzo2;CODICE2|indirizzo3"'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: diagnosi
+  cancel-in-progress: false
+
+jobs:
+  diagnosi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PV_TURSO_URL: ${{ secrets.PV_TURSO_URL }}
+      PV_TURSO_TOKEN: ${{ secrets.PV_TURSO_TOKEN }}
+      PV_CONTACT: ${{ secrets.PV_CONTACT }}
+      CASI: ${{ github.event.inputs.casi }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-server.txt
+      - name: Diagnosi sui siti reali
+        run: |
+          set -o pipefail
+          mkdir -p results/diagnosi
+          python tools/diagnose_product.py --casi "$CASI" 2>&1 | tee results/diagnosi/ultimo-log.txt
+      - name: Salva i risultati nel repository
+        if: always()
+        run: |
+          git config user.name "diagnosi-bot"
+          git config user.email "diagnosi-bot@users.noreply.github.com"
+          git add results/diagnosi
+          git diff --cached --quiet || git commit -m "Diagnosi prodotto $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase || true
+          git push
