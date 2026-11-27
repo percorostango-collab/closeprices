@@ -1,0 +1,129 @@
+{
+ "schema": 1,
+ "gtin": "8008490000021",
+ "radius_km": 10.0,
+ "position_used": true,
+ "product": {
+  "state": "riconosciuto",
+  "name": "Acqua Minerale Naturale",
+  "brand": "Uliveto",
+  "quantity": "1,5 L",
+  "image_url": "http://img.example/uliveto.jpg",
+  "source": "Open Food Facts",
+  "own_brand_chain": null,
+  "corrected_fields": [],
+  "name_hint": null,
+  "name_hint_source": null
+ },
+ "online_offers": [
+  {
+   "store": "Esselunga",
+   "title": "Acqua Uliveto 1,5 L",
+   "price": 0.99,
+   "currency": "EUR",
+   "url": "https://esselunga.example/p/uliveto",
+   "match": "nome",
+   "source": "Google Shopping"
+  }
+ ],
+ "online_offers_state": {
+  "state": "ok",
+  "searches_used_month": 2,
+  "monthly_limit": 200,
+  "error": null
+ },
+ "catalogs": [],
+ "catalog_name_matches": [
+  {
+   "chain": "Conad",
+   "level": 5,
+   "level_label": "Possibile corrispondenza: titolo simile, NON verificata col codice a barre",
+   "url": "http://127.0.0.1:36315/prodotto/acqua-1",
+   "title": "Acqua Uliveto 1,5 L",
+   "price": null,
+   "currency": null,
+   "verified_at": "2026-11-27T06:14:54Z"
+  }
+ ],
+ "stores_with_product_in_catalog": [],
+ "stores_without_information": [
+  {
+   "chain": null,
+   "name": "Da Mario",
+   "distance_m": 200,
+   "address": "Via Prova 6",
+   "lat": 41.9046,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Conad",
+   "name": "Conad City",
+   "distance_m": 300,
+   "address": "Via Prova 1",
+   "lat": 41.905499999999996,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Lidl",
+   "name": "Lidl",
+   "distance_m": 497,
+   "address": "Via Prova 4",
+   "lat": 41.9028,
+   "lon": 12.5024
+  },
+  {
+   "chain": "Eurospin",
+   "name": "Eurospin",
+   "distance_m": 1001,
+   "address": "Via Prova 5",
+   "lat": 41.8938,
+   "lon": 12.4964
+  },
+  {
+   "chain": "Esselunga",
+   "name": "Esselunga",
+   "distance_m": 2002,
+   "address": "Via Prova 7",
+   "lat": 41.8848,
+   "lon": 12.4964
+  }
+ ],
+ "indexing": {
+  "state": "completata",
+  "chains_consultable": 1,
+  "chains_tried": 1,
+  "chains_confirmed": 0
+ },
+ "limits": [
+  {
+   "code": "NO_CATALOG_CONFIRMATION",
+   "severity": "warning",
+   "text": "Nessun catalogo online ha confermato questo prodotto con il codice a barre. Non significa che non sia in vendita: significa che non abbiamo una prova."
+  },
+  {
+   "code": "COVERAGE",
+   "severity": "info",
+   "text": "Cataloghi consultabili in automatico: 1 su 51 catene. Le altre bloccano gli accessi automatici, mostrano i prodotti solo con JavaScript o non indicano il codice a barre: per quelle non possiamo dire nulla."
+  },
+  {
+   "code": "OFFERS_INFO",
+   "severity": "info",
+   "text": "I prezzi online sono riferimenti trovati su Google Shopping: spedizione, disponibilità e condizioni dipendono dal negozio online. 1 su 1 sono state trovate per somiglianza di nome: controlla che sia lo stesso prodotto."
+  },
+  {
+   "code": "NAME_MATCH_INFO",
+   "severity": "info",
+   "text": "Le corrispondenze per nome nei cataloghi non sono verificate col codice a barre: controlla che sia lo stesso prodotto."
+  },
+  {
+   "code": "STORE_AVAILABILITY",
+   "severity": "info",
+   "text": "Un catalogo che contiene il prodotto non garantisce che il negozio vicino lo abbia in magazzino: gli assortimenti cambiano da negozio a negozio."
+  },
+  {
+   "code": "PRICE_STORE",
+   "severity": "info",
+   "text": "Il prezzo sullo scaffale dei singoli negozi non è un dato pubblico: non lo mostriamo e non lo stimiamo. Il prezzo di un catalogo è quello del sito online e può essere diverso nel negozio fisico."
+  }
+ ]
+}

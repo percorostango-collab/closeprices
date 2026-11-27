@@ -87,7 +87,7 @@ def test_no_profiles_means_nothing_is_tried():
     import tempfile, os
     conn = connect(os.path.join(tempfile.mkdtemp(), "e.db"))
     out = catalogs.index_gtin(conn, G, {}, Fetcher(min_interval=0, ua="T"), Robots(Fetcher(min_interval=0, ua="T")))
-    assert out == {"consultabili": 0, "provate": 0, "confermate": 0, "incomplete": 0}
+    assert out == {"consultabili": 0, "provate": 0, "confermate": 0, "somiglianze": 0, "incomplete": 0}
 
 
 def test_needs_index_ttl():

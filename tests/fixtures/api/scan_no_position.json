@@ -11,20 +11,30 @@
   "image_url": "http://img.example/uliveto.jpg",
   "source": "Open Food Facts",
   "own_brand_chain": null,
-  "corrected_fields": []
+  "corrected_fields": [],
+  "name_hint": null,
+  "name_hint_source": null
+ },
+ "online_offers": [],
+ "online_offers_state": {
+  "state": "non_configurato",
+  "searches_used_month": 0,
+  "monthly_limit": 200,
+  "error": null
  },
  "catalogs": [
   {
    "chain": "Conad",
    "level": 1,
    "level_label": "Verificato: il codice a barre è nei dati della scheda del catalogo",
-   "url": "http://127.0.0.1:41999/prodotto/acqua-1",
+   "url": "http://127.0.0.1:46425/prodotto/acqua-1",
    "title": "Acqua Uliveto 1,5 L",
    "price": 0.89,
    "currency": "EUR",
-   "verified_at": "2026-11-24T12:29:07Z"
+   "verified_at": "2026-11-27T06:14:52Z"
   }
  ],
+ "catalog_name_matches": [],
  "stores_with_product_in_catalog": [],
  "stores_without_information": [],
  "indexing": {
@@ -43,6 +53,11 @@
    "code": "NO_POSITION",
    "severity": "warning",
    "text": "Posizione non indicata: non possiamo mostrare i negozi vicini."
+  },
+  {
+   "code": "OFFERS_NOT_CONFIGURED",
+   "severity": "warning",
+   "text": "I prezzi online di riferimento non sono attivi: manca la chiave del servizio di ricerca (PV_SERPAPI_KEY)."
   },
   {
    "code": "STORE_AVAILABILITY",

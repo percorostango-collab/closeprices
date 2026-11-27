@@ -35,6 +35,13 @@ CREATE TABLE IF NOT EXISTS corrections(
   id INTEGER PRIMARY KEY AUTOINCREMENT, gtin TEXT NOT NULL, field TEXT NOT NULL, value TEXT NOT NULL,
   user_id TEXT NOT NULL, created_at TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS index_queue(gtin TEXT PRIMARY KEY, requested_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS offers(
+  gtin TEXT NOT NULL, store TEXT NOT NULL, url TEXT NOT NULL, title TEXT, price REAL NOT NULL, currency TEXT,
+  match TEXT NOT NULL, source TEXT NOT NULL, fetched_at TEXT NOT NULL, PRIMARY KEY(gtin, store, url));
+CREATE TABLE IF NOT EXISTS offer_queries(
+  gtin TEXT NOT NULL, source TEXT NOT NULL, n_offers INTEGER NOT NULL, name_hint TEXT, fetched_at TEXT NOT NULL,
+  PRIMARY KEY(gtin, source));
+CREATE TABLE IF NOT EXISTS api_usage(source TEXT NOT NULL, month TEXT NOT NULL, count INTEGER NOT NULL, PRIMARY KEY(source, month));
 """
 
 

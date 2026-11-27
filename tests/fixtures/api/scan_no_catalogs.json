@@ -11,9 +11,19 @@
   "image_url": "http://img.example/uliveto.jpg",
   "source": "Open Food Facts",
   "own_brand_chain": null,
-  "corrected_fields": []
+  "corrected_fields": [],
+  "name_hint": null,
+  "name_hint_source": null
+ },
+ "online_offers": [],
+ "online_offers_state": {
+  "state": "non_configurato",
+  "searches_used_month": 0,
+  "monthly_limit": 200,
+  "error": null
  },
  "catalogs": [],
+ "catalog_name_matches": [],
  "stores_with_product_in_catalog": [],
  "stores_without_information": [
   {
@@ -73,6 +83,11 @@
    "code": "NO_CATALOGS_QUERYABLE",
    "severity": "warning",
    "text": "Al momento nessun catalogo è consultabile in automatico da questo servizio."
+  },
+  {
+   "code": "OFFERS_NOT_CONFIGURED",
+   "severity": "warning",
+   "text": "I prezzi online di riferimento non sono attivi: manca la chiave del servizio di ricerca (PV_SERPAPI_KEY)."
   },
   {
    "code": "STORE_AVAILABILITY",

@@ -51,3 +51,17 @@ Da lì in poi gira da solo: ogni ora la coda dei prodotti, ogni giorno la scoper
   sospese dopo molti giorni senza attività nel repository: se succede, riattivale dalla scheda Actions.
 - **Indirizzi dei server**: 19 dei 63 siti di catene respingono i server in cloud (GitHub e, probabilmente, Render).
   È un limite dei siti, non risolvibile da qui.
+
+## 6. Prezzi online di riferimento (Google Shopping via SerpApi)
+È la fonte che dava sempre un riferimento di prezzo nell'app originale, ora dentro il servizio con cache e quota controllata.
+
+1. Su **Render → Environment** aggiungi `PV_SERPAPI_KEY` con la chiave SerpApi che già usavi (serpapi.com → Manage API key). Poi *Save*: il servizio si riavvia.
+2. Controlla `/v1/diag`: `serpapi_key_impostata` deve essere `true`.
+
+**Quota.** Il piano gratuito di SerpApi indica 250 ricerche al mese e 50 all'ora (pagina prezzi, 26/11/2026: verifica sul tuo account). Il servizio:
+- cerca per codice a barre (1 ricerca) e, solo se non trova nulla, per nome (altra ricerca);
+- ricorda il risultato per 3 giorni (1 giorno se non ha trovato nulla): lo stesso prodotto non costa altre ricerche;
+- si ferma da solo a 200 ricerche al mese (`PV_SHOPPING_MONTHLY_LIMIT`) e lo dice nell'app ("quota esaurita"): mostra i prezzi già salvati.
+Con questi numeri bastano per circa 100-200 prodotti diversi al mese. Se superi la quota gratuita dovresti passare a un piano a pagamento: non è gratuito oltre.
+
+**Come si leggono i prezzi.** Ogni riga dice come è stata trovata: *"trovato cercando il codice a barre"* oppure *"somiglianza di nome: controlla che sia lo stesso prodotto"*. Non sono verificati sulla pagina del negozio.

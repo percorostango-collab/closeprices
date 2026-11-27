@@ -25,7 +25,8 @@ def diagnose(settings) -> dict:
             "turso_host": host, "turso_token_forma": token_shape(settings.turso_token),
             "turso_token_dopo_pulizia": token_shape(clean_token(settings.turso_token)),
             "caratteri_tolti_dalla_pulizia": len(settings.turso_token or "") - len(clean_token(settings.turso_token)), "contatto_impostato": settings.contact != "contatto-non-configurato",
-            "budget_verifica_s": settings.index_budget_s}
+            "budget_verifica_s": settings.index_budget_s,
+            "serpapi_key_impostata": bool(settings.serpapi_key), "limite_mensile_ricerche_prezzi": settings.shopping_monthly_limit}
     try:
         conn = connect(settings.db_path, settings)
         try:

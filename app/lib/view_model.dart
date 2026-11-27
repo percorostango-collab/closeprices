@@ -64,8 +64,65 @@ ResultVm buildResult(ScanResponse r) {
       break;
     default:
       headline = 'Prodotto non riconosciuto';
-      subline = r.gtin;
+      subline = p.nameHint == null
+          ? r.gtin
+          : '${r.gtin} · ${p.nameHintSource ?? 'suggerimento'}: «${p.nameHint}»';
   }
+
+  String offersEmpty;
+  switch (r.offersState.state) {
+    case 'non_configurato':
+      offersEmpty = 'Prezzi online non attivi: manca la chiave del servizio di ricerca.';
+      break;
+    case 'quota_esaurita':
+      offersEmpty = 'Quota gratuita mensile di ricerche esaurita: nessun prezzo salvato per questo prodotto.';
+      break;
+    case 'errore':
+      offersEmpty = 'Ricerca dei prezzi non riuscita${r.offersState.error == null ? '' : ': ${r.offersState.error}'}.';
+      break;
+    default:
+      offersEmpty = 'Nessun prezzo online trovato per questo prodotto.';
+  }
+  final offers = SectionVm(
+    'offers',
+    'Prezzi online (riferimento)',
+    [
+      for (final o in r.onlineOffers)
+        RowVm(
+          o.store,
+          subtitle: o.title,
+          trailing: formatPrice(o.price, o.currency),
+          badge: o.byName
+              ? 'somiglianza di nome: controlla che sia lo stesso prodotto'
+              : 'trovato cercando il codice a barre',
+          url: o.url,
+          tone: o.byName ? Tone.probable : Tone.info,
+        ),
+    ],
+    emptyText: offersEmpty,
+    note: r.onlineOffers.isEmpty
+        ? null
+        : 'Riferimenti da ${r.onlineOffers.first.source}: spedizione e disponibilità dipendono dal negozio online.',
+    tone: Tone.info,
+  );
+
+  final nameMatches = SectionVm(
+    'namematches',
+    'Possibili corrispondenze nei cataloghi (per nome)',
+    [
+      for (final c in r.catalogNameMatches)
+        RowVm(
+          c.chain,
+          subtitle: c.title,
+          trailing: c.price == null ? null : formatPrice(c.price!, c.currency),
+          badge: c.levelLabel,
+          url: c.url,
+          tone: Tone.probable,
+        ),
+    ],
+    note: 'Non verificate col codice a barre: controlla che sia lo stesso prodotto.',
+    tone: Tone.probable,
+  );
 
   final catalogs = SectionVm(
     'catalogs',
@@ -124,5 +181,5 @@ ResultVm buildResult(ScanResponse r) {
 
   final limits = [...r.limits.where((l) => l.isWarning), ...r.limits.where((l) => !l.isWarning)];
   return ResultVm(headline, subline, p.imageUrl, p.recognized, p.state == 'non_riconosciuto',
-      [catalogs, withProduct, others], limits);
+      [offers, catalogs, if (r.catalogNameMatches.isNotEmpty) nameMatches, withProduct, others], limits);
 }

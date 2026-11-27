@@ -9,13 +9,7 @@ from scenarios import LAT, LON, env, shape
 pytestmark = pytest.mark.usefixtures("db_mode")
 
 FIX = Path(__file__).resolve().parent.parent / "fixtures" / "api"
-CASES = {
-    "scan_full": (dict(), dict(code=G, lat=LAT, lon=LON)),
-    "scan_unknown": (dict(off_products={}), dict(code="8020141800002", lat=LAT, lon=LON)),
-    "scan_own_brand": (dict(off_products={}), dict(code="8017596003126", lat=LAT, lon=LON)),
-    "scan_no_position": (dict(), dict(code=G)),
-    "scan_no_catalogs": (dict(with_profile=False), dict(code=G, lat=LAT, lon=LON)),
-}
+from contract_cases import CASES  # noqa: E402
 
 
 @pytest.mark.parametrize("name", sorted(CASES))

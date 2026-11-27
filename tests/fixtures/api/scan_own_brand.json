@@ -11,9 +11,19 @@
   "image_url": null,
   "source": null,
   "own_brand_chain": "Eurospin",
-  "corrected_fields": []
+  "corrected_fields": [],
+  "name_hint": null,
+  "name_hint_source": null
+ },
+ "online_offers": [],
+ "online_offers_state": {
+  "state": "non_configurato",
+  "searches_used_month": 0,
+  "monthly_limit": 200,
+  "error": null
  },
  "catalogs": [],
+ "catalog_name_matches": [],
  "stores_with_product_in_catalog": [
   {
    "chain": "Eurospin",
@@ -87,6 +97,11 @@
    "code": "COVERAGE",
    "severity": "info",
    "text": "Cataloghi consultabili in automatico: 1 su 51 catene. Le altre bloccano gli accessi automatici, mostrano i prodotti solo con JavaScript o non indicano il codice a barre: per quelle non possiamo dire nulla."
+  },
+  {
+   "code": "OFFERS_NOT_CONFIGURED",
+   "severity": "warning",
+   "text": "I prezzi online di riferimento non sono attivi: manca la chiave del servizio di ricerca (PV_SERPAPI_KEY)."
   },
   {
    "code": "STORE_AVAILABILITY",

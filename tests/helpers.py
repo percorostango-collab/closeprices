@@ -46,11 +46,13 @@ def page_for(mode, gtin):
         return '<script type="application/ld+json">%s</script><h1>Acqua Sant Anna</h1>' % json.dumps(node)
     if mode == "carousel":
         return ("<h1>Acqua</h1><p>EAN 8020141800002</p><ul><li>%s</li><li>8001620014172</li><li>80134091</li></ul>" % gtin)
+    if mode == "nocode_variant":
+        return "<h1>Acqua Uliveto Zero 1,5 L</h1><p>Prezzo 0,99 €</p>"
     return "<h1>Acqua Uliveto 1,5 L</h1><p>Prezzo 0,89 €</p>"          # nocode
 
 
 def catalog_router(mode="json", gtin=G, hits=None, delay=0.0, robots="User-agent: *\nDisallow: /admin\n",
-                   home=FORM, search_status=200):
+                   home=FORM, search_status=200, by_name=False):
     hits = hits if hits is not None else []
 
     def router(path, q, base):
@@ -64,7 +66,8 @@ def catalog_router(mode="json", gtin=G, hits=None, delay=0.0, robots="User-agent
             if search_status != 200:
                 return search_status, "Just a moment... cf-chl", "text/html"
             term = (q.get("q") or [""])[0]
-            body = '<a href="/prodotto/acqua-1">Acqua</a>' if term == gtin else "<p>Nessun risultato</p>"
+            found = term == gtin or (by_name and term != gtin and "uliveto" in term.lower())
+            body = '<a href="/prodotto/acqua-1">Acqua Uliveto</a>' if found else "<p>Nessun risultato</p>"
             return 200, "<html><body>%s</body></html>" % body, "text/html"
         if path == "/prodotto/acqua-1":
             return 200, "<html><body>%s</body></html>" % page_for(mode, gtin), "text/html"
@@ -85,3 +88,25 @@ def off_router(products=None, status=200, hits=None):
             return 200, json.dumps({"status": 1, "product": products[code]}), "application/json"
         return 200, json.dumps({"status": 0, "status_verbose": "product not found"}), "application/json"
     return router, hits
+
+
+def shopping_router(results=None, hits=None, status=200, error=None):
+    """Finto SerpApi (Google Shopping). results: {'<query>': [risultati], '*': [risultati per qualunque query]}."""
+    hits = hits if hits is not None else []
+    results = results or {}
+
+    def router(path, q, base):
+        term = (q.get("q") or [""])[0]
+        hits.append({"path": path, "q": term, "key": (q.get("api_key") or [""])[0]})
+        if status != 200:
+            return status, json.dumps({"error": error or "errore"}), "application/json"
+        items = results.get(term, results.get("*", []))
+        if not items:
+            return 200, json.dumps({"error": "Google hasn't returned any results for this query."}), "application/json"
+        return 200, json.dumps({"shopping_results": items}), "application/json"
+    return router, hits
+
+
+def shop_item(store, price, title="Acqua Uliveto 1,5 L", url=None):
+    return {"title": title, "source": store, "price": f"€ {price:.2f}".replace(".", ","), "extracted_price": price,
+            "link": url or f"https://{store.lower().replace(' ', '')}.example/p/uliveto"}

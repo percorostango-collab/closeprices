@@ -9,6 +9,7 @@ contiene (provato dal codice a barre nella scheda), quali negozi vicini apparten
 prova, lo scrive: **"non trovato" è una risposta normale, e in molti casi sarà quella che vedrai.**
 
 ## Cosa NON fa
+0. **Prezzi online di riferimento (novità).** Come nell'app originale, l'app mostra i prezzi trovati su Google Shopping (serve una chiave SerpApi, quota gratuita limitata). Ogni riga dichiara se è stata trovata col codice a barre o solo per somiglianza di nome: **non sono verificati** sulla pagina del negozio e non dicono nulla sul negozio fisico vicino.
 1. **Non mostra il prezzo sullo scaffale di un negozio.** Non è un dato pubblico e non lo stimiamo. Il prezzo che a volte
    compare è quello del *catalogo online* della catena, e l'app lo dice ("prezzo del sito online").
 2. **Non sa se il negozio vicino ha il prodotto.** Sa solo che il catalogo della catena lo contiene.
@@ -44,3 +45,9 @@ Un nome simile **non** vale come prova.
 1. Aggiungere connettori mirati per le catene che espongono un'API o una ricerca per codice (servono misure per catena).
 2. Un browser automatico per i siti con JavaScript: fragile e al limite dei termini d'uso di molti siti.
 3. Dati a pagamento di un fornitore: l'unico modo di avere prezzi di negozio affidabili.
+
+
+## Aggiunte del 26/11/2026
+- **Somiglianze per nome nei cataloghi**: quando il codice non compare in nessuna scheda, si cerca per nome e si accetta una scheda solo se il titolo ha la stessa marca, lo stesso formato, la stessa confezione e nessuna variante in più (per esempio "plant-based", "zero", "light"). Compaiono in una sezione a parte, come *"possibile corrispondenza, NON verificata col codice a barre"*, e **non** sbloccano i negozi vicini.
+- **Più banche dati per riconoscere il prodotto**: se Open Food Facts non conosce il codice si prova Open Beauty Facts, Open Pet Food Facts e Open Products Facts.
+- **Suggerimento di nome**: per un prodotto non riconosciuto, il titolo indicato da Google Shopping viene mostrato come suggerimento *non verificato*; il prodotto resta "non riconosciuto".

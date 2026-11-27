@@ -5,7 +5,7 @@ import os
 import tempfile
 
 from fastapi.testclient import TestClient
-from helpers import G, catalog_router, off_router, serve2
+from helpers import G, catalog_router, off_router, serve2, shopping_router
 from probe.probe import Fetcher, Robots
 from server import catalogs, products, stores
 from server.app import create_app
@@ -13,6 +13,7 @@ from server.config import Settings
 from server.db import connect
 
 LAT, LON = 41.9028, 12.4964
+KEY = "SERPAPI-CHIAVE-SEGRETA-123"
 MODE = {}          # impostato dalla fixture db_mode: {} = SQLite, {'turso': FakeTurso} = Turso finto
 
 
@@ -31,14 +32,21 @@ OFF_PRODUCT = {G: {"product_name": "Acqua Minerale Naturale", "brands": "Uliveto
 
 
 @contextlib.contextmanager
-def env(mode="json", delay=0.0, with_profile=True, budget=5.0, stores_on=True, off_products=None, chain="Conad"):
+def env(mode="json", delay=0.0, with_profile=True, budget=5.0, stores_on=True, off_products=None, chain="Conad",
+        shopping=None, shopping_limit=200, shopping_status=200, shopping_error=None, by_name=False):
     tmp = tempfile.mkdtemp()
-    cat_router, cat_hits = catalog_router(mode, G, delay=delay)
+    cat_router, cat_hits = catalog_router(mode, G, delay=delay, by_name=by_name)
     off_r, off_hits = off_router(OFF_PRODUCT if off_products is None else off_products)
     cat_srv, cat_base = serve2(cat_router)
     off_srv, off_base = serve2(off_r)
+    sh_hits, sh_srv, sh_base = [], None, "http://127.0.0.1:1"
+    if shopping is not None:
+        sh_router, sh_hits = shopping_router(shopping, status=shopping_status, error=shopping_error)
+        sh_srv, sh_base = serve2(sh_router)
     s = Settings(db_path=os.path.join(tmp, "t.db"), off_base=off_base.rstrip("/"), request_interval_s=0,
                  index_budget_s=budget, contact="test@example.org",
+                 serpapi_key=KEY if shopping is not None else "", serpapi_base=sh_base.rstrip("/"),
+                 shopping_monthly_limit=shopping_limit,
                  turso_url=MODE["turso"].url if MODE.get("turso") else "",
                  turso_token=MODE["turso"].token if MODE.get("turso") else "")
     conn = connect(s.db_path, s)
@@ -52,10 +60,12 @@ def env(mode="json", delay=0.0, with_profile=True, budget=5.0, stores_on=True, o
     conn.close()
     client = TestClient(create_app(s, f))
     try:
-        yield client, {"catalog": cat_hits, "off": off_hits, "settings": s}
+        yield client, {"catalog": cat_hits, "off": off_hits, "settings": s, "shopping": sh_hits}
     finally:
         cat_srv.shutdown()
         off_srv.shutdown()
+        if sh_srv:
+            sh_srv.shutdown()
 
 
 def shape(x):

@@ -98,3 +98,45 @@ def same_size(want_text: str, title: str, tol: float = 0.01):
     if not want or not got:
         return None
     return any(abs(g - w) <= w * tol for g in got for w in want)
+
+
+# ---- confronto per nome, con filtri contro le varianti --------------------------------------------
+VARIANT_WORDS = [
+    r"plant[- ]?based", r"vegan[oa]?", r"senza glutine", r"gluten[- ]?free", r"senza lattosio", r"lactose[- ]?free",
+    r"light", r"zero", r"bio(?:logic[oa])?", r"integral[ei]", r"decaffeinat[oa]", r"mini", r"maxi", r"family",
+    r"diet", r"sugar[- ]?free", r"senza zuccher[oi]", r"proteic[oa]", r"protein", r"ricaric[ah]e?", r"refill",
+    r"campione", r"sample", r"usato", r"used", r"ricondizionat[oa]", r"kit", r"edizione limitata", r"limited edition",
+]
+
+
+def extra_variant_words(reference: str, title: str) -> list:
+    """Parole di variante che il TITOLO ha e il prodotto di riferimento no (es. 'plant based', 'light').
+    Se ce ne sono, probabilmente è un altro prodotto della stessa marca."""
+    ref, t = reference.lower(), title.lower()
+    out = []
+    for w in VARIANT_WORDS:
+        rx = re.compile(rf"(?<![a-zà-ú]){w}(?![a-zà-ú])")
+        if rx.search(t) and not rx.search(ref):
+            out.append(rx.search(t).group(0))
+    return out
+
+
+def name_match(brand: str, name: str, quantity: str, title: str):
+    """Il titolo di un annuncio/scheda è lo stesso prodotto? Ritorna (True, '') oppure (False, motivo).
+    Più severo dell'originale: stessa marca/parole distintive, stesso formato (se noto), stessa confezione,
+    nessuna variante in più. NON è una prova: resta una probabilità, e va mostrata come tale."""
+    ref = " ".join(x for x in (brand, name, quantity) if x)
+    if not identity_ok(name or brand or "", f"{brand} {title}" if brand and brand.lower() not in title.lower() else title):
+        return False, "nome diverso"
+    if brand and stem(brand.lower().split()[0]) not in title.lower():
+        return False, "marca assente nel titolo"
+    if same_size(quantity or name or "", title) is False:
+        return False, "formato diverso"
+    if pack_count(f"{name} {quantity}") != pack_count(title):
+        return False, "confezione diversa"
+    if variant_conflict(name or "", title):
+        return False, "variante in conflitto"
+    extra = extra_variant_words(ref, title)
+    if extra:
+        return False, f"variante in più: {extra[0]}"
+    return True, ""

@@ -14,9 +14,9 @@ def make_fetcher(settings) -> Fetcher:
     return Fetcher(min_interval=settings.request_interval_s, timeout=15, ua=settings.user_agent)
 
 
-def _fetch_off(gtin, settings, fetcher):
+def _fetch_one(label, base, gtin, fetcher):
     """-> ('found', dict) | ('missing', None) | ('error', motivo)"""
-    r = fetcher.get(f"{settings.off_base}/api/v2/product/{gtin}.json", params={"fields": FIELDS})
+    r = fetcher.get(f"{base}/api/v2/product/{gtin}.json", params={"fields": FIELDS})
     if r.status is None:
         return "error", r.error
     if r.status == 404:
@@ -32,7 +32,20 @@ def _fetch_off(gtin, settings, fetcher):
     if j.get("status") != 1 or not (name or p.get("brands")):
         return "missing", None
     return "found", {"name": name or None, "brand": (p.get("brands") or "").split(",")[0].strip() or None,
-                     "quantity": (p.get("quantity") or "").strip() or None, "image_url": p.get("image_front_small_url")}
+                     "quantity": (p.get("quantity") or "").strip() or None, "image_url": p.get("image_front_small_url"),
+                     "source": label}
+
+
+def _fetch_off(gtin, settings, fetcher):
+    """Prova le banche dati aperte in ordine; la prima che conosce il codice vince."""
+    errors = []
+    for label, base in settings.product_sources:
+        state, data = _fetch_one(label, base, gtin, fetcher)
+        if state == "found":
+            return "found", data
+        if state == "error":
+            errors.append(f"{label}: {data}")
+    return ("error", "; ".join(errors)) if errors else ("missing", None)
 
 
 def _cached(conn, gtin, settings):
@@ -57,7 +70,7 @@ def lookup(conn, gtin, settings, fetcher) -> dict:
         if state == "found":
             conn.execute("INSERT OR REPLACE INTO products VALUES(?,?,?,?,?,?,?,?)",
                          (gtin, 1, data["name"], data["brand"], data["quantity"], data["image_url"],
-                          "Open Food Facts", now_iso()))
+                          data["source"], now_iso()))
         elif state == "missing":
             conn.execute("INSERT OR REPLACE INTO products VALUES(?,?,?,?,?,?,?,?)",
                          (gtin, 0, None, None, None, None, None, now_iso()))
@@ -70,7 +83,7 @@ def lookup(conn, gtin, settings, fetcher) -> dict:
     fixed = effective_fields(base, corrections_for(conn, gtin), settings.correction_min_users)
     corrected = [k for k in base if fixed.get(k) != base.get(k)]
     found = bool(row and row["found"]) or bool(fixed.get("name") or fixed.get("brand"))
-    source = ("Open Food Facts" if row and row["found"] else None)
+    source = (row["source"] or "Open Food Facts") if row and row["found"] else None
     if corrected:
         source = (source + " + correzioni degli utenti") if source else "Correzioni degli utenti"
     return {"gtin": gtin, "state": ("riconosciuto" if found else ("errore_fonte" if source_error else "non_riconosciuto")),

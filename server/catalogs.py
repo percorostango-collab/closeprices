@@ -1,5 +1,8 @@
-"""Indice dei cataloghi. Regola unica: si registra SOLO ciò che il codice a barre nella scheda conferma.
-Mai un nome simile, mai un'ipotesi. Un catalogo non consultabile resta 'non consultabile'."""
+"""Indice dei cataloghi. Due categorie, mai mescolate:
+  - prove (livelli 1-2): il codice a barre compare nella scheda. Sono le uniche che sbloccano i negozi vicini.
+  - somiglianze (livello 5): nessun codice nella scheda, ma il titolo corrisponde per nome, formato, confezione e
+    varianti (pvcore.identity.name_match). Si mostrano sempre come "possibile corrispondenza, non verificata".
+Un catalogo non consultabile resta 'non consultabile'."""
 import json
 import threading
 from concurrent.futures import ThreadPoolExecutor, wait
@@ -11,7 +14,8 @@ from bs4 import BeautifulSoup
 from probe.probe import (Robots, brand_tokens, candidate_links, find_search, is_js_shell, is_product_url,
                          page_title)
 from pvcore.evidence import from_page_result
-from pvcore.page_check import find_prices, looks_blocked, check_page
+from pvcore.identity import name_match
+from pvcore.page_check import check_page, distinct_valid_gtins, find_prices, looks_blocked
 from pvcore.registry import load_registry, registrable
 
 from .db import now_iso, older_than
@@ -110,7 +114,7 @@ def product_links(soup, base_url, tokens, limit=2):
     return out[:limit]
 
 
-def check_chain(gtin, product, prof, fetcher, robots) -> dict:
+def _check_by_code(gtin, product, prof, fetcher, robots) -> dict:
     """Cerca il codice nel catalogo e verifica la scheda. Ritorna {'chain','outcome','evidence'}."""
     chain, hidden = prof["chain"], json.loads(prof["hidden"] or "{}")
     params = dict(hidden)
@@ -156,6 +160,50 @@ def check_chain(gtin, product, prof, fetcher, robots) -> dict:
     return res
 
 
+def _check_by_name(chain, product, prof, fetcher, robots):
+    """Seconda possibilità: cerca per nome e accetta una scheda solo se il titolo supera name_match.
+    Ritorna un dizionario di evidenza di livello 5, oppure None."""
+    brand, name, qty = product.get("brand") or "", product.get("name") or "", product.get("quantity") or ""
+    term = " ".join(x for x in (brand, name, qty) if x).strip()
+    if not term:
+        return None
+    params = json.loads(prof["hidden"] or "{}")
+    params[prof["search_param"]] = term
+    if not robots.allowed(requests.Request("GET", prof["search_url"], params=params).prepare().url):
+        return None
+    r = fetcher.get(prof["search_url"], params=params)
+    if r.status != 200 or looks_blocked(r.text, r.status):
+        return None
+    tokens = brand_tokens(brand, name) if brand else []
+    for link in product_links(BeautifulSoup(r.text, "html.parser"), r.url, tokens, limit=3):
+        if not robots.allowed(link):
+            continue
+        p = fetcher.get(link)
+        if p.status != 200 or looks_blocked(p.text, p.status) or distinct_valid_gtins(p.text) >= 3:
+            continue                                   # pagina non leggibile, o un elenco di prodotti
+        title = page_title(BeautifulSoup(p.text, "html.parser"))
+        ok, _ = name_match(brand, name, qty, title)
+        if ok:
+            price = find_prices(p.text)
+            return {"chain": chain, "level": 5, "url": link, "title": title[:160],
+                    "price": price[0][0] if price else None,
+                    "currency": ("EUR" if price and price[0][1] in ("?", "EUR") else (price[0][1] if price else None))}
+    return None
+
+
+def check_chain(gtin, product, prof, fetcher, robots) -> dict:
+    """Prima il codice (prova); se non conferma, il nome (somiglianza, dichiarata come tale)."""
+    res = _check_by_code(gtin, product, prof, fetcher, robots)
+    if res["outcome"] in ("nessun_risultato", "scheda_senza_codice") and (product.get("brand") or product.get("name")):
+        try:
+            ne = _check_by_name(prof["chain"], product, prof, fetcher, robots)
+        except Exception:
+            ne = None
+        if ne:
+            res["name_evidence"], res["outcome"] = ne, "somiglianza_nome"
+    return res
+
+
 def needs_index(conn, gtin, ttl_days) -> bool:
     last = conn.execute("SELECT MAX(tried_at) FROM attempts WHERE gtin=?", (gtin,)).fetchone()[0]
     return last is None or older_than(last, ttl_days)
@@ -168,7 +216,7 @@ def usable_profiles(conn) -> list:
 def index_gtin(conn, gtin, product, fetcher, robots, budget_s=8.0, workers=8) -> dict:
     """Prova il codice in tutti i cataloghi consultabili, entro il tempo disponibile."""
     profs = usable_profiles(conn)
-    out = {"consultabili": len({p["chain"] for p in profs}), "provate": 0, "confermate": 0, "incomplete": 0}
+    out = {"consultabili": len({p["chain"] for p in profs}), "provate": 0, "confermate": 0, "somiglianze": 0, "incomplete": 0}
     if not profs:
         return out
     ex = ThreadPoolExecutor(max_workers=workers)
@@ -179,7 +227,8 @@ def index_gtin(conn, gtin, product, fetcher, robots, budget_s=8.0, workers=8) ->
     for f in done:
         r = f.result()
         prev = by_chain.get(r["chain"])
-        if prev is None or r["outcome"] == "confermato":
+        rank = {"confermato": 2, "somiglianza_nome": 1}
+        if prev is None or rank.get(r["outcome"], 0) > rank.get(prev["outcome"], 0):
             by_chain[r["chain"]] = r
     for chain, r in by_chain.items():
         conn.execute("INSERT OR REPLACE INTO attempts VALUES(?,?,?,?)", (gtin, chain, r["outcome"], now_iso()))
@@ -187,8 +236,13 @@ def index_gtin(conn, gtin, product, fetcher, robots, budget_s=8.0, workers=8) ->
             e = r["evidence"]
             conn.execute("INSERT OR REPLACE INTO evidence VALUES(?,?,?,?,?,?,?,?)",
                          (gtin, e["chain"], e["level"], e["url"], e["title"], e["price"], e["currency"], now_iso()))
+        if r.get("name_evidence"):
+            e = r["name_evidence"]
+            conn.execute("INSERT OR REPLACE INTO evidence VALUES(?,?,?,?,?,?,?,?)",
+                         (gtin, e["chain"], e["level"], e["url"], e["title"], e["price"], e["currency"], now_iso()))
     conn.commit()
     out["provate"] = len(by_chain)
+    out["somiglianze"] = sum(1 for r in by_chain.values() if r["outcome"] == "somiglianza_nome")
     out["confermate"] = sum(1 for r in by_chain.values() if r["outcome"] == "confermato")
     out["incomplete"] = len(pending)
     return out

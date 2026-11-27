@@ -15,6 +15,8 @@ void check(bool ok, String what) {
   }
 }
 
+SectionVm sec(ResultVm vm, String id) => vm.sections.firstWhere((x) => x.id == id);
+
 ScanResponse load(String dir, String name) =>
     ScanResponse.fromJson(jsonDecode(File('$dir/$name.json').readAsStringSync()) as Map<String, dynamic>);
 
@@ -47,28 +49,53 @@ void main(List<String> args) {
   check(full.limits.any((l) => l.code == 'PRICE_STORE'), 'limite prezzo');
   final vm = buildResult(full);
   check(vm.headline == 'Uliveto — Acqua Minerale Naturale', 'titolo: ${vm.headline}');
-  check(vm.sections[0].rows.length == 1 && vm.sections[0].rows.first.trailing == '0,89 €', 'riga catalogo');
-  check(vm.sections[0].rows.first.badge == 'prezzo del sito online', 'il prezzo dice di essere online');
-  check(vm.sections[1].rows.length == 2 && vm.sections[2].collapsed, 'sezioni');
-  check(vm.sections[1].rows.first.subtitle == '300 m · Via Prova 1', 'riga negozio: ${vm.sections[1].rows.first.subtitle}');
+  check(sec(vm, 'catalogs').rows.length == 1 && sec(vm, 'catalogs').rows.first.trailing == '0,89 €', 'riga catalogo');
+  check(sec(vm, 'catalogs').rows.first.badge == 'prezzo del sito online', 'il prezzo dice di essere online');
+  check(sec(vm, 'stores').rows.length == 2 && sec(vm, 'others').collapsed, 'sezioni');
+  check(sec(vm, 'stores').rows.first.subtitle == '300 m · Via Prova 1', 'riga negozio: ${sec(vm, 'stores').rows.first.subtitle}');
   check(vm.limits.first.isWarning || vm.limits.every((l) => !l.isWarning), 'avvisi prima delle informazioni');
+
+  // --- prezzi online di riferimento (Google Shopping)
+  check(full.onlineOffers.length == 2 && full.onlineOffers.first.store == 'Conad' && full.onlineOffers.first.price == 0.89, 'prezzi online ordinati');
+  check(full.onlineOffers.every((o) => o.match == 'codice' && !o.byName && o.url.startsWith('http')), 'prezzi trovati col codice');
+  check(full.offersState.state == 'ok' && full.offersState.searchesUsedMonth == 1 && full.offersState.monthlyLimit == 200, 'stato prezzi online');
+  check(vm.sections.first.id == 'offers', 'i prezzi online sono la prima sezione');
+  check(sec(vm, 'offers').rows.first.trailing == '0,89 €' && sec(vm, 'offers').rows.first.title == 'Conad', 'riga prezzo online');
+  check(sec(vm, 'offers').rows.first.badge == 'trovato cercando il codice a barre', 'etichetta: trovato col codice');
+  check(full.limits.any((l) => l.code == 'OFFERS_INFO'), 'avviso sui prezzi online');
+  check(full.catalogNameMatches.isEmpty && !vm.sections.any((x) => x.id == 'namematches'), 'nessuna sezione somiglianze se vuota');
 
   // --- prodotto sconosciuto: deve dirlo chiaramente
   final unk = load(dir, 'scan_unknown');
   final u = buildResult(unk);
   check(!u.recognized && u.canSuggestName && u.headline == 'Prodotto non riconosciuto', 'non riconosciuto');
-  check(u.sections[0].rows.isEmpty && u.sections[0].emptyText!.contains('Nessun catalogo'), 'nessun catalogo: testo');
+  check(sec(u, 'catalogs').rows.isEmpty && sec(u, 'catalogs').emptyText!.contains('Nessun catalogo'), 'nessun catalogo: testo');
   check(u.limits.first.isWarning && u.limits.any((l) => l.code == 'PRODUCT_NOT_RECOGNIZED'), 'limite non riconosciuto');
+  check(unk.product.nameHint == 'Qualcosa di misterioso 500 g' && unk.product.name == null, 'suggerimento di nome, non nome');
+  check(u.subline!.contains('Qualcosa di misterioso') && u.subline!.contains('non verificato'), 'il suggerimento si dichiara non verificato: ${u.subline}');
 
   // --- marchio proprio: probabile, non certo
   final own = buildResult(load(dir, 'scan_own_brand'));
-  check(own.sections[1].rows.length == 1 && own.sections[1].rows.first.tone == Tone.probable, 'marchio proprio = probabile');
-  check(own.sections[1].rows.first.badge!.startsWith('Probabile'), 'etichetta probabile');
-  check(own.sections[0].rows.isEmpty, 'nessun catalogo per marchio proprio');
+  check(sec(own, 'stores').rows.length == 1 && sec(own, 'stores').rows.first.tone == Tone.probable, 'marchio proprio = probabile');
+  check(sec(own, 'stores').rows.first.badge!.startsWith('Probabile'), 'etichetta probabile');
+  check(sec(own, 'catalogs').rows.isEmpty, 'nessun catalogo per marchio proprio');
+
+  // --- somiglianza di nome: separata e dichiarata
+  final nmr = load(dir, 'scan_name_match');
+  final nm = buildResult(nmr);
+  check(nmr.catalogs.isEmpty && nmr.storesWithProduct.isEmpty, 'la somiglianza non è una prova e non sblocca i negozi');
+  check(nmr.catalogNameMatches.length == 1 && nmr.catalogNameMatches.first.level == 5, 'somiglianza di livello 5');
+  check(nm.sections.any((x) => x.id == 'namematches'), 'sezione somiglianze presente');
+  final nrow = sec(nm, 'namematches').rows.first;
+  check(nrow.tone == Tone.probable && nrow.badge!.contains('NON verificata') && nrow.title == 'Conad', 'riga somiglianza dichiarata');
+  check(nmr.onlineOffers.first.byName && sec(nm, 'offers').rows.first.badge!.startsWith('somiglianza di nome'), 'prezzo per nome dichiarato');
+  check(nmr.limits.any((l) => l.code == 'NAME_MATCH_INFO'), 'avviso sulle somiglianze');
 
   // --- senza posizione e senza cataloghi
   final np = buildResult(load(dir, 'scan_no_position'));
-  check(np.sections[1].rows.isEmpty && np.sections[1].emptyText!.contains('Posizione non indicata'), 'senza posizione');
+  check(sec(np, 'stores').rows.isEmpty && sec(np, 'stores').emptyText!.contains('Posizione non indicata'), 'senza posizione');
+  // --- prezzi online non attivi: lo dice
+  check(np.sections.first.id == 'offers' && sec(np, 'offers').rows.isEmpty && sec(np, 'offers').emptyText!.contains('non attivi'), 'prezzi online non attivi: dichiarato');
   final nc = load(dir, 'scan_no_catalogs');
   check(nc.indexing.state == 'non_disponibile' && nc.limits.any((l) => l.code == 'NO_CATALOGS_QUERYABLE'), 'nessun catalogo consultabile');
 

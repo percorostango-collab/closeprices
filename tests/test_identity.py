@@ -67,3 +67,43 @@ def test_identity_distinctive_words():
                    "non sono riconosciute, quindi il controllo del formato viene saltato.")
 def test_spelled_out_units(text, expected):
     assert sizes(text) == expected
+
+
+# ---- name_match: la corrispondenza per nome, con i casi che in passato davano falsi risultati ----
+from pvcore.identity import extra_variant_words, name_match  # noqa: E402
+
+UL = ("Uliveto", "Acqua minerale naturale", "1,5 l")
+
+
+@pytest.mark.parametrize("title,ok", [
+    ("Acqua Uliveto 1,5 L", True),
+    ("Uliveto Acqua Minerale Naturale 1.5 L", True),
+    ("ULIVETO acqua effervescente naturale 1500 ml", True),
+    ("Acqua Uliveto 0,5 L", False),                    # formato diverso
+    ("Acqua Uliveto 1,5 L x 6", False),                # confezione diversa
+    ("Acqua Sant'Anna 1,5 L", False),                  # altra marca
+    ("Acqua Uliveto Zero 1,5 L", False),               # variante in più
+    ("Acqua Uliveto frizzante 1,5 L", False),          # variante in conflitto (naturale vs frizzante)
+])
+def test_name_match_water(title, ok):
+    assert name_match(*UL, title)[0] is ok
+
+
+def test_plant_based_nutella_is_not_nutella():
+    assert name_match("Nutella", "Nutella", "350 g", "Nutella 350 g")[0]
+    ok, why = name_match("Nutella", "Nutella", "350 g", "Nutella Plant-Based 350 g")
+    assert not ok and "plant" in why
+    assert not name_match("Nutella", "Nutella", "350 g", "Nutella Biscuits 193 g")[0]          # altro formato
+
+
+def test_variant_words_only_count_when_the_reference_lacks_them():
+    assert extra_variant_words("Coca-Cola Zero 330 ml", "Coca Cola Zero lattina 330 ml") == []
+    assert extra_variant_words("Coca-Cola 330 ml", "Coca Cola Zero 330 ml") == ["zero"]
+    assert extra_variant_words("Yogurt greco", "Yogurt greco bio") == ["bio"]
+    assert extra_variant_words("Mini Babybel", "Babybel mini") == []
+    assert extra_variant_words("Pasta Barilla", "Pasta Barilla biologica")[0].startswith("bio")
+
+
+def test_name_match_with_unknown_quantity_still_checks_the_rest():
+    assert name_match("Barilla", "Spaghetti n.5", "", "Barilla Spaghetti n.5 500 g")[0]
+    assert not name_match("Barilla", "Spaghetti n.5", "", "Barilla Penne Rigate 500 g")[0]

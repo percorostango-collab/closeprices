@@ -8,7 +8,7 @@ List<T> _list<T>(dynamic v, T Function(Map<String, dynamic>) f) =>
 
 class ProductInfo {
   final String state; // riconosciuto | non_riconosciuto | errore_fonte
-  final String? name, brand, quantity, imageUrl, source, ownBrandChain;
+  final String? name, brand, quantity, imageUrl, source, ownBrandChain, nameHint, nameHintSource;
   final List<String> correctedFields;
   const ProductInfo({
     required this.state,
@@ -18,6 +18,8 @@ class ProductInfo {
     this.imageUrl,
     this.source,
     this.ownBrandChain,
+    this.nameHint,
+    this.nameHintSource,
     this.correctedFields = const [],
   });
   bool get recognized => state == 'riconosciuto';
@@ -29,6 +31,8 @@ class ProductInfo {
         imageUrl: _str(j['image_url']),
         source: _str(j['source']),
         ownBrandChain: _str(j['own_brand_chain']),
+        nameHint: _str(j['name_hint']),
+        nameHintSource: _str(j['name_hint_source']),
         correctedFields: [for (final e in (j['corrected_fields'] as List? ?? [])) e.toString()],
       );
 }
@@ -57,6 +61,46 @@ class CatalogItem {
         price: _dbl(j['price']),
         currency: _str(j['currency']),
         verifiedAt: _str(j['verified_at']),
+      );
+}
+
+/// Un prezzo online di riferimento (Google Shopping). match: "codice" = trovato cercando il codice a barre;
+/// "nome" = trovato per somiglianza di nome, NON verificato.
+class OfferItem {
+  final String store, title, url, match, source;
+  final double price;
+  final String? currency;
+  const OfferItem({
+    required this.store,
+    required this.title,
+    required this.price,
+    required this.url,
+    required this.match,
+    required this.source,
+    this.currency,
+  });
+  bool get byName => match == 'nome';
+  factory OfferItem.fromJson(Map<String, dynamic> j) => OfferItem(
+        store: _str(j['store']) ?? '',
+        title: _str(j['title']) ?? '',
+        price: _dbl(j['price']) ?? 0,
+        url: _str(j['url']) ?? '',
+        match: _str(j['match']) ?? 'nome',
+        source: _str(j['source']) ?? '',
+        currency: _str(j['currency']),
+      );
+}
+
+class OffersState {
+  final String state; // ok | nessun_risultato | non_configurato | quota_esaurita | errore
+  final int searchesUsedMonth, monthlyLimit;
+  final String? error;
+  const OffersState({required this.state, required this.searchesUsedMonth, required this.monthlyLimit, this.error});
+  factory OffersState.fromJson(Map<String, dynamic> j) => OffersState(
+        state: _str(j['state']) ?? 'non_configurato',
+        searchesUsedMonth: _int(j['searches_used_month']),
+        monthlyLimit: _int(j['monthly_limit']),
+        error: _str(j['error']),
       );
 }
 
@@ -133,7 +177,9 @@ class ScanResponse {
   final double radiusKm;
   final bool positionUsed;
   final ProductInfo product;
-  final List<CatalogItem> catalogs;
+  final List<CatalogItem> catalogs, catalogNameMatches;
+  final List<OfferItem> onlineOffers;
+  final OffersState offersState;
   final List<StoreItem> storesWithProduct, storesWithoutInfo;
   final IndexingInfo indexing;
   final List<LimitItem> limits;
@@ -143,6 +189,9 @@ class ScanResponse {
     required this.positionUsed,
     required this.product,
     required this.catalogs,
+    required this.catalogNameMatches,
+    required this.onlineOffers,
+    required this.offersState,
     required this.storesWithProduct,
     required this.storesWithoutInfo,
     required this.indexing,
@@ -158,6 +207,9 @@ class ScanResponse {
       positionUsed: j['position_used'] == true,
       product: ProductInfo.fromJson((j['product'] as Map<String, dynamic>?) ?? const {}),
       catalogs: _list(j['catalogs'], CatalogItem.fromJson),
+      catalogNameMatches: _list(j['catalog_name_matches'], CatalogItem.fromJson),
+      onlineOffers: _list(j['online_offers'], OfferItem.fromJson),
+      offersState: OffersState.fromJson((j['online_offers_state'] as Map<String, dynamic>?) ?? const {}),
       storesWithProduct: _list(j['stores_with_product_in_catalog'], StoreItem.fromJson),
       storesWithoutInfo: _list(j['stores_without_information'], StoreItem.fromJson),
       indexing: IndexingInfo.fromJson((j['indexing'] as Map<String, dynamic>?) ?? const {}),

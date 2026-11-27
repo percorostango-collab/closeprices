@@ -11,9 +11,29 @@
   "image_url": null,
   "source": null,
   "own_brand_chain": null,
-  "corrected_fields": []
+  "corrected_fields": [],
+  "name_hint": "Qualcosa di misterioso 500 g",
+  "name_hint_source": "Google Shopping (non verificato)"
+ },
+ "online_offers": [
+  {
+   "store": "Conad",
+   "title": "Qualcosa di misterioso 500 g",
+   "price": 0.89,
+   "currency": "EUR",
+   "url": "https://conad.example/p/uliveto",
+   "match": "codice",
+   "source": "Google Shopping"
+  }
+ ],
+ "online_offers_state": {
+  "state": "ok",
+  "searches_used_month": 1,
+  "monthly_limit": 200,
+  "error": null
  },
  "catalogs": [],
+ "catalog_name_matches": [],
  "stores_with_product_in_catalog": [],
  "stores_without_information": [
   {
@@ -78,6 +98,11 @@
    "code": "COVERAGE",
    "severity": "info",
    "text": "Cataloghi consultabili in automatico: 1 su 51 catene. Le altre bloccano gli accessi automatici, mostrano i prodotti solo con JavaScript o non indicano il codice a barre: per quelle non possiamo dire nulla."
+  },
+  {
+   "code": "OFFERS_INFO",
+   "severity": "info",
+   "text": "I prezzi online sono riferimenti trovati su Google Shopping: spedizione, disponibilità e condizioni dipendono dal negozio online."
   },
   {
    "code": "STORE_AVAILABILITY",
