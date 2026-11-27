@@ -1,0 +1,477 @@
+{
+ "codice_dato": "8001250120267",
+ "gtin": "8001250120267",
+ "prodotto": {
+  "state": "riconosciuto",
+  "name": "Mezzi Rigatoni",
+  "brand": "De Cecco",
+  "quantity": "500g",
+  "source": "Open Food Facts"
+ },
+ "A_indirizzi_forniti": [
+  {
+   "url": "https://coopacasa.coopetruria.coop.it/pasta-e-riso/pasta-di-semola/classica/6563.html",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 672310,
+   "titolo": "Mezzi rigatoni di semola de cecco n26 sacc. g 500",
+   "js_shell": false,
+   "verdetto": "absent",
+   "codice_ovunque_nel_html": false,
+   "gtin_dichiarati": {},
+   "prezzi_strutturati": [
+    [
+     1.59,
+     "EUR"
+    ]
+   ],
+   "prezzi_nel_testo": [
+    "0,00",
+    "1,59",
+    "3,18"
+   ],
+   "esito": "senza_codice"
+  },
+  {
+   "url": "https://www.spesasicura.com/product/de-cecco-026-mezzi-rigatoni-gr500-id-3577",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 101040,
+   "titolo": "mezzi rigatoni n. 26 de cecco lenta essiccazione - 500 gr",
+   "js_shell": false,
+   "verdetto": "confirmed_structured",
+   "codice_ovunque_nel_html": true,
+   "gtin_dichiarati": {
+    "8001250120267": "structured"
+   },
+   "prezzi_strutturati": [
+    [
+     1.15,
+     "EUR"
+    ],
+    [
+     1.15,
+     "?"
+    ]
+   ],
+   "prezzi_nel_testo": [
+    "0,00",
+    "1,15"
+   ],
+   "esito": "codice_confermato:confirmed_structured"
+  },
+  {
+   "url": "https://www.carrefour.it/p/de-cecco-mezzi-rigatoni-n%C2%B026-500-g/8001250120267.html",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 187543,
+   "titolo": "De Cecco Mezzi Rigatoni n°26 500 g",
+   "js_shell": false,
+   "verdetto": "confirmed_embedded_json",
+   "codice_ovunque_nel_html": true,
+   "gtin_dichiarati": {},
+   "prezzi_strutturati": [
+    [
+     1.59,
+     "EUR"
+    ]
+   ],
+   "prezzi_nel_testo": [
+    "3,18",
+    "1,59",
+    "3,18",
+    "1,59"
+   ],
+   "esito": "codice_confermato:confirmed_embedded_json"
+  },
+  {
+   "url": "https://dambros.it/online/prodotto/0000186118",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 754440,
+   "titolo": "Mezzi rigatoni integrali n° 26 500g De Cecco",
+   "js_shell": false,
+   "verdetto": "absent",
+   "codice_ovunque_nel_html": false,
+   "gtin_dichiarati": {},
+   "prezzi_strutturati": [
+    [
+     1.69,
+     "EUR"
+    ],
+    [
+     1.88,
+     "EUR"
+    ]
+   ],
+   "prezzi_nel_testo": [
+    "3,38",
+    "1,69",
+    "1,88",
+    "11,74",
+    "5,87"
+   ],
+   "esito": "senza_codice"
+  },
+  {
+   "url": "https://craigo.it/prodotto/de-cecco-de-cecco-mezzi-rigatoni-n-26-500-g-1435040",
+   "robots_consente": false,
+   "status": 403,
+   "errore": null,
+   "finale": null,
+   "esito": "non_leggibile"
+  },
+  {
+   "url": "https://www.easycoop.com/de-cecco-de-cecco-mezzi-rigatoni-n-26-500-g-3352450.html",
+   "robots_consente": true,
+   "status": 403,
+   "errore": null,
+   "finale": null,
+   "esito": "non_leggibile"
+  },
+  {
+   "url": "https://www.abcfoodservice.it/it/pasta/de-cecco-mezzi-rigatoni-n26-gr-500-x-10",
+   "robots_consente": false,
+   "status": 403,
+   "errore": null,
+   "finale": null,
+   "esito": "non_leggibile"
+  },
+  {
+   "url": "https://www.rossofinefood.com/it/pasta-di-semola/2468-de-cecco-mezzi-rigatoni-n-26-500-g-8001250120267.html",
+   "robots_consente": false,
+   "status": 403,
+   "errore": null,
+   "finale": null,
+   "esito": "non_leggibile"
+  },
+  {
+   "url": "https://zainofood.it/products/pasta-de-cecco-mezzi-rigatoni-3kg-n-26-060001741",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 215378,
+   "titolo": "Pasta De Cecco mezzi rigatoni 3kg n. 26",
+   "js_shell": false,
+   "verdetto": "absent",
+   "codice_ovunque_nel_html": false,
+   "gtin_dichiarati": {},
+   "prezzi_strutturati": [
+    [
+     3.01,
+     "?"
+    ]
+   ],
+   "prezzi_nel_testo": [],
+   "esito": "senza_codice"
+  },
+  {
+   "url": "https://www.imaspa.com/prodotti/pasta/mezzi-rigatoni-de-cecco-4-x-3-kg/",
+   "robots_consente": true,
+   "status": 200,
+   "errore": null,
+   "finale": null,
+   "bloccata": false,
+   "byte": 45421,
+   "titolo": "MEZZI RIGATONI N.26 DE CECCO KG.3x4",
+   "js_shell": false,
+   "verdetto": "absent",
+   "codice_ovunque_nel_html": false,
+   "gtin_dichiarati": {
+    "8001250180261": "text",
+    "8001250700261": "text"
+   },
+   "prezzi_strutturati": [
+    [
+     27.6,
+     "?"
+    ]
+   ],
+   "prezzi_nel_testo": [],
+   "esito": "senza_codice"
+  }
+ ],
+ "B_catene_consultabili": [
+  {
+   "catena": "Conad",
+   "sito": "https://www.conad.it/",
+   "ricerca": "https://www.conad.it/",
+   "parametro": "q",
+   "url_ricerca": "https://www.conad.it/?q=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 328823,
+   "js_shell": false,
+   "codice_nei_risultati": false,
+   "candidati": [
+    {
+     "url": "https://www.conad.it/prodotti-e-marchi/i-nostri-valori",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "I Nostri Valori: Tradizione, Autenticità e Qualità | Conad",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.conad.it/prodotti-e-marchi",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Tutti i prodotti a marchio | Conad",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.conad.it/prodotti-e-marchi/bassi-e-fissi",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Bassi e Fissi Conad, scopri i prodotti e le offerte del volantino | Conad",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.conad.it/prodotti-e-marchi/i-nostri-valori/il-buono-del-paese",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Il Buono del Paese: Prodotti Locali e Tradizioni Italiane | Conad",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.conad.it/prodotti-e-marchi/i-nostri-valori/scelte-di-benessere",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Scelte di Benessere Conad: Alimentazione sana e Cura del corpo | Conad",
+     "prezzi": []
+    }
+   ],
+   "esito": "candidati_senza_codice"
+  },
+  {
+   "catena": "Carrefour",
+   "sito": "https://www.carrefour.it/",
+   "ricerca": "https://www.carrefour.it/search",
+   "parametro": "q",
+   "url_ricerca": "https://www.carrefour.it/search?q=8001250120267",
+   "robots_consente": false,
+   "esito": "robots_vieta"
+  },
+  {
+   "catena": "Todis",
+   "sito": "https://www.todisacasa.it/",
+   "ricerca": "https://todisacasa.it/ricerca",
+   "parametro": "search",
+   "url_ricerca": "https://todisacasa.it/ricerca?search=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 160378,
+   "js_shell": false,
+   "codice_nei_risultati": true,
+   "candidati": [
+    {
+     "url": "https://todisacasa.it/prodotti-viso_75",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Prodotti viso | Todis a Casa | Consegna a casa",
+     "prezzi": []
+    },
+    {
+     "url": "https://todisacasa.it/prodotti-per-dentiere_158",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Prodotti per dentiere | Todis a Casa | Consegna a casa",
+     "prezzi": []
+    }
+   ],
+   "esito": "candidati_senza_codice"
+  },
+  {
+   "catena": "Migross",
+   "sito": "https://www.emigross.it/",
+   "ricerca": "https://emigross.it/",
+   "parametro": "s",
+   "url_ricerca": "https://emigross.it/?post_type=product&dgwt_wcas=1&s=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 298631,
+   "js_shell": false,
+   "codice_nei_risultati": true,
+   "candidati": [],
+   "esito": "nessun_candidato"
+  },
+  {
+   "catena": "Prezzemolo & Vitale",
+   "sito": "https://www.prezzemoloevitale.it/",
+   "ricerca": "https://www.prezzemoloevitale.it/it/catalogsearch/result/",
+   "parametro": "q",
+   "url_ricerca": "https://www.prezzemoloevitale.it/it/catalogsearch/result/?q=8001250120267",
+   "robots_consente": true,
+   "status": 403,
+   "bloccata": true,
+   "esito": "ricerca_non_riuscita"
+  },
+  {
+   "catena": "Oasi",
+   "sito": "https://www.oasitigre.it/",
+   "ricerca": "https://www.oasitigre.it/",
+   "parametro": "address",
+   "url_ricerca": "https://www.oasitigre.it/?addressId=&address=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 133421,
+   "js_shell": false,
+   "codice_nei_risultati": false,
+   "candidati": [
+    {
+     "url": "https://www.oasitigre.it/it/prodotti-a-marchio/fatti-buoni.html",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Fatti Buoni",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.oasitigre.it/it/prodotti-a-marchio/consilia.html",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Consilia",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.oasitigre.it/it/prodotti-a-marchio/selezione-qualita.html",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Selezione Qualità",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.oasitigre.it/content/ot/it/it/prodotti-a-marchio/fatti-buoni/natale.html",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Natale Fatti Buoni",
+     "prezzi": []
+    },
+    {
+     "url": "https://www.oasitigre.it/prodotti/pastarisocibietniciepronti/pastaeriso/consiliasapersceglierepastaalluovofantasiequadruccin49250g-73957.html",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Consilia Saper Scegliere Pasta all'Uovo Fantasie Quadrucci N.49 250 g",
+     "prezzi": []
+    }
+   ],
+   "esito": "candidati_senza_codice"
+  },
+  {
+   "catena": "Dem",
+   "sito": "https://www.supermercatidem.com/",
+   "ricerca": "https://www.supermercatidem.com/",
+   "parametro": "s",
+   "url_ricerca": "https://www.supermercatidem.com/?s=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 410826,
+   "js_shell": false,
+   "codice_nei_risultati": true,
+   "candidati": [],
+   "esito": "nessun_candidato"
+  },
+  {
+   "catena": "Sì con Te",
+   "sito": "https://www.siconte.it/",
+   "ricerca": "https://www.siconte.it/",
+   "parametro": "s",
+   "url_ricerca": "https://www.siconte.it/?ct_post_type=post%3Apage&s=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 106186,
+   "js_shell": false,
+   "codice_nei_risultati": true,
+   "candidati": [],
+   "esito": "nessun_candidato"
+  },
+  {
+   "catena": "Despar",
+   "sito": "https://www.despar.it/",
+   "ricerca": "https://www.despar.it/it/punti-vendita/",
+   "parametro": "searchTerm",
+   "url_ricerca": "https://www.despar.it/it/punti-vendita/?__ncforminfo=f130K5pt3D__H4IUJAsek3H4d0BzFPpBN-NO5q-66XF3DOL6CUpE6Vbs99urfGv1VYN4Et9Oar99rv_qUOrD0vFMsED51XrVvcLSyL9mQFQ%3D&searchTerm=8001250120267",
+   "robots_consente": true,
+   "status": 200,
+   "bloccata": false,
+   "byte": 232491,
+   "js_shell": false,
+   "codice_nei_risultati": true,
+   "candidati": [
+    {
+     "url": "https://www.despar.it/it/prodotti-a-marchio-despar/",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "I prodotti a marchio Despar",
+     "prezzi": []
+    }
+   ],
+   "esito": "candidati_senza_codice"
+  }
+ ],
+ "B_riepilogo_tentativi_nel_database": [
+  {
+   "chain": "Carrefour",
+   "outcome": "robots",
+   "tried_at": "2026-11-26T14:07:44Z"
+  },
+  {
+   "chain": "Conad",
+   "outcome": "scheda_senza_codice",
+   "tried_at": "2026-11-26T14:07:44Z"
+  },
+  {
+   "chain": "Dem",
+   "outcome": "nessun_risultato",
+   "tried_at": "2026-11-26T14:07:44Z"
+  },
+  {
+   "chain": "Despar",
+   "outcome": "scheda_senza_codice",
+   "tried_at": "2026-11-26T14:07:44Z"
+  },
+  {
+   "chain": "Migross",
+   "outcome": "nessun_risultato",
+   "tried_at": "2026-11-26T14:07:43Z"
+  },
+  {
+   "chain": "Oasi",
+   "outcome": "scheda_senza_codice",
+   "tried_at": "2026-11-26T14:07:44Z"
+  },
+  {
+   "chain": "Prezzemolo & Vitale",
+   "outcome": "bloccato",
+   "tried_at": "2026-11-26T14:07:43Z"
+  },
+  {
+   "chain": "Sì con Te",
+   "outcome": "nessun_risultato",
+   "tried_at": "2026-11-26T14:07:43Z"
+  },
+  {
+   "chain": "Todis",
+   "outcome": "scheda_senza_codice",
+   "tried_at": "2026-11-26T14:07:42Z"
+  }
+ ]
+}
