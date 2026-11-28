@@ -36,7 +36,7 @@ DOK: senza_ricerca
 Despar Centro Sud: senza_ricerca
 Coop Sardegna: senza_ricerca
 Famila Sicilia / Ciaospesa: senza_ricerca
-D’Ambros: bloccato
+D’Ambros: senza_ricerca
 Mercatò: senza_ricerca
 Il Gigante: senza_ricerca
 Emisfero: senza_ricerca
@@ -51,8 +51,14 @@ Despar: senza_ricerca
 Gelmarket: senza_ricerca
 Pewex: senza_ricerca
 Oasi: senza_ricerca
+Cicalia: senza_ricerca
+Cortilia: senza_ricerca
 NaturaSì: js_senza_ricerca
 Eataly Italia: senza_ricerca
+Bofrost: usabile
+Eismann: usabile
+Biobottega: bloccato
+Selex — prodotti a marchio: senza_ricerca
 ALDI: senza_ricerca
 Lidl: senza_ricerca
 DPiù: senza_ricerca
@@ -60,4 +66,10 @@ MD — sito diretto: senza_ricerca
 Rossetto: senza_ricerca
 Despar Aspiag — offerte: usabile
 Gelmarket — catalogo: senza_ricerca
-{'usabile': 9, 'senza_ricerca': 36, 'bloccato': 11, 'js_senza_ricerca': 6}
+Coop a casa — Unicoop Etruria (negozio online): usabile
+SpesaSicura: usabile
+ABC Food Service: bloccato
+Rossofine Food: bloccato
+Zaino Food: usabile
+IMA SpA: errore
+{'usabile': 14, 'senza_ricerca': 40, 'bloccato': 13, 'js_senza_ricerca': 6, 'errore': 1}

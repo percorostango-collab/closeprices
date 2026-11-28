@@ -5,8 +5,8 @@
   "catene_consultabili": 14,
   "stato_siti": {
    "bloccato": 12,
+   "errore": 1,
    "js_senza_ricerca": 6,
-   "ricerca_post": 1,
    "senza_ricerca": 34,
    "usabile": 14
   },
