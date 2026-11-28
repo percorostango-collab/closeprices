@@ -30,12 +30,16 @@
  "contatto_impostato": true,
  "budget_verifica_s": 8.0,
  "serpapi_key_impostata": false,
+ "omniroute_configurato": false,
+ "omniroute_host": null,
+ "llm_modello": null,
  "limite_mensile_ricerche_prezzi": 200,
  "database": "ok",
  "tabelle": [
   "api_usage",
   "attempts",
   "corrections",
+  "discovery_runs",
   "evidence",
   "index_queue",
   "offer_queries",
@@ -49,7 +53,7 @@
   "stores": 42616,
   "site_profiles": 74,
   "products": 5,
-  "evidence": 8,
+  "evidence": 0,
   "index_queue": 0
  }
 }
