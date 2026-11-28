@@ -80,3 +80,22 @@ def test_load_stores_rejects_a_malformed_area(tmp_path, monkeypatch):
     monkeypatch.setenv("PV_DB", str(tmp_path / "c.db"))
     with pytest.raises(SystemExit):
         cli.main(["load-stores", "--bbox", "1,2,3"])
+
+
+def test_purge_echo_removes_only_the_false_confirmations(tmp_path, monkeypatch, capsys):
+    from server.catalogs import purge_echo_evidence
+    monkeypatch.setenv("PV_DB", str(tmp_path / "p.db"))
+    cli.main(["init-db"])
+    s = Settings()
+    conn = connect(s.db_path, s)
+    G1, G2 = "8001250120267", "8025916126592"
+    rows = [(G1, "Dem", 2, f"https://x.it/?s={G1}"), (G1, "SpesaSicura", 2, f"https://x.it/login?returnurl=https%3A%2F%2Fx.it%2F%3Fs%3D{G1}"),
+            (G1, "Carrefour", 2, f"https://www.carrefour.it/p/de-cecco/{G1}.html"), (G2, "Todis", 2, "https://todisacasa.it/prodotto/semi-1")]
+    for g, c, l, u in rows:
+        conn.execute("INSERT INTO evidence VALUES(?,?,?,?,?,?,?,?)", (g, c, l, u, "t", None, None, "2026-11-27T00:00:00Z"))
+    conn.execute("INSERT INTO attempts VALUES(?,?,?,?)", (G1, "Dem", "confermato", "2026-11-27T00:00:00Z"))
+    conn.commit()
+    assert purge_echo_evidence(conn) == 2
+    left = sorted(r["chain"] for r in conn.execute("SELECT chain FROM evidence"))
+    assert left == ["Carrefour", "Todis"]                                             # i veri restano
+    assert conn.execute("SELECT COUNT(*) FROM attempts WHERE gtin=?", (G1,)).fetchone()[0] == 0   # si rifà la verifica

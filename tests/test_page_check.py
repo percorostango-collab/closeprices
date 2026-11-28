@@ -65,3 +65,38 @@ def test_upc_variant_is_found():
 def test_never_raises_on_garbage():
     for h in ["", "<<<>>>", "<script type='application/ld+json'>{rotto</script>"]:
         assert check_page(h, G).verdict in (Verdict.ABSENT, Verdict.UNREADABLE)
+
+
+# ---- eco della ricerca: i casi che davano falsi positivi sui siti reali (Dem, Migross, Si con Te, SpesaSicura) ----
+import pytest  # noqa: E402
+
+CODE = "8001250120267"
+ECHOES = {
+    "casella di ricerca": f'<form><input type="search" value="{CODE}"></form><p>Nessun risultato</p>',
+    "titolo": f'<html><head><title>Risultati per {CODE}</title></head><body>Niente</body></html>',
+    "link ?s=": f'<a href="/?s={CODE}">Vedi tutti</a>',
+    "link dgwt": f'<a href="/?post_type=product&dgwt_wcas=1&s={CODE}">x</a>',
+    "script query": f'<script>window.S={{"query":"{CODE}","n":0}}</script>',
+    "script search=": f'<script>var u="search={CODE}";</script>',
+    "returnurl codificato": f'<a href="/login?returnurl=https%3A%2F%2Fx.it%2F%3Fs%3D{CODE}">Accedi</a>',
+    "canonical ?q=": f'<head><link rel="canonical" href="https://x.it/cerca?q={CODE}"></head><body>x</body>',
+}
+GENUINE = {
+    "percorso prodotto in JSON (Carrefour)": (f'<script>var p={{"url":"https://www.carrefour.it/p/de-cecco/{CODE}.html"}}</script>', "confirmed_embedded_json"),
+    "testo EAN": (f"<p>Codice EAN: {CODE}</p>", "confirmed_text"),
+    "attributo dati": (f'<div data-product-ean="{CODE}">Prodotto</div>', "confirmed_text"),
+    "JSON-LD": ('<script type="application/ld+json">{"@type":"Product","gtin13":"%s"}</script>' % CODE, "confirmed_structured"),
+}
+
+
+@pytest.mark.parametrize("name", sorted(ECHOES))
+def test_search_echo_is_never_a_proof(name):
+    from pvcore.page_check import Verdict, check_page
+    assert check_page(f"<html><body>{ECHOES[name]}</body></html>", CODE).verdict == Verdict.ABSENT
+
+
+@pytest.mark.parametrize("name", sorted(GENUINE))
+def test_genuine_product_codes_still_confirm(name):
+    from pvcore.page_check import check_page
+    html, expected = GENUINE[name]
+    assert check_page(f"<html><body>{html}</body></html>", CODE).verdict.value == expected

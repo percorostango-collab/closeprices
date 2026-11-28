@@ -39,6 +39,8 @@ jobs:
           set -o pipefail
           mkdir -p results/diagnosi
           python -m server.cli discover-sites 2>&1 | tee results/diagnosi/scoperta.log
+      - name: Pulizia delle conferme false
+        run: python -m server.cli purge-echo 2>&1 | tee results/diagnosi/pulizia.log
       - name: Diagnosi sui siti reali
         run: |
           set -o pipefail

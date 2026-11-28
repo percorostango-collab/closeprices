@@ -41,6 +41,9 @@ CREATE TABLE IF NOT EXISTS offers(
 CREATE TABLE IF NOT EXISTS offer_queries(
   gtin TEXT NOT NULL, source TEXT NOT NULL, n_offers INTEGER NOT NULL, name_hint TEXT, fetched_at TEXT NOT NULL,
   PRIMARY KEY(gtin, source));
+CREATE TABLE IF NOT EXISTS discovery_runs(
+  gtin TEXT PRIMARY KEY, state TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT,
+  n_candidates INTEGER DEFAULT 0, n_verified INTEGER DEFAULT 0, error TEXT);
 CREATE TABLE IF NOT EXISTS api_usage(source TEXT NOT NULL, month TEXT NOT NULL, count INTEGER NOT NULL, PRIMARY KEY(source, month));
 """
 

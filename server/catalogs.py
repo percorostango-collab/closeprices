@@ -6,7 +6,7 @@ Un catalogo non consultabile resta 'non consultabile'."""
 import json
 import threading
 from concurrent.futures import ThreadPoolExecutor, wait
-from urllib.parse import urljoin, urlparse
+from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -109,25 +109,36 @@ def discover_all(conn, fetcher, robots, targets=None, workers=8, only_stale_days
 
 
 # ---------------------------------------------------------------- verifica di un prodotto in un catalogo
-def links_near_code(soup, base_url, gtin, limit=5):
+def links_near_code(soup, base_url, gtin, limit=5, exclude_url=None):
     """Link della 'scheda' (card) in cui compare il codice a barre: funziona anche quando l'indirizzo del prodotto
-    non ha un percorso riconoscibile. Si sale al massimo di 5 livelli e solo dentro blocchi piccoli, per non
-    prendere i link del menu."""
+    non ha un percorso riconoscibile. Si sale al massimo di 5 livelli e solo dentro blocchi piccoli. Si ignorano:
+    caselle di ricerca, modulo, intestazione, menu e piè di pagina (lì il codice è l'eco della nostra domanda), e
+    qualunque indirizzo che contenga il codice dopo un '?' o sia la pagina di ricerca stessa."""
     rx = boundary_regex(gtin_variants(gtin))
     host = registrable(urlparse(base_url).hostname or "")
     out = []
 
     def ok(href):
         u = urlparse(href)
-        return (u.scheme in ("http", "https") and registrable(u.hostname or "") == host and not NOT_PRODUCT.search(u.path)
-                and href not in out)
+        if rx.search(u.query) or rx.search(unquote(u.query)):
+            return False
+        if exclude_url and (u.path, u.query) == (urlparse(exclude_url).path, urlparse(exclude_url).query):
+            return False
+        return (u.scheme in ("http", "https") and registrable(u.hostname or "") == host
+                and not NOT_PRODUCT.search(u.path) and href not in out)
+
+    def in_chrome(el):
+        return any(p.name in ("form", "header", "nav", "footer") for p in el.parents)
     for el in soup.find_all(True):
+        if el.name in ("input", "textarea", "form", "title") or in_chrome(el):
+            continue
         blob = " ".join(" ".join(v) if isinstance(v, list) else str(v) for v in el.attrs.values())
         if not (rx.search(blob) or (el.string and rx.search(el.string))):
             continue
         node = el
         for _ in range(5):
-            if node is None or len(node.get_text(" ", strip=True)) > 1500:
+            if node is None or node.name in ("form", "header", "nav", "footer", "body", "html") \
+                    or len(node.get_text(" ", strip=True)) > 1500:
                 break
             a = node if (node.name == "a" and node.get("href")) else node.find("a", href=True)
             if a:
@@ -141,10 +152,10 @@ def links_near_code(soup, base_url, gtin, limit=5):
     return out[:limit]
 
 
-def product_links(soup, base_url, tokens, limit=5, gtin=None):
+def product_links(soup, base_url, tokens, limit=5, gtin=None, exclude_url=None):
     """Candidati in ordine di affidabilità: prima i link accanto al codice cercato, poi quelli che sembrano schede
     prodotto (con la marca se nota), poi gli altri. Fino a [limit]."""
-    out = links_near_code(soup, base_url, gtin, limit) if gtin else []
+    out = links_near_code(soup, base_url, gtin, limit, exclude_url) if gtin else []
     if tokens:
         links, _ = candidate_links(soup, base_url, tokens, limit)
         out += [l for l in links if l not in out]
@@ -176,7 +187,7 @@ def _check_by_code(gtin, product, prof, fetcher, robots) -> dict:
             return res
         soup = BeautifulSoup(r.text, "html.parser")
         tokens = brand_tokens(product.get("brand") or "", product.get("name") or "") if product.get("brand") else []
-        links = product_links(soup, r.url, tokens, limit=5, gtin=gtin)
+        links = product_links(soup, r.url, tokens, limit=5, gtin=gtin, exclude_url=r.url)
         if not links:
             res["outcome"] = "nessun_risultato"
             return res
@@ -313,3 +324,21 @@ def coverage(conn) -> dict:
             "stato_siti": status,
             "prodotti_con_conferma": conn.execute("SELECT COUNT(DISTINCT gtin) FROM evidence").fetchone()[0],
             "prodotti_provati": conn.execute("SELECT COUNT(DISTINCT gtin) FROM attempts").fetchone()[0]}
+
+
+def purge_echo_evidence(conn) -> int:
+    """Elimina le conferme false create da una versione precedente: pagine di RICERCA in cui il codice era solo
+    l'eco della domanda (codice dopo un '?' nell'indirizzo). Ritorna quante ne ha tolte e azzera i tentativi
+    di quei prodotti, così alla prossima scansione si rifanno."""
+    from urllib.parse import unquote
+    bad = []
+    for r in conn.execute("SELECT gtin, chain, url FROM evidence"):
+        u = unquote(unquote(r["url"]))
+        i, j = u.find("?"), u.find(r["gtin"])
+        if i != -1 and j != -1 and i < j:
+            bad.append((r["gtin"], r["chain"], r["url"]))
+    for g, c, u in bad:
+        conn.execute("DELETE FROM evidence WHERE gtin=? AND chain=? AND url=?", (g, c, u))
+        conn.execute("DELETE FROM attempts WHERE gtin=?", (g,))
+    conn.commit()
+    return len(bad)

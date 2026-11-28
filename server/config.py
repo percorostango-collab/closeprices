@@ -17,6 +17,15 @@ class Settings:
     offers_ttl_days: float = field(default_factory=lambda: _f("PV_OFFERS_TTL_DAYS", 3.0))
     offers_empty_ttl_days: float = field(default_factory=lambda: _f("PV_OFFERS_EMPTY_TTL_DAYS", 1.0))
     offers_timeout_s: float = field(default_factory=lambda: _f("PV_OFFERS_TIMEOUT_S", 12.0))
+    omni_url: str = field(default_factory=lambda: os.environ.get("PV_OMNIROUTE_URL", "").strip())
+    omni_key: str = field(default_factory=lambda: os.environ.get("PV_OMNIROUTE_KEY", "").strip())
+    llm_model: str = field(default_factory=lambda: os.environ.get("PV_LLM_MODEL", "").strip())
+    search_provider: str = field(default_factory=lambda: os.environ.get("PV_SEARCH_PROVIDER", "").strip())
+    fetch_provider: str = field(default_factory=lambda: os.environ.get("PV_FETCH_PROVIDER", "").strip())
+    discovery_budget_s: float = field(default_factory=lambda: _f("PV_DISCOVERY_BUDGET_S", 25.0))
+    discovery_ttl_days: float = field(default_factory=lambda: _f("PV_DISCOVERY_TTL_DAYS", 7.0))
+    discovery_max_candidates: int = field(default_factory=lambda: _f("PV_DISCOVERY_MAX_CANDIDATES", 10))
+    discovery_llm_calls: int = field(default_factory=lambda: _f("PV_DISCOVERY_LLM_CALLS", 6))
     turso_pipeline: str = field(default_factory=lambda: os.environ.get("PV_TURSO_PIPELINE", "v2"))
     contact: str = field(default_factory=lambda: os.environ.get("PV_CONTACT", "contatto-non-configurato"))
     off_base: str = field(default_factory=lambda: os.environ.get("OFF_BASE", "https://world.openfoodfacts.org"))
@@ -39,6 +48,10 @@ class Settings:
                     ("Open Pet Food Facts", b.replace("openfoodfacts", "openpetfoodfacts")),
                     ("Open Products Facts", b.replace("openfoodfacts", "openproductsfacts"))]
         return [("Open Food Facts", b)]
+
+    @property
+    def omni_enabled(self) -> bool:
+        return bool(self.omni_url and self.omni_key)
 
     @property
     def user_agent(self) -> str:

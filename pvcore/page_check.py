@@ -90,6 +90,28 @@ def distinct_valid_gtins(text: str) -> int:
 LISTING_THRESHOLD = 3
 
 
+_ECHO_CTX = re.compile(r"(?:query|search|searchterm|term|keywords?|text|ricerca|cerca|q|s)[\"']?\s*[:=]\s*[\"']?$", re.I)
+_TOKEN_BREAK = " \t\n\r\"'<>(),;"
+
+
+def _is_echo(s: str, i: int, j: int) -> bool:
+    """Il codice compare perché la RICERCA lo ripete (eco della nostra domanda), non perché è il prodotto?
+    - dentro un indirizzo, dopo un '?'  (…/?s=CODICE, …?q=CODICE, anche codificato %3F)
+    - come valore di un campo di ricerca nei dati della pagina ("query":"CODICE", search=CODICE)
+    Un codice nel PERCORSO di un indirizzo (…/p/nome/CODICE.html) non è un'eco: è l'identificativo del prodotto."""
+    a = i
+    while a > 0 and s[a - 1] not in _TOKEN_BREAK:
+        a -= 1
+    before = s[a:i].lower()
+    if "?" in before or "%3f" in before:
+        return True
+    return bool(_ECHO_CTX.search(s[max(0, i - 40):i]))
+
+
+def real_match(rx, s: str) -> bool:
+    return any(not _is_echo(s, m.start(), m.end()) for m in rx.finditer(s))
+
+
 def looks_blocked(html: str, status: int) -> bool:
     low = (html or "")[:20000].lower()
     if status in (401, 403, 429, 503):
@@ -137,16 +159,19 @@ def check_page(html, gtin: str, status: int = 200) -> PageResult:
         if re.search(r"ld\+json", s.get("type") or "", re.I):
             continue
         body = s.string or s.get_text() or ""
-        if body and rx.search(body):
+        if body and real_match(rx, body):
             return PageResult(Verdict.CONFIRMED_JSON, product_count=count,
                               is_listing=count > 1 or distinct_valid_gtins(body) >= LISTING_THRESHOLD,
                               detail="script/JSON incorporato")
 
     # 3) testo e attributi, senza script e stili
-    for t in soup(["script", "style"]):
+    for t in soup(["script", "style", "title", "textarea"]):
         t.decompose()
+    for t in soup.find_all("input"):
+        if (t.get("type") or "text").lower() in ("search", "text"):
+            t.decompose()                       # la casella di ricerca ripete ciò che abbiamo cercato
     flat = str(soup)
-    if rx.search(flat):
+    if real_match(rx, flat):
         return PageResult(Verdict.CONFIRMED_TEXT, product_count=count,
                           is_listing=count > 1 or distinct_valid_gtins(flat) >= LISTING_THRESHOLD,
                           detail="testo o attributo della pagina")

@@ -124,3 +124,14 @@ def test_links_near_code_only_takes_the_card_not_the_menu():
     # un altro dominio non conta
     other = '<div data-ean="8008490000021"><a href="https://altro.example/p/1">x</a></div>'
     assert links_near_code(BeautifulSoup(other, "html.parser"), "https://x.example/", "8008490000021") == []
+
+
+# ---- il caso reale: la ricerca ripete il codice ma il sito non ha il prodotto (Dem, Migross, Si con Te, SpesaSicura) ----
+def test_search_page_echoing_the_code_is_not_a_confirmation():
+    out, ev, att, _ = run("json", echo_only=True)
+    assert ev == [] and out["confermate"] == 0 and att["Conad"] != "confermato"
+
+
+def test_echo_in_results_does_not_break_the_real_card():
+    out, ev, att, _ = run("json", decoys=2)
+    assert att == {"Conad": "confermato"} and ev[0]["url"].endswith("/prodotto/acqua-1") and "cerca" not in ev[0]["url"]

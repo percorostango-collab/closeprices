@@ -37,7 +37,7 @@ def maintenance(settings, fetcher, robots, stop=None):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["init-db", "load-stores", "discover-sites", "index", "coverage", "diag", "serve"])
+    ap.add_argument("cmd", choices=["init-db", "load-stores", "discover-sites", "index", "coverage", "diag", "purge-echo", "serve"])
     ap.add_argument("--file")
     ap.add_argument("--host", default="0.0.0.0")
     ap.add_argument("--port", type=int, default=8000)
@@ -73,6 +73,8 @@ def main(argv=None):
     elif a.cmd == "index":
         lookup = lambda g: products.lookup(conn, g, s, fetcher)  # noqa: E731
         print("prodotti verificati:", catalogs.process_queue(conn, s, fetcher, robots, lookup, limit=a.limit))
+    elif a.cmd == "purge-echo":
+        print("conferme false eliminate:", catalogs.purge_echo_evidence(conn))
     elif a.cmd == "coverage":
         print(json.dumps({"cataloghi": catalogs.coverage(conn), "negozi": stores.count_stores(conn)},
                          ensure_ascii=False, indent=1))
