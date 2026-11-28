@@ -66,32 +66,6 @@
     "1,59"
    ],
    "esito": "codice_confermato:confirmed_embedded_json"
-  },
-  {
-   "url": "https://coopacasa.coopetruria.coop.it/pasta-e-riso/pasta-di-semola/classica/6563.html",
-   "robots_consente": true,
-   "status": 200,
-   "errore": null,
-   "finale": null,
-   "bloccata": false,
-   "byte": 672310,
-   "titolo": "Mezzi rigatoni di semola de cecco n26 sacc. g 500",
-   "js_shell": false,
-   "verdetto": "absent",
-   "codice_ovunque_nel_html": false,
-   "gtin_dichiarati": {},
-   "prezzi_strutturati": [
-    [
-     1.59,
-     "EUR"
-    ]
-   ],
-   "prezzi_nel_testo": [
-    "0,00",
-    "1,59",
-    "3,18"
-   ],
-   "esito": "senza_codice"
   }
  ],
  "B_catene_consultabili": [
@@ -104,7 +78,7 @@
    "robots_consente": true,
    "status": 200,
    "bloccata": false,
-   "byte": 328830,
+   "byte": 328826,
    "js_shell": false,
    "codice_nei_risultati": false,
    "candidati": [
@@ -271,7 +245,7 @@
    "robots_consente": true,
    "status": 200,
    "bloccata": false,
-   "byte": 410826,
+   "byte": 12190,
    "js_shell": false,
    "codice_nei_risultati": true,
    "candidati": [],
@@ -331,7 +305,7 @@
    "sito": "https://www.despar.it/",
    "ricerca": "https://www.despar.it/it/punti-vendita/",
    "parametro": "searchTerm",
-   "url_ricerca": "https://www.despar.it/it/punti-vendita/?__ncforminfo=g-fUewSp5WTDd5o1hTRvpaDBwgRsJHDUYdranTfP5SR3ok7pknACHUvTG8OGHQRd2YE3tOEFYjafSuzWT7JwQfzeK04U4L0xgqyyYEYAdY0%3D&searchTerm=8001250120267",
+   "url_ricerca": "https://www.despar.it/it/punti-vendita/?__ncforminfo=w_sErwUpr8FH0A9S0o52VhQx9QKODy_tCNKSe0RLuoJo1XYCSrZaHlKZa5ge6sKxM0gS8123QxLldbLJ6xWAbKEu9-MABxKC2WxP2Iisw9E%3D&searchTerm=8001250120267",
    "robots_consente": true,
    "status": 200,
    "bloccata": false,
@@ -358,7 +332,7 @@
    "robots_consente": true,
    "status": 200,
    "bloccata": false,
-   "byte": 613813,
+   "byte": 613518,
    "js_shell": false,
    "codice_nei_risultati": true,
    "candidati": [
@@ -479,64 +453,35 @@
  "C_verifica_del_servizio": {
   "consultabili": 14,
   "provate": 14,
-  "confermate": 4,
+  "confermate": 0,
   "somiglianze": 0,
   "incomplete": 0
  },
- "C_conferme_salvate": [
-  {
-   "chain": "Dem",
-   "level": 2,
-   "url": "https://www.supermercatidem.com/?s=8001250120267",
-   "title": "Hai cercato 8001250120267 - Supermercati DEM",
-   "price": null
-  },
-  {
-   "chain": "Migross",
-   "level": 2,
-   "url": "https://emigross.it/?post_type=product&dgwt_wcas=1&s=8001250120267",
-   "title": "Hai cercato 8001250120267 - Emigross",
-   "price": null
-  },
-  {
-   "chain": "SpesaSicura",
-   "level": 2,
-   "url": "https://www.spesasicura.com/buy/AuthorizationBroker/StartLogin?returnurl=https%3A%2F%2Fwww.spesasicura.com%2Fhome%2Fsearch%3FsetVce%3D0%26desc%3D8001250120267",
-   "title": "_LayoutContainer",
-   "price": null
-  },
-  {
-   "chain": "Sì con Te",
-   "level": 2,
-   "url": "https://www.siconte.it/?ct_post_type=post%3Apage&s=8001250120267",
-   "title": "Hai cercato 8001250120267 - Si con te",
-   "price": null
-  }
- ],
+ "C_conferme_salvate": [],
  "C_esiti_per_catena": [
   {
    "chain": "Prezzemolo & Vitale",
    "outcome": "bloccato"
   },
   {
+   "chain": "Bofrost",
+   "outcome": "errore"
+  },
+  {
    "chain": "Dem",
-   "outcome": "confermato"
+   "outcome": "nessun_risultato"
   },
   {
    "chain": "Migross",
-   "outcome": "confermato"
+   "outcome": "nessun_risultato"
   },
   {
    "chain": "SpesaSicura",
-   "outcome": "confermato"
+   "outcome": "nessun_risultato"
   },
   {
    "chain": "Sì con Te",
-   "outcome": "confermato"
-  },
-  {
-   "chain": "Bofrost",
-   "outcome": "errore"
+   "outcome": "nessun_risultato"
   },
   {
    "chain": "Zaino Food",
