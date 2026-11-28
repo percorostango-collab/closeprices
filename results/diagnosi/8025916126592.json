@@ -51,6 +51,8 @@
    "byte": 328843,
    "js_shell": false,
    "codice_nei_risultati": false,
+   "occorrenze_del_codice": [],
+   "vicino_al_codice": [],
    "candidati": [
     {
      "url": "https://www.conad.it/prodotti-e-marchi/i-nostri-valori",
@@ -111,19 +113,22 @@
    "byte": 166439,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "Online, scegli la data e l&#39;ora e ricevi la spesa a casa\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\" /><title>\r \t8025916126592\r </title>\r \t<meta property=\"og:title\" content=\"8025916126592\" />\r \t<meta property=\"og:description\" ",
+    "/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\" /><title>\r \t8025916126592\r </title>\r \t<meta property=\"og:title\" content=\"8025916126592\" />\r \t<meta property=\"og:description\" content=\"Ordina la Spesa Online, scegli la data e l&#39;ora e",
+    "40\" />\r \t<meta property=\"og:image:height\" content=\"747\" />\r \r \t<meta name=\"twitter:card\" content=\"summary_large_image\" />\r \t<meta name=\"twitter:title\" content=\"8025916126592\" />\r \t<meta name=\"twitter:description\" content=\"Ordina la Spesa Online, scegli la data e l&#39;ora ",
+    "istElement\" itemscope=\"itemscope\" itemtype=\"http://schema.org/ListItem\">\r                         <a itemprop=\"item\" href=\"https://todisacasa.it/ricerca?search=8025916126592\" title=\"8025916126592\"><span itemprop=\"name\">8025916126592</span></a>\r                         <met"
+   ],
+   "vicino_al_codice": [
+    "https://todisacasa.it/",
+    "https://todisacasa.it/prodotto/solo-sano-semi-di-zucca-decorticati-1248013"
+   ],
    "candidati": [
     {
-     "url": "https://todisacasa.it/prodotti-viso_75",
+     "url": "https://todisacasa.it/",
      "status": 200,
      "verdetto": "absent",
-     "titolo": "Prodotti viso | Todis a Casa | Consegna a casa",
-     "prezzi": []
-    },
-    {
-     "url": "https://todisacasa.it/prodotti-per-dentiere_158",
-     "status": 200,
-     "verdetto": "absent",
-     "titolo": "Prodotti per dentiere | Todis a Casa | Consegna a casa",
+     "titolo": "Todis a Casa | Todis | Consegna a domicilio",
      "prezzi": []
     },
     {
@@ -137,6 +142,20 @@
        "EUR"
       ]
      ]
+    },
+    {
+     "url": "https://todisacasa.it/prodotti-viso_75",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Prodotti viso | Todis a Casa | Consegna a casa",
+     "prezzi": []
+    },
+    {
+     "url": "https://todisacasa.it/prodotti-per-dentiere_158",
+     "status": 200,
+     "verdetto": "absent",
+     "titolo": "Prodotti per dentiere | Todis a Casa | Consegna a casa",
+     "prezzi": []
     }
    ],
    "esito": "confermato"
@@ -153,6 +172,13 @@
    "byte": 298634,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "rdPress by gtm4wp.com --> \t<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ --> \t<title>Hai cercato 8025916126592 - Emigross</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\" content",
+    " Emigross</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\" content=\"article\" /> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Emigross\" /> \t<meta property=\"og:url\" content=\"https://emigross.it/search/8025916126592/\" /> \t<me",
+    " content=\"article\" /> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Emigross\" /> \t<meta property=\"og:url\" content=\"https://emigross.it/search/8025916126592/\" /> \t<meta property=\"og:site_name\" content=\"Emigross\" /> \t<meta name=\"twitter:card\" content=\"summa",
+    "meta property=\"og:site_name\" content=\"Emigross\" /> \t<meta name=\"twitter:card\" content=\"summary_large_image\" /> \t<meta name=\"twitter:title\" content=\"Hai cercato 8025916126592 - Emigross\" /> \t<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/"
+   ],
+   "vicino_al_codice": [],
    "candidati": [],
    "esito": "nessun_candidato"
   },
@@ -179,6 +205,8 @@
    "byte": 133421,
    "js_shell": false,
    "codice_nei_risultati": false,
+   "occorrenze_del_codice": [],
+   "vicino_al_codice": [],
    "candidati": [
     {
      "url": "https://www.oasitigre.it/it/prodotti-a-marchio/fatti-buoni.html",
@@ -227,9 +255,16 @@
    "robots_consente": true,
    "status": 200,
    "bloccata": false,
-   "byte": 12134,
+   "byte": 410826,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "ent='noindex, follow' />  \t<!-- This site is optimized with the Yoast SEO plugin v27.6 - https://yoast.com/product/yoast-seo-wordpress/ --> \t<title>Hai cercato 8025916126592 - Supermercati DEM</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\"",
+    "rcati DEM</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\" content=\"article\" /> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Supermercati DEM\" /> \t<meta property=\"og:url\" content=\"https://www.supermercatidem.com/search/802",
+    "> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Supermercati DEM\" /> \t<meta property=\"og:url\" content=\"https://www.supermercatidem.com/search/8025916126592/\" /> \t<meta property=\"og:site_name\" content=\"Supermercati DEM\" /> \t<meta name=\"twitter:card\" conten",
+    "perty=\"og:site_name\" content=\"Supermercati DEM\" /> \t<meta name=\"twitter:card\" content=\"summary_large_image\" /> \t<meta name=\"twitter:title\" content=\"Hai cercato 8025916126592 - Supermercati DEM\" /> \t<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\""
+   ],
+   "vicino_al_codice": [],
    "candidati": [],
    "esito": "nessun_candidato"
   },
@@ -245,6 +280,13 @@
    "byte": 106186,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "ent='noindex, follow' />  \t<!-- This site is optimized with the Yoast SEO plugin v28.9 - https://yoast.com/product/yoast-seo-wordpress/ --> \t<title>Hai cercato 8025916126592 - Si con te</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\" conten",
+    "Si con te</title> \t<meta property=\"og:locale\" content=\"it_IT\" /> \t<meta property=\"og:type\" content=\"article\" /> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Si con te\" /> \t<meta property=\"og:url\" content=\"https://www.siconte.it/search/8025916126592/\" /> ",
+    "tent=\"article\" /> \t<meta property=\"og:title\" content=\"Hai cercato 8025916126592 - Si con te\" /> \t<meta property=\"og:url\" content=\"https://www.siconte.it/search/8025916126592/\" /> \t<meta property=\"og:site_name\" content=\"Si con te\" /> \t<meta name=\"twitter:card\" content=\"summ",
+    "eta property=\"og:site_name\" content=\"Si con te\" /> \t<meta name=\"twitter:card\" content=\"summary_large_image\" /> \t<meta name=\"twitter:title\" content=\"Hai cercato 8025916126592 - Si con te\" /> \t<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\"
+   ],
+   "vicino_al_codice": [],
    "candidati": [],
    "esito": "nessun_candidato"
   },
@@ -271,6 +313,13 @@
    "byte": 419747,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "                            <div class=\"module-text\">                                     <a class=\"btn btn-secondary btn-lg mx-1 mb-1 mb-xl-0 active\" href=\"?q=8025916126592\">Prodotti</a>                                                                              <a class",
+    "/a>                                                                              <a class=\"btn btn-secondary btn-lg mx-1 mb-1 mb-xl-0\" href=\"?searchType=blog&q=8025916126592\">                                             Blog                                         </a>    ",
+    ">                                                                              <a class=\"btn btn-secondary btn-lg mx-1 mb-1 mb-xl-0\" href=\"?searchType=recipe&q=8025916126592\">                                             Ricette                                         </a> ",
+    "</a>                                                                              <a class=\"btn btn-secondary btn-lg mx-1 mb-1 mb-xl-0\" href=\"?searchType=faq&q=8025916126592\">                                             FAQs                                         </a>    "
+   ],
+   "vicino_al_codice": [],
    "candidati": [
     {
      "url": "https://www.eismann.it/prodotti-novita",
@@ -294,6 +343,10 @@
    "byte": 232491,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "e_campo_ricerca_pv mb-3\">                  <input name=\"data[User][localita_puntovendita]\" placeholder=\"Inserisci la provincia\" class=\"campo_ricerca_pv\" value=\"8025916126592\" type=\"text\" id=\"UserLocalitaPuntovendita\"/>                 <div id=\"icona_ricerca_pv\">           "
+   ],
+   "vicino_al_codice": [],
    "candidati": [
     {
      "url": "https://www.despar.it/it/prodotti-a-marchio-despar/",
@@ -317,6 +370,13 @@
    "byte": 613518,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "p.it/on/demandware.store/Sites-CoopTi-Site/it_IT/Login-OAuthLoggedEvent\"></div>   <div class=\"page\" data-action=\"Search-Show\" data-querystring=\"lang=null&amp;q=8025916126592\" > <header class=\"cc-header\">                      <div class=\"cc-header__fixedContainer\">         ",
+    "section\">                         <div id=\"gtmProducts\" class=\"cc-search gtmSearchListName gtmPageView\" data-listname=\"Tutte le categorie\" data-searchkeywords=\"8025916126592\"     data-pagename=\"Tutte le categorie\" data-pagetype=\"product list page\" data-language=\"it\"     da",
+    "data-customerid=\"null\" data-customermembercard=\"null\"     data-customerregistered=\"false\">                         <h1 class=\"sr-only\">Risultati di ricerca per 8025916126592</h1>   <div class=\"cc-search__results search-results\">     <div class=\"container\">                 ",
+    "enti, ma non &egrave; stato trovato alcun risultato per:                         <span class=\"font-weight-bold cc-search-keywords\">                             8025916126592                         </span>                     </span>                     <div>              "
+   ],
+   "vicino_al_codice": [],
    "candidati": [
     {
      "url": "https://coopacasa.coopetruria.coop.it/alimenti-per-il-tuo-benessere/integratori-vitamine-e-estratti-naturali/prodotti-gastrointestinali/",
@@ -413,6 +473,11 @@
    "byte": 20854,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "link\" id=\"LoginPopup\" Title=\"login\" href=\"/buy/AuthorizationBroker/StartLogin?returnurl=https%3A%2F%2Fwww.spesasicura.com%2Fhome%2Fsearch%3FsetVce%3D0%26desc%3D8025916126592\">accedi</a>\r                       <!--  <span class=\"sr-only\">(current)</span> -->\r               ",
+    "text/javascript\">\r           var lastProd = 0;\r           lastScollVuoto = false;\r           loading = false;\r           cancellati = 0;\r           filtDesc = \"8025916126592\";\r           CodRepScelto = \"\";\r           BrandScelto = \"\";\r           TagScelto = '';\r           "
+   ],
+   "vicino_al_codice": [],
    "candidati": [],
    "esito": "nessun_candidato"
   },
@@ -428,6 +493,13 @@
    "byte": 201758,
    "js_shell": false,
    "codice_nei_risultati": true,
+   "occorrenze_del_codice": [
+    "eload\" href=\"//zainofood.it/cdn/shop/t/4/assets/theme.js?v=37771504629849232931679588265\" as=\"script\"><link rel=\"canonical\" href=\"https://zainofood.it/search?q=8025916126592&type=product\" /><link rel=\"shortcut icon\" href=\"//zainofood.it/cdn/shop/files/favicon-zaino.png?v=1",
+    " eccellenze culinarie artigianali, i veri sapori d’Italia.\">    <meta name=\"theme-color\" content=\"#dea56b\">    <title>   Ricerca: 0 risultati trovati per &quot;8025916126592&quot; &ndash; Zaino Foodservice   </title>   <script src=\"https://ajax.googleapis.com/ajax/libs/jqu",
+    "y/2.2.4/jquery.min.js\"></script>      <meta property=\"og:site_name\" content=\"Zaino Foodservice\"> <meta property=\"og:url\" content=\"https://zainofood.it/search?q=8025916126592&type=product\"> <meta property=\"og:title\" content=\"Ricerca: 0 risultati trovati per &quot;8025916126",
+    "property=\"og:url\" content=\"https://zainofood.it/search?q=8025916126592&type=product\"> <meta property=\"og:title\" content=\"Ricerca: 0 risultati trovati per &quot;8025916126592&quot;\"> <meta property=\"og:type\" content=\"website\"> <meta property=\"og:description\" content=\"Zaino "
+   ],
+   "vicino_al_codice": [],
    "candidati": [],
    "esito": "nessun_candidato"
   }
