@@ -1,0 +1,75 @@
+Conad: usabile
+Esselunga: senza_ricerca
+Carrefour: usabile
+EasyCoop: bloccato
+CoopShop: js_senza_ricerca
+Coop.fi — Unicoop Firenze: senza_ricerca
+Coop a casa — Unicoop Etruria: bloccato
+Bennet: bloccato
+Tigros: bloccato
+Iper Tosano — La Tua Spesa: bloccato
+Pam — Pam a Casa: senza_ricerca
+Eurospin Online: senza_ricerca
+Iperal: bloccato
+Iper — IperDrive: senza_ricerca
+CRAI — CraiGO: bloccato
+Sigma Online: bloccato
+Unes / U2 / il Viaggiator Goloso: senza_ricerca
+Decò a Casa — Multicedi: bloccato
+Dodecà: senza_ricerca
+Todis a Casa: usabile
+Despar a Casa: senza_ricerca
+Nonna Isa Shop: senza_ricerca
+Migross — eMigross: usabile
+Prezzemolo & Vitale: usabile
+CTS: js_senza_ricerca
+PIM: js_senza_ricerca
+Pewex: senza_ricerca
+Ipertriscount: js_senza_ricerca
+Basko: js_senza_ricerca
+Oasi / Tigre: usabile
+Alì / Alìper — Alìperme: bloccato
+Dem: usabile
+Sacoph: senza_ricerca
+Sì con Te: usabile
+DOK: senza_ricerca
+Despar Centro Sud: senza_ricerca
+Coop Sardegna: senza_ricerca
+Famila Sicilia / Ciaospesa: senza_ricerca
+D’Ambros: senza_ricerca
+Mercatò: senza_ricerca
+Il Gigante: senza_ricerca
+Emisfero: senza_ricerca
+Galassia: senza_ricerca
+Italmark: senza_ricerca
+Pan: senza_ricerca
+Sole365: senza_ricerca
+MD: senza_ricerca
+Elite / Super Elite: senza_ricerca
+Sapore di Mare: senza_ricerca
+Despar: senza_ricerca
+Gelmarket: senza_ricerca
+Pewex: senza_ricerca
+Oasi: senza_ricerca
+Cicalia: senza_ricerca
+Cortilia: senza_ricerca
+NaturaSì: js_senza_ricerca
+Eataly Italia: senza_ricerca
+Bofrost: usabile
+Eismann: usabile
+Biobottega: bloccato
+Selex — prodotti a marchio: senza_ricerca
+ALDI: senza_ricerca
+Lidl: senza_ricerca
+DPiù: senza_ricerca
+MD — sito diretto: senza_ricerca
+Rossetto: senza_ricerca
+Despar Aspiag — offerte: usabile
+Gelmarket — catalogo: senza_ricerca
+Coop a casa — Unicoop Etruria (negozio online): usabile
+SpesaSicura: usabile
+ABC Food Service: bloccato
+Rossofine Food: bloccato
+Zaino Food: usabile
+IMA SpA: ricerca_post
+{'usabile': 14, 'senza_ricerca': 40, 'bloccato': 13, 'js_senza_ricerca': 6, 'ricerca_post': 1}
