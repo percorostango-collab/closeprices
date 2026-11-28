@@ -1,14 +1,16 @@
 {
  "cataloghi": {
   "catene_con_negozi_fisici": 51,
-  "catene_consultabili": 9,
+  "cataloghi_totali": 62,
+  "catene_consultabili": 14,
   "stato_siti": {
-   "bloccato": 10,
+   "bloccato": 12,
    "js_senza_ricerca": 6,
-   "senza_ricerca": 30,
-   "usabile": 9
+   "ricerca_post": 1,
+   "senza_ricerca": 34,
+   "usabile": 14
   },
-  "prodotti_con_conferma": 0,
+  "prodotti_con_conferma": 2,
   "prodotti_provati": 5
  },
  "negozi": {
