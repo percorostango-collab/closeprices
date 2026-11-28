@@ -69,7 +69,10 @@ def trace_chain(gtin, product, prof, fetcher, robots):
     t["js_shell"] = is_js_shell(BeautifulSoup(r.text, "html.parser"))
     t["codice_nei_risultati"] = bool(boundary_regex(gtin_variants(gtin)).search(r.text))
     tokens = catalogs.brand_tokens(product.get("brand") or "", product.get("name") or "") if product.get("brand") else []
-    links = catalogs.product_links(soup, r.url, tokens, limit=5)
+    rx = boundary_regex(gtin_variants(gtin))
+    t["occorrenze_del_codice"] = [r.text[max(0, m.start() - 160):m.end() + 100].replace("\n", " ") for m in list(rx.finditer(r.text))[:4]]
+    t["vicino_al_codice"] = catalogs.links_near_code(soup, r.url, gtin, 8, exclude_url=r.url)
+    links = catalogs.product_links(soup, r.url, tokens, limit=5, gtin=gtin, exclude_url=r.url)   # esattamente ciò che fa il servizio
     t["candidati"] = []
     for link in links:
         c = {"url": link}

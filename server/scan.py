@@ -1,9 +1,11 @@
+import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import TimeoutError as FutTimeout
 
 from pvcore.gtin import normalize_gtin
 
-from . import catalogs, offers, products, stores
+from . import catalogs, discovery, offers, products, stores
 from .db import now_iso
 from .limits import LEVEL_LABELS, build_limits
 
@@ -35,6 +37,14 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
     if op["action"] == "search":
         pool = ThreadPoolExecutor(max_workers=1)
         fut = pool.submit(offers.search, gtin, {k: product.get(k) for k in ("brand", "name", "quantity")}, settings, fetcher)
+
+    # Scoperta aperta sul web (OmniRoute): in un thread, con la sua connessione; si aspetta solo un po'.
+    t0, disc_thread = time.time(), None
+    if settings.omni_enabled and discovery.should_run(conn, gtin, settings):
+        discovery.mark_started(conn, gtin)
+        disc_thread = threading.Thread(target=discovery.background, daemon=True, name="scoperta",
+                                       args=(settings, gtin, {k: product.get(k) for k in ("brand", "name", "quantity")}, fetcher, robots))
+        disc_thread.start()
 
     # Verifica sui cataloghi: solo se mai fatta (o scaduta). Il resto è lettura dal database.
     state, summary = "completata", {"provate": 0, "confermate": 0, "somiglianze": 0, "incomplete": 0}
@@ -68,6 +78,14 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
         pool.shutdown(wait=False)
     if o_state in ("quota_esaurita", "errore") and not o_list and op["action"] != "search":
         o_list = op["offers"]
+
+    if disc_thread is not None:
+        disc_thread.join(timeout=max(0.0, settings.discovery_budget_s - (time.time() - t0)))
+    d_state, d_cand, d_ver = "non_configurato", 0, 0
+    if settings.omni_enabled:
+        row = discovery.run_state(conn, gtin)
+        d_state = row["state"] if row else "non_avviata"
+        d_cand, d_ver = (row["n_candidates"] or 0, row["n_verified"] or 0) if row else (0, 0)
 
     ev = catalogs.fresh_evidence(conn, gtin, settings.catalog_ttl_days)
     certain = [e for e in ev if e["level"] <= 2]
@@ -114,7 +132,7 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
                           offers_state=o_state, offers_error=o_error, offers_count=len(o_list),
                           offers_by_name=sum(1 for o in o_list if o["match"] == "nome"),
                           offers_usage=used, offers_limit=settings.shopping_monthly_limit,
-                          name_matches=len(name_matches))
+                          name_matches=len(name_matches), discovery_state=d_state)
     hint = o_hint if product["state"] != "riconosciuto" else None
     return {
         "schema": SCHEMA, "gtin": gtin, "radius_km": radius_km, "position_used": position_used,
@@ -127,6 +145,7 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
                                 "monthly_limit": settings.shopping_monthly_limit, "error": o_error},
         "catalogs": [_catalog_item(e) for e in certain],
         "catalog_name_matches": [_catalog_item(e) for e in name_matches],
+        "discovery": {"state": d_state, "candidates": d_cand, "verified": d_ver},
         "stores_with_product_in_catalog": with_info,
         "stores_without_information": without,
         "indexing": {"state": state, "chains_consultable": consultable, "chains_tried": summary["provate"],

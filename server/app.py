@@ -7,7 +7,7 @@ from probe.probe import Robots
 from . import catalogs, products, stores
 from .config import Settings
 from .db import DatabaseError, connect
-from .diag import diagnose
+from .diag import diagnose, diagnose_omniroute
 from .scan import run_scan
 
 
@@ -67,5 +67,10 @@ def create_app(settings: Settings | None = None, fetcher=None) -> FastAPI:
     def diag():
         """Stato del servizio in chiaro, senza segreti: serve a capire perché qualcosa non funziona."""
         return diagnose(settings)
+
+    @app.get("/v1/diag/omniroute")
+    def diag_omniroute():
+        """Prova dal vivo di OmniRoute (ricerca, lettura pagina, chat). Non mostra mai chiavi né contenuti."""
+        return diagnose_omniroute(settings)
 
     return app

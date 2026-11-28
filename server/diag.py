@@ -26,7 +26,9 @@ def diagnose(settings) -> dict:
             "turso_token_dopo_pulizia": token_shape(clean_token(settings.turso_token)),
             "caratteri_tolti_dalla_pulizia": len(settings.turso_token or "") - len(clean_token(settings.turso_token)), "contatto_impostato": settings.contact != "contatto-non-configurato",
             "budget_verifica_s": settings.index_budget_s,
-            "serpapi_key_impostata": bool(settings.serpapi_key), "limite_mensile_ricerche_prezzi": settings.shopping_monthly_limit}
+            "serpapi_key_impostata": bool(settings.serpapi_key),
+            "omniroute_configurato": settings.omni_enabled, "omniroute_host": (urlparse(settings.omni_url).hostname if settings.omni_url else None),
+            "llm_modello": settings.llm_model or None, "limite_mensile_ricerche_prezzi": settings.shopping_monthly_limit}
     try:
         conn = connect(settings.db_path, settings)
         try:
@@ -46,3 +48,21 @@ def diagnose(settings) -> dict:
         info["database"] = "errore"
         info["errore"] = f"{type(e).__name__}: {msg}"[:500]
     return info
+
+
+def diagnose_omniroute(settings) -> dict:
+    """Prova dal vivo (ricerca, lettura, chat) e dice com'è fatta ogni risposta: chiavi e conteggi, mai i contenuti."""
+    from .omniroute import OmniRoute, parse_fetch, parse_search
+    if not settings.omni_enabled:
+        return {"configurato": False, "come": "imposta PV_OMNIROUTE_URL e PV_OMNIROUTE_KEY (e PV_LLM_MODEL per la chat)"}
+    o = OmniRoute(settings)
+    out = {"configurato": True, "host": urlparse(settings.omni_url).hostname, "modello": settings.llm_model or None}
+    status, j, err = o._post("/v1/search", {"query": "De Cecco mezzi rigatoni n.26 500 g prezzo", "max_results": 3, "country": "IT"})
+    out["ricerca"] = {"http": status, "errore": err, "chiavi_risposta": list(j.keys())[:10] if isinstance(j, dict) else type(j).__name__,
+                      "risultati_letti": len(parse_search(j)) if err is None else 0}
+    status, j, err = o._post("/v1/web/fetch", {"url": "https://example.com", "format": "markdown"}, timeout=45)
+    out["lettura_pagina"] = {"http": status, "errore": err, "chiavi_risposta": list(j.keys())[:10] if isinstance(j, dict) else type(j).__name__,
+                             "testo_letto": bool(parse_fetch(j)) if err is None else False}
+    ans, err = o.chat_json("Rispondi solo con JSON.", 'Rispondi con {"ok": true}', max_tokens=30)
+    out["chat"] = {"errore": err, "json_valido": ans is not None}
+    return out

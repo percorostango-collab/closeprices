@@ -15,7 +15,7 @@ AVAILABILITY = ("Un catalogo che contiene il prodotto non garantisce che il nego
 
 def build_limits(*, product_state, has_catalogs, indexing, stores_total, position_used, source_error=None,
                  pending=False, chains_total=0, offers_state="non_configurato", offers_error=None, offers_count=0,
-                 offers_by_name=0, offers_usage=0, offers_limit=0, name_matches=0):
+                 offers_by_name=0, offers_usage=0, offers_limit=0, name_matches=0, discovery_state="non_configurato"):
     L = []
 
     def add(code, severity, text):
@@ -68,6 +68,14 @@ def build_limits(*, product_state, has_catalogs, indexing, stores_total, positio
     if name_matches:
         add("NAME_MATCH_INFO", "info",
             "Le corrispondenze per nome nei cataloghi non sono verificate col codice a barre: controlla che sia lo stesso prodotto.")
+    if discovery_state == "non_configurato":
+        add("DISCOVERY_NOT_CONFIGURED", "info",
+            "La ricerca aperta sul web (OmniRoute) non è attiva: si vedono solo i cataloghi noti e i prezzi di Google Shopping.")
+    elif discovery_state == "in_corso":
+        add("DISCOVERY_IN_PROGRESS", "info",
+            "Sto cercando altri negozi online sul web: il risultato si aggiorna da solo tra qualche secondo.")
+    elif discovery_state == "errore":
+        add("DISCOVERY_ERROR", "warning", "La ricerca aperta sul web non è riuscita: riprova più tardi.")
     add("STORE_AVAILABILITY", "info", AVAILABILITY)
     add("PRICE_STORE", "info", PRICE_STORE)
     return L
