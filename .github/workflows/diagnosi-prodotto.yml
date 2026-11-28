@@ -6,6 +6,10 @@ on:
       casi:
         description: 'Casi: "CODICE|indirizzo1,indirizzo2;CODICE2|indirizzo3"'
         required: true
+      scopri:
+        description: "Prima riscopri i siti consultabili? (si/no)"
+        required: false
+        default: "no"
 
 permissions:
   contents: write
@@ -29,6 +33,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-server.txt
+      - name: Riscoperta dei siti consultabili
+        if: github.event.inputs.scopri == 'si'
+        run: |
+          set -o pipefail
+          mkdir -p results/diagnosi
+          python -m server.cli discover-sites 2>&1 | tee results/diagnosi/scoperta.log
       - name: Diagnosi sui siti reali
         run: |
           set -o pipefail

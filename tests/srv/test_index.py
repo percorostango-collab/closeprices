@@ -98,3 +98,29 @@ def test_needs_index_ttl():
     assert not catalogs.needs_index(conn, G, 30)
     conn.execute("UPDATE attempts SET tried_at='2020-01-01T00:00:00Z'")
     assert catalogs.needs_index(conn, G, 30)
+
+
+# ---- il difetto trovato sul Todis reale: le "esche" prima della scheda giusta nascondevano il prodotto ----
+def test_decoy_results_do_not_hide_the_right_card():
+    out, ev, att, hits = run("json", product={"brand": "Uliveto", "name": "Acqua"}, decoys=4)
+    assert out["confermate"] == 1 and att == {"Conad": "confermato"} and ev[0]["url"].endswith("/prodotto/acqua-1")
+
+
+def test_card_link_is_found_even_without_a_product_path():
+    out, ev, att, _ = run("json", odd_link=True)
+    assert att == {"Conad": "confermato"} and ev[0]["url"].endswith("/vai/xyz-777")
+
+
+def test_links_near_code_only_takes_the_card_not_the_menu():
+    from bs4 import BeautifulSoup
+    from server.catalogs import links_near_code
+    html = ('<nav><a href="/prodotto/menu-1">Menu</a></nav>'
+            '<div class="c"><span data-ean="8008490000021"></span><a href="/p/giusto">Giusto</a></div>'
+            '<div class="c"><a href="/p/altro">Altro</a></div>')
+    assert links_near_code(BeautifulSoup(html, "html.parser"), "https://x.example/", "8008490000021") == ["https://x.example/p/giusto"]
+    # un blocco enorme (tutta la pagina) non va risalito: niente link presi a caso
+    big = '<div><span data-ean="8008490000021"></span><a href="/p/x">x</a>' + "testo " * 400 + "</div>"
+    assert links_near_code(BeautifulSoup(big, "html.parser"), "https://x.example/", "8008490000021") == []
+    # un altro dominio non conta
+    other = '<div data-ean="8008490000021"><a href="https://altro.example/p/1">x</a></div>'
+    assert links_near_code(BeautifulSoup(other, "html.parser"), "https://x.example/", "8008490000021") == []

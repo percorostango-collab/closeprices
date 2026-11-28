@@ -110,7 +110,7 @@ def run_scan(conn, raw_code, lat, lon, radius_km, settings, fetcher, robots) -> 
                           indexing={"state": state, "chains_consultable": consultable},
                           stores_total=len(near), position_used=position_used,
                           source_error=product.get("source_error"), pending=pending,
-                          chains_total=catalogs.physical_chain_count(),
+                          chains_total=catalogs.catalog_count(),
                           offers_state=o_state, offers_error=o_error, offers_count=len(o_list),
                           offers_by_name=sum(1 for o in o_list if o["match"] == "nome"),
                           offers_usage=used, offers_limit=settings.shopping_monthly_limit,

@@ -130,6 +130,8 @@ def name_match(brand: str, name: str, quantity: str, title: str):
         return False, "nome diverso"
     if brand and stem(brand.lower().split()[0]) not in title.lower():
         return False, "marca assente nel titolo"
+    if quantity and sizes(quantity) and not sizes(title):
+        return False, "formato assente nel titolo"          # senza formato non si distingue 0,5 l da 1,5 l
     if same_size(quantity or name or "", title) is False:
         return False, "formato diverso"
     if pack_count(f"{name} {quantity}") != pack_count(title):

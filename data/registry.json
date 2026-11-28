@@ -628,5 +628,60 @@
   "slug": null,
   "kind": "informativo",
   "physical": true
+ },
+ {
+  "name": "Coop a casa — Unicoop Etruria (negozio online)",
+  "canonical": "Coop",
+  "domain": "coop.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": true,
+  "base_url": "https://coopacasa.coopetruria.coop.it/"
+ },
+ {
+  "name": "SpesaSicura",
+  "canonical": "SpesaSicura",
+  "domain": "spesasicura.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": false
+ },
+ {
+  "name": "ABC Food Service",
+  "canonical": "ABC Food Service",
+  "domain": "abcfoodservice.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": false
+ },
+ {
+  "name": "Rossofine Food",
+  "canonical": "Rossofine Food",
+  "domain": "rossofinefood.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": false
+ },
+ {
+  "name": "Zaino Food",
+  "canonical": "Zaino Food",
+  "domain": "zainofood.it",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": false
+ },
+ {
+  "name": "IMA SpA",
+  "canonical": "IMA",
+  "domain": "imaspa.com",
+  "platform": null,
+  "slug": null,
+  "kind": "ecommerce",
+  "physical": false
  }
 ]

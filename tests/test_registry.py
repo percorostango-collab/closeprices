@@ -5,9 +5,9 @@ from pvcore.registry import (duplicate_domains, load_registry, registrable,
 KINDS = {"ecommerce", "accesso", "cosicomodo", "everli", "specialista", "informativo"}
 
 
-def test_registry_has_70_entries_and_is_consistent():
+def test_registry_has_76_entries_and_is_consistent():
     reg = load_registry()
-    assert len(reg) == 70
+    assert len(reg) == 76
     for s in reg:
         assert s["kind"] in KINDS, s
         assert s["domain"] or (s["platform"] and s["slug"]), s

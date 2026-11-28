@@ -52,7 +52,7 @@ def page_for(mode, gtin):
 
 
 def catalog_router(mode="json", gtin=G, hits=None, delay=0.0, robots="User-agent: *\nDisallow: /admin\n",
-                   home=FORM, search_status=200, by_name=False):
+                   home=FORM, search_status=200, by_name=False, decoys=0, odd_link=False):
     hits = hits if hits is not None else []
 
     def router(path, q, base):
@@ -67,10 +67,19 @@ def catalog_router(mode="json", gtin=G, hits=None, delay=0.0, robots="User-agent
                 return search_status, "Just a moment... cf-chl", "text/html"
             term = (q.get("q") or [""])[0]
             found = term == gtin or (by_name and term != gtin and "uliveto" in term.lower())
-            body = '<a href="/prodotto/acqua-1">Acqua Uliveto</a>' if found else "<p>Nessun risultato</p>"
+            if not found:
+                body = "<p>Nessun risultato</p>"
+            else:
+                href = "/vai/xyz-777" if odd_link else "/prodotto/acqua-1"          # indirizzo senza percorso da "prodotto"
+                card = f'<div class="card" data-ean="{gtin}"><a href="{href}">Acqua Uliveto</a></div>'
+                esche = "".join(f'<div class="card"><a href="/prodotto/uliveto-esca-{i}">Uliveto Esca {i}</a></div>' for i in range(decoys))
+                menu = '<nav><a href="/prodotto/promo-menu">Offerte Uliveto</a></nav>'
+                body = menu + esche + card
             return 200, "<html><body>%s</body></html>" % body, "text/html"
-        if path == "/prodotto/acqua-1":
+        if path in ("/prodotto/acqua-1", "/vai/xyz-777"):
             return 200, "<html><body>%s</body></html>" % page_for(mode, gtin), "text/html"
+        if path.startswith("/prodotto/uliveto-esca-") or path == "/prodotto/promo-menu":
+            return 200, "<html><body><h1>Uliveto - altra cosa</h1><p>Nessun codice qui</p></body></html>", "text/html"
         return 404, "no", "text/plain"
     return router, hits
 

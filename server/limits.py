@@ -37,7 +37,7 @@ def build_limits(*, product_state, has_catalogs, indexing, stores_total, positio
             "Al momento nessun catalogo è consultabile in automatico da questo servizio.")
     else:
         add("COVERAGE", "info",
-            f"Cataloghi consultabili in automatico: {indexing['chains_consultable']} su {chains_total} catene. "
+            f"Cataloghi consultabili in automatico: {indexing['chains_consultable']} su {chains_total}. "
             "Le altre bloccano gli accessi automatici, mostrano i prodotti solo con JavaScript o non indicano il "
             "codice a barre: per quelle non possiamo dire nulla.")
     if pending or indexing["state"] == "parziale":

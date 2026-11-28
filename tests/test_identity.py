@@ -84,6 +84,8 @@ UL = ("Uliveto", "Acqua minerale naturale", "1,5 l")
     ("Acqua Sant'Anna 1,5 L", False),                  # altra marca
     ("Acqua Uliveto Zero 1,5 L", False),               # variante in più
     ("Acqua Uliveto frizzante 1,5 L", False),          # variante in conflitto (naturale vs frizzante)
+    ("Uliveto - altra cosa", False),                   # nessun formato nel titolo: non si distingue il prodotto
+    ("Offerte Uliveto", False),
 ])
 def test_name_match_water(title, ok):
     assert name_match(*UL, title)[0] is ok

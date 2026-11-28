@@ -11,22 +11,27 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-from probe.probe import (Robots, brand_tokens, candidate_links, find_search, is_js_shell, is_product_url,
-                         page_title)
+from probe.probe import (NOT_PRODUCT, Robots, brand_tokens, candidate_links, find_search, is_js_shell,
+                         is_product_url, page_title)
 from pvcore.evidence import from_page_result
 from pvcore.identity import name_match
+from pvcore.gtin import boundary_regex, gtin_variants
 from pvcore.page_check import check_page, distinct_valid_gtins, find_prices, looks_blocked
 from pvcore.registry import load_registry, registrable
 
 from .db import now_iso, older_than
 
 
-def registry_targets() -> list:
+def registry_targets(include_online=True) -> list:
+    """Siti da interrogare. Anche i negozi solo online: un catalogo online con prezzo vale per l'obiettivo
+    dell'app anche se non ha negozi fisici vicini."""
     seen, out = set(), []
     for s in load_registry():
-        if not s["physical"]:
+        if not (s["physical"] or include_online):
             continue
-        if s["platform"] == "everli":
+        if s.get("base_url"):
+            base = s["base_url"]
+        elif s["platform"] == "everli":
             base = f"https://it.everli.com/it/spesa/{s['slug']}/"
         elif s["platform"] == "cosicomodo":
             base = f"https://www.cosicomodo.it/{s['slug']}"
@@ -36,6 +41,10 @@ def registry_targets() -> list:
             seen.add(base)
             out.append({"chain": s["canonical"], "name": s["name"], "base": base})
     return out
+
+
+def catalog_count() -> int:
+    return len({s["canonical"] for s in load_registry()})
 
 
 def physical_chain_count() -> int:
@@ -100,13 +109,46 @@ def discover_all(conn, fetcher, robots, targets=None, workers=8, only_stale_days
 
 
 # ---------------------------------------------------------------- verifica di un prodotto in un catalogo
-def product_links(soup, base_url, tokens, limit=2):
-    if tokens:
-        links, _ = candidate_links(soup, base_url, tokens, limit)
-        if links:
-            return links
+def links_near_code(soup, base_url, gtin, limit=5):
+    """Link della 'scheda' (card) in cui compare il codice a barre: funziona anche quando l'indirizzo del prodotto
+    non ha un percorso riconoscibile. Si sale al massimo di 5 livelli e solo dentro blocchi piccoli, per non
+    prendere i link del menu."""
+    rx = boundary_regex(gtin_variants(gtin))
     host = registrable(urlparse(base_url).hostname or "")
     out = []
+
+    def ok(href):
+        u = urlparse(href)
+        return (u.scheme in ("http", "https") and registrable(u.hostname or "") == host and not NOT_PRODUCT.search(u.path)
+                and href not in out)
+    for el in soup.find_all(True):
+        blob = " ".join(" ".join(v) if isinstance(v, list) else str(v) for v in el.attrs.values())
+        if not (rx.search(blob) or (el.string and rx.search(el.string))):
+            continue
+        node = el
+        for _ in range(5):
+            if node is None or len(node.get_text(" ", strip=True)) > 1500:
+                break
+            a = node if (node.name == "a" and node.get("href")) else node.find("a", href=True)
+            if a:
+                href = urljoin(base_url, a["href"]).split("#")[0]
+                if ok(href):
+                    out.append(href)
+                    break
+            node = node.parent
+        if len(out) >= limit:
+            break
+    return out[:limit]
+
+
+def product_links(soup, base_url, tokens, limit=5, gtin=None):
+    """Candidati in ordine di affidabilità: prima i link accanto al codice cercato, poi quelli che sembrano schede
+    prodotto (con la marca se nota), poi gli altri. Fino a [limit]."""
+    out = links_near_code(soup, base_url, gtin, limit) if gtin else []
+    if tokens:
+        links, _ = candidate_links(soup, base_url, tokens, limit)
+        out += [l for l in links if l not in out]
+    host = registrable(urlparse(base_url).hostname or "")
     for a in soup.find_all("a", href=True):
         href = urljoin(base_url, a["href"]).split("#")[0]
         if registrable(urlparse(href).hostname or "") == host and is_product_url(href) and href not in out:
@@ -134,7 +176,7 @@ def _check_by_code(gtin, product, prof, fetcher, robots) -> dict:
             return res
         soup = BeautifulSoup(r.text, "html.parser")
         tokens = brand_tokens(product.get("brand") or "", product.get("name") or "") if product.get("brand") else []
-        links = product_links(soup, r.url, tokens)
+        links = product_links(soup, r.url, tokens, limit=5, gtin=gtin)
         if not links:
             res["outcome"] = "nessun_risultato"
             return res
@@ -267,7 +309,7 @@ def process_queue(conn, settings, fetcher, robots, lookup, limit=5, budget_s=60.
 def coverage(conn) -> dict:
     status = {r[0]: r[1] for r in conn.execute("SELECT status, COUNT(DISTINCT chain) FROM site_profiles GROUP BY status")}
     usable = conn.execute("SELECT COUNT(DISTINCT chain) FROM site_profiles WHERE status='usabile'").fetchone()[0]
-    return {"catene_con_negozi_fisici": physical_chain_count(), "catene_consultabili": usable,
+    return {"catene_con_negozi_fisici": physical_chain_count(), "cataloghi_totali": catalog_count(), "catene_consultabili": usable,
             "stato_siti": status,
             "prodotti_con_conferma": conn.execute("SELECT COUNT(DISTINCT gtin) FROM evidence").fetchone()[0],
             "prodotti_provati": conn.execute("SELECT COUNT(DISTINCT gtin) FROM attempts").fetchone()[0]}

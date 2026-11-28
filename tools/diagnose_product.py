@@ -109,8 +109,15 @@ def main():
             res["prodotto"] = {k: prod.get(k) for k in ("state", "name", "brand", "quantity", "source")}
             res["A_indirizzi_forniti"] = [analyse_url(u.strip(), gtin, fetcher, robots) for u in urls.split(",") if u.strip()]
             res["B_catene_consultabili"] = [trace_chain(gtin, prod, dict(p), fetcher, robots) for p in profs]
-            res["B_riepilogo_tentativi_nel_database"] = [dict(r) for r in conn.execute(
-                "SELECT chain, outcome, tried_at FROM attempts WHERE gtin=?", (gtin,))]
+            # C) la verifica VERA del servizio (quella di una scansione), rifatta da zero per questo codice
+            conn.execute("DELETE FROM attempts WHERE gtin=?", (gtin,))
+            conn.execute("DELETE FROM evidence WHERE gtin=?", (gtin,))
+            conn.commit()
+            res["C_verifica_del_servizio"] = catalogs.index_gtin(conn, gtin, prod, fetcher, robots, budget_s=90.0)
+            res["C_conferme_salvate"] = [dict(r) for r in conn.execute(
+                "SELECT chain, level, url, title, price FROM evidence WHERE gtin=? ORDER BY level, chain", (gtin,))]
+            res["C_esiti_per_catena"] = [dict(r) for r in conn.execute(
+                "SELECT chain, outcome FROM attempts WHERE gtin=? ORDER BY outcome, chain", (gtin,))]
         (Path(a.out) / f"{gtin or 'non_valido'}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
         print("scritto", gtin)
 
